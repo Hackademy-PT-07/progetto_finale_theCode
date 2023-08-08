@@ -9,6 +9,9 @@
 @vite(['resources/js/app.js', 'resources/css/app.css'])
     </head>
     <body>
+        <main>
         {{$slot}}
+        </main>
+        <x-footer />
     </body>
 </html>
