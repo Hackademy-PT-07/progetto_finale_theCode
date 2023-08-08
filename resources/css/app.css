@@ -101,12 +101,13 @@ ul {
     margin-right: 1rem;
 }
 
-#nav #nav-right ul li:hover {
+#nav #nav-right ul li:hover,
+#dropList li:active {
     background-color: var(--primary-color-light);
     color: white;
 }
 
-#nav #nav-right .hamburger i {
+#nav #nav-right #hamburger i {
     color: white;
     font-weight: 600;
     font-size: 2rem;
@@ -114,17 +115,64 @@ ul {
     display: none;
 }
 
+#dropMenu li{
+    display: none;
+} 
+
+
+
 @media only screen and (max-width: 600px) {
-#nav{
-    padding-left:0 ;
-}
-    #nav #nav-right .hamburger i {
+    #nav {
+        padding-left: 0;
+    }
+
+    #nav #nav-right #hamburger i {
         display: block;
     }
 
     #nav #nav-right ul {
         display: none;
     }
+
+    #dropList {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--primary-color);
+    }
+
+    #dropList li {
+        margin: .5rem 0;
+        font-size: 1rem;
+    }
+        #dropMenu li {
+            display: block;
+        }
+
+    #dropList li {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: white;
+        border-radius: 3px;
+        padding: .2rem 1rem;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+    }
+
+    #dropMenu {
+        height: 100vh;
+        width: 100%;
+        z-index: 999;
+        display: none;
+    }
+
+    #dropMenu.show {
+        display: block;
+    }
+/* aggiungere in js */
 }
 
 /* navbar end */

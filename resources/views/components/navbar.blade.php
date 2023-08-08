@@ -22,8 +22,27 @@
                             <a href="#">item</a>
                         </li>
                     </ul>
-                    <div class="hamburger">
+                    <div id="hamburger">
                         <i class="bi bi-list"></i>
                     </div>
                 </div>
             </nav>
+            <div id="dropMenu">
+                <ul id="dropList">
+                        <li>
+                            <a href="#">item</a>
+                        </li>
+                        <li>
+                            <a href="#">item</a>
+                        </li>
+                        <li>
+                            <a href="#">item</a>
+                        </li>
+                        <li>
+                            <a href="#">item</a>
+                        </li>
+                        <li>
+                            <a href="#">item</a>
+                        </li>
+                </ul>
+            </div>
