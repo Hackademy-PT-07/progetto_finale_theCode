@@ -5,9 +5,6 @@
                     </a>
                 </div>
                 <div id="nav-right">
-                    <div class="hamburger">
-                        <i class="bi bi-list"></i>
-                    </div>
                     <ul>
                         <li>
                             <a href="#">item</a>
@@ -25,5 +22,8 @@
                             <a href="#">item</a>
                         </li>
                     </ul>
+                    <div class="hamburger">
+                        <i class="bi bi-list"></i>
+                    </div>
                 </div>
             </nav>
