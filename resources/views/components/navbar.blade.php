@@ -1,7 +1,7 @@
             <nav id="nav">
                 <div id="nav-left">
                     <a href="#">
-                        <img src="/storage/imgs/logo.png" alt="logo" class="logo">
+                        <img src="/storage/imgs/logo-nobcg.png" alt="logo" class="logo">
                     </a>
                 </div>
                 <div id="nav-right">

@@ -55,6 +55,7 @@ ul {
     -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
     background-color: var(--primary-color);
+    overflow: hidden;
 }
 
 #nav #nav-left{
@@ -92,7 +93,7 @@ ul {
 }
 
 #nav #nav-left .logo{
-    height: 70px;
+    height: 150px;
 }
 
 #nav #nav-right ul li {
