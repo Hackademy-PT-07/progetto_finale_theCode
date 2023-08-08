@@ -114,9 +114,10 @@ ul {
     cursor: pointer;
     display: none;
 }
+
 #dropMenu li{
     display: none;
-}
+} 
 
 
 
@@ -145,6 +146,9 @@ ul {
         margin: .5rem 0;
         font-size: 1rem;
     }
+        #dropMenu li {
+            display: block;
+        }
 
     #dropList li {
         text-transform: uppercase;
@@ -165,8 +169,7 @@ ul {
         display: none;
     }
 
-    #dropMenu.show,
-    #dropMenu li.show {
+    #dropMenu.show {
         display: block;
     }
 /* aggiungere in js */
