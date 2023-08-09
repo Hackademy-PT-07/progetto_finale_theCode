@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="it">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,16 +9,9 @@
 
 
 <body>
-    <header>
-        <x-navbar />
-    </header>
-        
-    <main>
+    <main id="auth-main">
         {{$slot}}
-    </main>
-        
-    <x-footer />
-    
+    </main>    
 </body>
 
 </html>

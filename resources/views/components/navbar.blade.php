@@ -5,6 +5,7 @@
                     </a>
                 </div>
                 <div id="nav-right">
+                    @auth
                     <ul>
                         <li>
                             <a href="#">item</a>
@@ -25,9 +26,20 @@
                     <div id="hamburger">
                         <i class="bi bi-list"></i>
                     </div>
+                    @else
+                    <ul>
+                        <li>
+                            <a href="/login">Accedi</a>
+                        </li>
+                        <li>
+                            <a href="/register">Registrati</a>
+                        </li>
+                    </ul>
+                    @endauth
                 </div>
             </nav>
-            <div id="dropMenu">
+            
+                <div id="dropMenu">
                 <ul id="dropList">
                         <li>
                             <a href="#">item</a>
