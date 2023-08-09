@@ -1,6 +1,9 @@
 <div>
     <div class="container">
+
+    <x-success />
         <section class="form-custom-container">
+
             <form wire:submit.prevent="storeAnnouncement" class="form-custom">
                 @csrf
                 <h3>Crea annuncio</h3>

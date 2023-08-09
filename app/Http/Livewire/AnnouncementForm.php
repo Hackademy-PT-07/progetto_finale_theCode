@@ -30,5 +30,7 @@ class AnnouncementForm extends Component
             'price' => $this->price,
             'description' => $this->description,
         ]);
+
+        session()->flash('success','Annuncio creato correttamente');
     }
 }
