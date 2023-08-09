@@ -1,33 +1,38 @@
-<x-layout>
+<x-auth-main>
+    <x-slot:title>Login</x-slot>
 
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-6">
+<section class="form-custom-container">
+    <form class="form-custom" action="/login" method="POST">
+        @csrf
+        <h3>Bentornato!</h3>
+        <span>accedi al tuo account</span>
 
-                <form class="my-5 bg-white p-3 rounded shadow" action="/login" method="POST">
-                    @csrf
-                    <div class="mb-3">
-                        <h1>Accedi</h1>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" name="email" id="email">
-                    </div>
-                    @error('email') <span class="small text-danger">{{ $message }}</span> @enderror
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password" id="password">
-                    </div>
-                    @error('password') <span class="small text-danger">{{ $message }}</span> @enderror
-                    <div class="mt-4">
-                        <button type="submit" class="btn btn-outline-primary">Login</button>
-                    </div>
-                    <p class="mt-4 text-center">Non hai un account? <a href="/register">Registrati</a></p>
-                </form>
-
-
-            </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="your@email.com" value="{{old('email')}}">
+            @error('email')<span class="error-span">Ops!{{$message}}</span>@enderror
         </div>
+
+        <div>
+            <label for="">Password</label>
+            <input type="password" name="password" id="password">
+            @error('password')<span class="error-span">Ops!{{$message}}</span>@enderror
+
+        </div>
+
+        <div class="form-btn-container">
+            <button type="submit" class="form-custom-btn">Accedi</button>
+        </div>
+
+        <div class="text-start pt-3">
+            <span>Nuovo qui?
+                <a href="/register">Registrati!</a>
+
+            </span>
+        </div>
+    </form>
+</section>
     </div>
 
-</x-layout>
+</x-auth-main>
