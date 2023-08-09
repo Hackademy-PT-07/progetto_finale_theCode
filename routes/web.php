@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/livewire', function () {
     return view('announcement-create');
 });
+
+Route::get('/announcements', function () {
+    return view('announcements');
+});

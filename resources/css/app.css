@@ -412,3 +412,23 @@ footer>* {
 
     /* responsive navbar end*/
 }
+
+.success-component {
+    text-align: center;
+    font-size: 1.8rem;
+    background-color: green;
+    border-radius: 3rem;
+    color: black;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.error-component {
+    text-align: center;
+    font-size: 1.8rem;
+    background-color: red;
+    border-radius: 3rem;
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+}
