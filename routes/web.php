@@ -14,11 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
-
-Route::get('/announcements', [AnnouncementController::class, 'index'])->name('announcements.index');
+Route::get('/', [AnnouncementController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
 
