@@ -7,6 +7,5 @@
 @endauth
     </div>
 
-
 </x-main>
 
