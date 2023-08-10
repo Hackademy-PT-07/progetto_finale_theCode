@@ -6,14 +6,6 @@
     </div>
     @endauth
 
-    <div class="container">
-        <div class="row py-5">
-            <livewire:cards 
-                :announcements="$announcements"
-                :categories='$categories'
-            >
-        </div>
-    </div>
-
+    <livewire:cards :announcements="$announcements" :categories='$categories'>
 
 </x-main>
