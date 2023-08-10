@@ -1,5 +1,8 @@
 <x-main>
-<div class="btn-container">
-    <a href="#" class="btn-custom">Crea Annuncio</a>
-</div>
+@auth
+    <div class="btn-container">
+        <a href="{{route('announcements.create')}}" class="btn-home">Crea Annuncio</a>
+    </div>
+@endauth
+
 </x-main>

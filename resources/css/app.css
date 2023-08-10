@@ -13,24 +13,6 @@
     --bcg2: #eee;
 }
 
-/* animations */
-@keyframes fadeFromRight {
-    0% {
-        transform: translateX(700px);
-        display: none;
-    }
-
-    50% {
-        display: block;
-        transform: translateX(350px);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-/* animations end */
 
 /* css reset start */
 *,
@@ -46,11 +28,15 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    min-height: 100vh;
+}
+
 main {
     min-height: 100vh;
     min-width: 100vw;
     background-color: var(--bcg2);
-    margin-top: 70px;
+    padding-top: 70px;
 }
 
 a {
@@ -81,6 +67,7 @@ ul {
     background-color: var(--primary-color);
     position: fixed;
     top: 0;
+    z-index: 999;
     /* overflow: hidden; */
 }
 
@@ -107,7 +94,9 @@ ul {
     height: 100px;
 }
 
-#nav #nav-right ul li {
+#nav #nav-right ul li a,
+#nav #nav-right ul li span,
+.logout-btn{
     text-transform: uppercase;
     font-size: 1.2rem;
     letter-spacing: 1px;
@@ -123,7 +112,7 @@ ul {
     margin-right: 1rem;
 }
 
-#nav #nav-right ul li:hover {
+#nav #nav-right ul li a:hover {
     background-color: var(--primary-color-light);
     color: white;
 }
@@ -139,28 +128,38 @@ ul {
 #dropMenu li {
     display: none;
 }
-
+.logout-btn{
+background-color: red;
+border: 1px solid rgba(255, 255, 255, 0.512);
+outline: none;
+padding: .1rem .5rem;
+}
 /* navbar end */
 
 /*form */
-#auth-main {
+#auth-main,
+.test {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../../public/storage/imgs/form_bcg_big.jpg);
+    background-image: url(../../public/storage/imgs/bcg_auth_big.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+.test {
+    background-image: url(../../public/storage/imgs/bcg_create_big.jpg);
+}
+
 .form-custom {
     display: inline-block;
     width: 43rem;
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: rgba(65, 65, 65, 0.3);
     padding: 1rem 2rem;
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
 
@@ -177,38 +176,44 @@ ul {
     font-size: 1.5rem;
     letter-spacing: 0.5px;
     outline: none;
-    border: none;
 }
 
 .form-custom h3 {
     font-size: 3rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 4.2rem;
 }
 
 .form-custom span {
     display: block;
     font-size: 1.6rem;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .form-custom label {
     display: block;
     margin-top: 3rem;
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 700;
 }
 
-.form-custom input {
+.form-custom input,
+.form-custom select {
     display: block;
     height: 5rem;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 3px;
     padding: 0 1rem;
     margin-top: .8rem;
     font-size: 1.4rem;
     font-weight: 300;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.option {
+    background-color: lightgray;
+    font-weight: 500;
 }
 
 .form-btn-container {
@@ -227,10 +232,11 @@ ul {
     border-radius: 50px;
     cursor: pointer;
     transition: all .2s;
+    border: none;
 }
 
 .form-custom-btn:hover {
-    background-color: var(--primary-color-dark);
+    background-color: var(--primary-color-light);
 }
 
 .form-custom a {
@@ -257,6 +263,7 @@ ul {
 .form-custom a:hover::after {
     transform: scale(1);
 }
+
 /*form end*/
 
 /* footer */
@@ -268,6 +275,7 @@ footer {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    z-index: 999;
 }
 
 .footer-list {
@@ -330,12 +338,35 @@ footer>* {
 
 /* footer end */
 
+.btn-container {
+    text-align: end;
+    padding: 1rem;
+}
+
+.btn-home {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    background-color: rgb(254, 31, 213);
+    padding: .5rem 1.5rem;
+    border-radius: 5px;
+    transition: all .2s;
+}
+
+.btn-home:hover {
+    background-color: rgb(176, 0, 143);
+}
+
 @media only screen and (max-width: 600px) {
 
     /* responsive navbar */
     #nav {
         padding-left: 0;
         position: relative;
+    }
+
+    .auth-btns {
+        display: block;
     }
 
     #nav #nav-right #hamburger i {
@@ -347,14 +378,18 @@ footer>* {
     }
 
     #dropMenu {
-        height: 100vh;
+        height: 100%;
         width: 100vw;
-        z-index: 999;
-        background-color: rgba(0, 0, 0, 0.199);
         display: flex;
+        background-color: rgba(0, 0, 0, 0.2);
         justify-content: end;
-        align-items: center;
-        display: none;
+        align-items: start;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        opacity: 0;
+        transition: all .5s;
+        transition-delay: .2s;
     }
 
     #dropList {
@@ -364,7 +399,7 @@ footer>* {
         flex-direction: column;
         background-color: var(--primary-color);
         width: 200px;
-        height: 100vh;
+        height: 675px;
     }
 
     #dropList li {
@@ -390,7 +425,7 @@ footer>* {
 
 
     #dropMenu.show {
-        display: block;
+        opacity: 1;
     }
 
     /* responsive navbar end*/
