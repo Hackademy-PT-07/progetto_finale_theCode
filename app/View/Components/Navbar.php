@@ -13,7 +13,7 @@ class Navbar extends Component
     {
         $this->navLinks = [
             "Home" => route('home'),
-            "Annunci" => route('announcements'),
+            "Annunci" => route('announcements.index'),
         ];
 
     }
