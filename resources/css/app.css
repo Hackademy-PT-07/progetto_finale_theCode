@@ -450,3 +450,132 @@ footer>* {
     width: 50%;
     margin: 0 auto;
 }
+
+/* custom card */
+.custom-card {
+    border-radius: 8px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    position: relative;
+    background-color: white;
+    -webkit-box-shadow: 1px 1px 13px -3px rgba(0, 0, 0, 0.9);
+        box-shadow: 1px 1px 13px -3px rgba(0, 0, 0, 0.9);
+
+
+}
+
+.img-custom {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+        border-radius: 8px;
+
+}
+
+.img-custom img {
+    object-fit: cover;
+}
+
+.custom-title,
+.custom-body,
+.card-button,
+.created_at {
+    padding: .2rem 1rem;
+}
+
+.custom-title h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: left;
+    text-transform: uppercase;
+    color: #ff2e6a;
+}
+
+.custom-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    position: relative;
+}
+
+.custom-body::after {
+    content: '';
+    width: 75%;
+    height: 2px;
+    display: block;
+    background-color: rgba(128, 128, 128, 0.362);
+    position: absolute;
+    bottom: -4px;
+    left: 12.5%;
+}
+
+.custom-body .description {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    color: grey;
+}
+
+.custom-body .price {
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ff2e6a;
+}
+
+.category-box {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background-color: #ff2e6a;
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+
+.card-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card-button a {
+    display: block;
+    width: 100px;
+    text-align: center;
+    color: white;
+    background-color: #94002a;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: .5px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    transition: all .2s ease-in;
+}
+
+.card-button a:hover {
+    background-color: #ff2e69af;
+}
+.created_at{
+    width: 100%;
+    text-align: right;
+    margin-top: 2px;
+}
+.created_at p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: grey;
+}
+
+.category-box span {
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: .5rem;
+}
+
+/* custom card end */
