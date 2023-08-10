@@ -1,4 +1,4 @@
-<div class="test">
+<div class="creation-form">
     <x-success />
         <section class="form-custom-container">
             <form wire:submit.prevent="storeAnnouncement" class="form-custom">
@@ -29,9 +29,11 @@
                 </div>
 
                 <div class="form-btn-container">
-                    <button type="submit" class="form-custom-btn">Accedi</button>
+                    <button type="submit" class="form-custom-btn">Vendi!</button>
                 </div>
             </form>
         </section>
-        </section>
+<div class="form-img">
+    <img src="/storage/imgs/annuncio-nobcg.png">
+</div>
 </div>

@@ -6,6 +6,8 @@ use App\Models\Announcement;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\returnSelf;
+
 class AnnouncementController extends Controller
 {
     public function index() {
@@ -16,5 +18,8 @@ class AnnouncementController extends Controller
 
     public function create() {
         return view('announcements.announcement-create');
+    }
+    public function announcement(Announcement $announcement){
+        return view('.announcements.announcement');
     }
 }

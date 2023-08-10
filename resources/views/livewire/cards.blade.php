@@ -1,9 +1,5 @@
-<div>
-
-    <button wire:click="cardByGenre">categoria</button>
-
     @foreach($announcements as $announcement)
-    <div class="col-12 col-md-3 mt-3">
+    <div class="col-12 col-md-3 my-5">
         <div class="custom-card">
             <div class="img-custom">
                 <img src="https://picsum.photos/200" class="card-img-top" alt="...">
@@ -29,7 +25,6 @@
                 <span>{{ $announcement->category->name }}</span>
             </div>
         </div>
-    </div>
-    @endforeach
-
 </div>
+@endforeach
+
