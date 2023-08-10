@@ -8,12 +8,12 @@ use Livewire\Component;
 class Cards extends Component
 {
     public $announcements;
-    public $category_id;
     public $categories;
-
+    public $category_id;
+    
     public function cardByGenre()
     {
-
+        dd($this->categories);
     }
 
     public function render()
