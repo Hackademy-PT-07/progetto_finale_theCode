@@ -7,8 +7,11 @@
     @endauth
 
     <div class="container">
-        <div class="row">
-            <livewire:cards />
+        <div class="row py-5">
+            <livewire:cards 
+                :announcements="$announcements"
+                :categories='$categories'
+            >
         </div>
     </div>
 
