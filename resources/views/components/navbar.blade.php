@@ -14,7 +14,7 @@
               </li>
             @endforeach
                         <li>
-                        <span>{{auth()->user()->name}}</span>
+                        <span>{{auth()->user()->email}}</span>
                         </li>
                         <li>
                              <form action="/logout" method="POST" id="logout">
