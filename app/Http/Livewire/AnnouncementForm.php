@@ -50,6 +50,11 @@ class AnnouncementForm extends Component
         $this->clearForm();
     }
 
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
     public function clearForm () {
         $this->title = '';
         $this->category = '';
