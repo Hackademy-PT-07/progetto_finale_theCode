@@ -27,12 +27,13 @@ html {
     font-family: 'Poppins', sans-serif;
     font-size: 62.5%;
 }
-body{
+
+body {
     min-height: 100vh;
 }
 
 main {
-    min-height: 80vh;
+    min-height: 100vh;
     min-width: 100vw;
     background-color: var(--bcg2);
     padding-top: 70px;
@@ -93,7 +94,9 @@ ul {
     height: 100px;
 }
 
-#nav #nav-right ul li {
+#nav #nav-right ul li a,
+#nav #nav-right ul li span,
+.logout-btn{
     text-transform: uppercase;
     font-size: 1.2rem;
     letter-spacing: 1px;
@@ -109,7 +112,7 @@ ul {
     margin-right: 1rem;
 }
 
-#nav #nav-right ul li:hover:not(:last-child) {
+#nav #nav-right ul li a:hover {
     background-color: var(--primary-color-light);
     color: white;
 }
@@ -125,7 +128,12 @@ ul {
 #dropMenu li {
     display: none;
 }
-
+.logout-btn{
+background-color: red;
+border: 1px solid rgba(255, 255, 255, 0.512);
+outline: none;
+padding: .1rem .5rem;
+}
 /* navbar end */
 
 /*form */
@@ -190,7 +198,7 @@ ul {
 }
 
 .form-custom input,
-.form-custom select{
+.form-custom select {
     display: block;
     height: 5rem;
     width: 100%;
@@ -202,9 +210,10 @@ ul {
     font-weight: 300;
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
-.option{
-        background-color: lightgray;
-        font-weight: 500;
+
+.option {
+    background-color: lightgray;
+    font-weight: 500;
 }
 
 .form-btn-container {
@@ -416,7 +425,8 @@ footer>* {
 
 
     #dropMenu.show {
-opacity: 1;    }
+        opacity: 1;
+    }
 
     /* responsive navbar end*/
 }

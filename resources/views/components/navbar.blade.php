@@ -16,6 +16,12 @@
                         <li>
                         <span>{{auth()->user()->name}}</span>
                         </li>
+                        <li>
+                             <form action="/logout" method="POST" id="logout">
+                                @csrf
+                                <button type="submit" class="logout-btn">Log Out</button>
+                            </form>
+                        </li>
                     </ul>
                     <div id="hamburger">
                         <i class="bi bi-list"></i>

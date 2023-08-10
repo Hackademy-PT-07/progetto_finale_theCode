@@ -1,7 +1,7 @@
 <x-auth-main>
     <x-slot:title>Login</x-slot>
 
-    <div class="container">
+    <div class="container h-100vh">
 <section class="form-custom-container">
     <form class="form-custom" action="/login" method="POST">
         @csrf
