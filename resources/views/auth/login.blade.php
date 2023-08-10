@@ -28,7 +28,6 @@
         <div class="text-start pt-3">
             <span>Nuovo qui?
                 <a href="/register">Registrati!</a>
-
             </span>
         </div>
     </form>

@@ -18,9 +18,9 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/livewire', function () {
-    return view('announcement-create');
-});
+    return view('announcements.announcement-create');
+})->name('announcements.create');
 
 Route::get('/announcements', function () {
-    return view('announcements');
-});
+    return view('announcements.announcements');
+})->name('announcements');

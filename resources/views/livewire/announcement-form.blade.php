@@ -1,9 +1,6 @@
-<div>
-    <div class="container">
-
+<div class="test">
     <x-success />
         <section class="form-custom-container">
-
             <form wire:submit.prevent="storeAnnouncement" class="form-custom">
                 @csrf
                 <h3>Crea annuncio</h3>
@@ -16,7 +13,7 @@
                 <label for="category">Categoria</label>
                 <select id="category" name="category" wire:model="category">
                     @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    <option value="{{ $category->id }}" class="option">{{ $category->name }}</option>
                     @endforeach
                 </select>
                 <div>
@@ -35,5 +32,4 @@
                 </div>
             </form>
         </section>
-    </div>
 </div>
