@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnnouncementController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +18,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/livewire', function () {
-    return view('announcement-create');
-});
+Route::get('/announcements', [AnnouncementController::class, 'index'])->name('announcements.index');
 
-Route::get('/announcements', function () {
-    return view('announcements');
+Route::middleware('auth')->group(function () {
+
+    Route::get('/announcements/create', [AnnouncementController::class, 'create'])->name('announcements.create');
+
 });

@@ -1,7 +1,7 @@
 <div>
     <div class="container">
 
-    <x-success />
+        <x-success />
         <section class="form-custom-container">
 
             <form wire:submit.prevent="storeAnnouncement" class="form-custom">
@@ -14,7 +14,8 @@
                     @error('title')<span class="error-span">Ops!{{$message}}</span>@enderror
                 </div>
                 <label for="category">Categoria</label>
-                <select id="category" name="category" wire:model="category">
+                <select id="category" name="category" wire:model.defer="category">
+                    <option value="">Scegli categoria</option>
                     @foreach($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach

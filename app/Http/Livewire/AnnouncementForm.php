@@ -14,15 +14,29 @@ class AnnouncementForm extends Component
     public $price;
     public $description;
 
-    public $rules=[];
-
-    public function render()
+    protected function rules()
     {
-        return view('livewire.announcement-form');
+        return [
+            'title' => 'required|max:50',
+            'category' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+        ];
     }
+
+    protected $messages = [
+        'title.required' => 'Il campo titolo non può essere vuoto.',
+        'title.max:50' => 'Il campo titolo non può contenere più di 50 caratteri',
+        'category.required' => 'Il campo categoria non può essere vuoto.',
+        'price.required' => 'Il campo prezzo non può essere vuoto.',
+        'description.required' => 'Il campo descrizione non può essere vuoto.',
+    ];
 
     public function storeAnnouncement()
     {
+
+        $this->validate();
+
         Announcement::create([
             'title' => $this->title,
             'user_id' => auth()->user()->id,
@@ -32,5 +46,20 @@ class AnnouncementForm extends Component
         ]);
 
         session()->flash('success','Annuncio creato correttamente');
+
+        $this->clearForm();
     }
+
+    public function clearForm () {
+        $this->title = '';
+        $this->category = '';
+        $this->price = '';
+        $this->description = '';
+    }
+
+    public function render()
+    {
+        return view('livewire.announcement-form');
+    }
+
 }
