@@ -17,7 +17,6 @@ class Cards extends Component
             $this->announcements = Announcement::all();
         } else {
             $categorySelected = $this->categories->find($this->category_id);
-
             $this->announcements = $categorySelected->announcements()->get();
         }
     }
