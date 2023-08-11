@@ -13,7 +13,7 @@
 
             <livewire:cards :announcements="$announcements" :categories='$categories'>
         </div>
-        @auth
+
         <div class="homebtn-container">
             <div>
                 <span>Comincia a guadagnare!</span>
@@ -21,7 +21,7 @@
             </div>
             <a href="{{route('announcements.create')}}" class="btn-home">Crea Annuncio</a>
         </div>
-        @endauth
+
     </div>
 
 </x-main>
