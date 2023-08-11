@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use App\Models\Announcement;
 use Livewire\Component;
 
@@ -13,13 +14,7 @@ class Cards extends Component
       
     public function cardByGenre()
     {
-        if($this->category_id == "0") {
-            $this->announcements = Announcement::all();
-        } else {
-            $categorySelected = $this->categories->find($this->category_id);
-
-            $this->announcements = $categorySelected->announcements()->get();
-        }
+        dd($this->categories);
     }
 
     public function render()

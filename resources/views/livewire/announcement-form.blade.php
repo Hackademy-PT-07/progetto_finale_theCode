@@ -28,12 +28,12 @@
                 @error('description')<span class="error-span">Ops!{{$message}}</span>@enderror
             </div>
 
-            <div class="form-btn-container">
-                <button type="submit" class="form-custom-btn">Vendi!</button>
-            </div>
-        </form>
-    </section>
-    <div class="form-img">
-        <img src="/storage/imgs/annuncio-nobcg.png">
-    </div>
+                <div class="form-btn-container">
+                    <button type="submit" class="form-custom-btn">Vendi!</button>
+                </div>
+            </form>
+        </section>
+<div class="ps-5 ann-img">
+    <img src="/storage/imgs/annuncio-nobcg.png">
+</div>
 </div>

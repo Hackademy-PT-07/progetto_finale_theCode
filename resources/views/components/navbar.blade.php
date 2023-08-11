@@ -1,33 +1,49 @@
 <div>
-            <nav id="nav">
-                <div id="nav-left">
-                    <a href="{{route('home')}}">
-                        <img src="/storage/imgs/logo-nobcg.png" alt="logo" class="logo">
-                    </a>
-                </div>
-                <div id="nav-right">
-                    @auth
-                    <ul>
-             @foreach($navLinks as $key => $link)
-                <li>
-                <a href="{{$link}}">{{$key}}</a>
-              </li>
-            @endforeach
-                        <li>
-                        <span>{{auth()->user()->email}}</span>
-                        </li>
-                        <li>
-                             <form action="/logout" method="POST" id="logout">
-                                @csrf
-                                <button type="submit" class="logout-btn">Log Out</button>
-                            </form>
-                        </li>
-                    </ul>
-                    <div id="hamburger">
-                        <i class="bi bi-list"></i>
-                    </div>
-                </div>
-            </nav>
+    <nav id="nav">
+        <div id="nav-left">
+            <a href="{{route('home')}}">
+                <img src="/storage/imgs/logo-nobcg.png" alt="logo" class="logo">
+            </a>
+        </div>
+
+        <div id="nav-right">
+            @auth
+            <div>
+                <span class="nav-mail">{{auth()->user()->email}}</span>
+            </div>
+
+            <div id="hamburger">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <div id="dropMenu">
+                <ul id="dropList">
+                    @foreach($navLinks as $key => $link)
+                    <li>
+                        <a href="{{$link}}">{{$key}}</a>
+                    </li>
+                    @endforeach
+                    <li>
+                        <form action="/logout" method="POST" id="logout">
+                            @csrf
+                                <button type="submit" class="btn btn-danger w-100 logout">Log Out</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+                    <!-- <ul>
+                        @foreach($navLinks as $key => $link)
+                            <li>
+                                <a href="{{$link}}">{{$key}}</a>
+                            </li>
+                        @endforeach
+                            <li>
+                                <span>{{auth()->user()->email}}</span>
+                            </li> -->
+                           
+                    <!-- </ul> -->
+
+                    
                     @else
                     <ul class="auth-btns">
                         <li>
@@ -38,14 +54,7 @@
                         </li>
                     </ul>
                     @endauth
+            </nav>
             
-                <div id="dropMenu">
-                <ul id="dropList">
-             @foreach($navLinks as $key => $link)
-                <li>
-                <a href="{{$link}}">{{$key}}</a>
-              </li>
-            @endforeach
-                </ul>
-            </div>
-            </div>
+        </div>
+</div>
