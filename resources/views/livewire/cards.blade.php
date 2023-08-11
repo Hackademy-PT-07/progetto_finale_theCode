@@ -23,26 +23,28 @@
         @forelse($announcements as $announcement)
         <div class="col-12 col-md-3 my-5">
             <div class="custom-card">
-                <div class="img-custom">
+                <div class="img-custom p-2" style="height: 200px;">
                     <img src="https://picsum.photos/200" class="card-img-top" alt="{{$announcement->title}}">
                 </div>
-                <div class="custom-title">
+                <div class="custom-title mt-2">
                     <h4>{{ $announcement->title }}</h4>
                 </div>
-                <div class="custom-body">
-                    <p class="description">
+                <div class="custom-body mb-5">
+                    <p class="description ps-2" style="height: 100px;">
                         {{ $announcement->description }}
                     </p>
                     <p class="price">
                         {{ $announcement->price }}€
                     </p>
+
+                </div>
                     <div class="card-button">
                         <a href="{{route('announcement', $announcement)}}">Apri</a>
                     </div>
-                </div>
-                <div class="created_at">
-                    <p>{{ $announcement->created_at->diffForHumans() }}</p>
-                </div>
+                    <div class="created_at">
+                        <p>{{ $announcement->created_at->diffForHumans() }}</p>
+                    </div>
+
                 <div class="category-box">
                     <span>{{ $announcement->category->name }}</span>
                 </div>
