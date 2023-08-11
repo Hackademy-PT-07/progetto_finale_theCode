@@ -10,10 +10,16 @@ class Cards extends Component
     public $announcements;
     public $categories;
     public $category_id;
-    
+      
     public function cardByGenre()
     {
-        dd($this->categories);
+        if($this->category_id == "0") {
+            $this->announcements = Announcement::all();
+        } else {
+            $categorySelected = $this->categories->find($this->category_id);
+
+            $this->announcements = $categorySelected->announcements()->get();
+        }
     }
 
     public function render()
