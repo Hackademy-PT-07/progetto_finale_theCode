@@ -19,6 +19,6 @@ Route::get('/', [AnnouncementController::class, 'index'])->name('home');
 Route::middleware('auth')->group(function () {
 
     Route::get('/announcements/create', [AnnouncementController::class, 'create'])->name('announcements.create');
-    Route::get('/announcement/{announcement}', [AnnouncementController::class, 'announcement'])->name('announcement');
+    Route::get('/announcements/announcement/{id}', [AnnouncementController::class, 'announcement'])->name('announcement');
 
 });
