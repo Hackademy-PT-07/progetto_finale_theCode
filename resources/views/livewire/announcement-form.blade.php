@@ -33,7 +33,7 @@
                 </div>
             </form>
         </section>
-<div class="form-img">
+<div class="ps-5 ann-img">
     <img src="/storage/imgs/annuncio-nobcg.png">
 </div>
 </div>

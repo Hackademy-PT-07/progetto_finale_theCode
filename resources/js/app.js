@@ -7,3 +7,6 @@ const dropMenu = document.getElementById('dropMenu')
 hamburger.addEventListener('click', () => {
     dropMenu.classList.toggle('show')
 })
+dropMenu.addEventListener('click', () => {
+    dropMenu.classList.remove('show')
+})
