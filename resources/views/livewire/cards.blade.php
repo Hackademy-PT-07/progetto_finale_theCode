@@ -15,7 +15,7 @@
         <div class="col-12 col-md-3 my-5">
             <div class="custom-card">
                 <div class="img-custom">
-                    <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                    <img src="https://picsum.photos/200" class="card-img-top" alt="{{$announcement->title}}">
                 </div>
                 <div class="custom-title">
                     <h4>{{ $announcement->title }}</h4>
@@ -28,7 +28,7 @@
                         {{ $announcement->price }}€
                     </p>
                     <div class="card-button">
-                        <a href="#">Apri</a>
+                        <a href="{{route('announcement', $announcement)}}">Apri</a>
                     </div>
                 </div>
                 <div class="created_at">

@@ -1,7 +1,7 @@
 <x-main>
+  <x-slot:title>Annuncio</x-slot:title>
     <div class="container">
-        <div class="row">
-
+<div class="row">
         <div class="col-12 col-md-6 p-5">
             <div id="carouselExampleDark" class="carousel carousel-dark slide">
   
@@ -44,30 +44,37 @@
 </div>
             </div>
 
-            <div class="col-12 col-md-6 p-5">
+<div class="col-12 col-md-6 p-5">
     <div class="ann">
-    <div class="ann-header">
-    <h1>Titolo dell annuncio</h1>
-<span class="ann-category">Tech</span>
-    </div>
+      <div class="ann-header">
+        <h1>{{$announcement->title}}</h1>
+          <span class="ann-category">{{$announcement->category->name}}</span>
+      </div>
 
     <div>
         <p>
             publicato da:
-            <span class="ann-user">Mario Rossi</span>
+            <span class="ann-user">{{$announcement->user->name}}</span>
         </p>
-        <p class="ann-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero facere ad eveniet officia cumque non, doloremque placeat at nam nesciunt neque, officiis obcaecati ipsam modi, earum in dicta error voluptatibus.</p>
+        <p class="ann-desc">{{$announcement->description}}</p>
     </div>
     <div class="ann-price">
         <p>Costo:
-            <span>19.00</span>€
+            <span>{{$announcement->price}}</span>€
         </p>
     </div>
 </div>
+
 </div>
 
-
-
+    <div class="homebtn-container">
+        <div>
+        <span>Non era ciò che cercavi?</span></span>
+        <span>Torna agli annunci!</span>
         </div>
+        <a href="{{route('home')}}" class="btn-home">Vai!</a>
+    </div>
+
+</div>
     </div>
 </x-main>
