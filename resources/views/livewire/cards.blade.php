@@ -19,7 +19,8 @@
                 </div>
             </form>
         </div>
-        @foreach($announcements as $announcement)
+
+        @forelse($announcements as $announcement)
         <div class="col-12 col-md-3 my-5">
             <div class="custom-card">
                 <div class="img-custom">
@@ -47,6 +48,9 @@
                 </div>
             </div>
         </div>
-        @endforeach
+        @empty
+        <H3>ciao</H3>
+        @endforelse
+
     </div>
 </div>
