@@ -1,10 +1,11 @@
 <div class="creation-form">
-    <x-success />
+
     <section class="form-custom-container">
+
         <form wire:submit.prevent="storeAnnouncement" class="form-custom">
             @csrf
             <h3>Crea annuncio</h3>
-
+            <x-success />
             <div>
                 <label for="title">Titolo</label>
                 <input type="text" name="title" id="title" wire:model="title">

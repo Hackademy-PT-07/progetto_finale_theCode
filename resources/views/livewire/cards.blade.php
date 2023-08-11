@@ -1,14 +1,21 @@
 <div class="container">
     <div class="row py-5">
         <div>
-            <form wire:submit.prevent="cardByGenre">
-                <select id="category_id" name="category_id" wire:model.defer="category_id">
+            <form wire:submit.prevent="cardByGenre" class="category-form col-10 offset-1 mb-5">
+                <div class="w-100 d-flex justify-center align-items-center">
+                <h3>Una categoria in particolare?</h3></div>
+                <div class="text-center w-25">
+                <select id="category_id" name="category_id" class="category-select" wire:model.defer="category_id">
                     <option value="0">Tutti gli annunci</option>
                     @foreach($categories as $category)
                     <option value="{{ $category->id }}" class="option">{{ $category->name }}</option>
                     @endforeach
                 </select>
-                <button type="submit">Filtra</button>
+</div>
+                <div class="homebtn-container-sort">
+                <button type="submit" class="btn-home">Filtra</button>
+
+                </div>
             </form>
         </div>
         @foreach($announcements as $announcement)
