@@ -11,15 +11,16 @@ use function PHPUnit\Framework\returnSelf;
 class AnnouncementController extends Controller
 {
     public function index() {
-
         return view('announcements.announcements');
-
     }
 
-    public function create() {
-        return view('announcements.announcement-create');
-    }
     public function announcement(Announcement $announcement){
         return view('.announcements.announcement');
     }
+    
+    public function create() {
+        return view('announcements.announcement-create');
+    }
+
+
 }
