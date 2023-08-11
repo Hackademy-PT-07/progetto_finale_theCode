@@ -10,7 +10,7 @@ class Cards extends Component
     public $announcements;
     public $categories;
     public $category_id;
-      
+
     public function cardByGenre()
     {
         if($this->category_id == "0") {
