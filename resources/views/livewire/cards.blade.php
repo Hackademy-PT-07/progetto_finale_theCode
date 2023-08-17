@@ -2,7 +2,7 @@
     <div class="row py-5">
         <div>
             <form wire:submit.prevent="cardByGenre" class="category-form col-10 offset-1 mb-5">
-                <div class="w-100 d-flex justify-center align-items-center">
+            <div class="w-100 d-flex justify-center align-items-center">
                     <h3>Una categoria in particolare?</h3>
                 </div>
                 <div class="text-center w-25">
@@ -38,12 +38,12 @@
                     </p>
 
                 </div>
-                    <div class="card-button">
-                        <a href="{{route('announcement', $announcement)}}">Apri</a>
-                    </div>
-                    <div class="created_at">
-                        <p>{{ $announcement->created_at->diffForHumans() }}</p>
-                    </div>
+                <div class="card-button">
+                    <a href="{{route('announcement', $announcement)}}">Apri</a>
+                </div>
+                <div class="created_at">
+                    <p>{{ $announcement->created_at->diffForHumans() }}</p>
+                </div>
 
                 <div class="category-box">
                     <span>{{ $announcement->category->name }}</span>
@@ -51,8 +51,7 @@
             </div>
         </div>
         @empty
-        <H3>ciao</H3>
+        <H3>Ops... Non ci sono annunci in questa categoria. Perchè non ne crei uno?</H3>
         @endforelse
-
     </div>
 </div>

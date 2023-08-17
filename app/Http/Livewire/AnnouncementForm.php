@@ -45,6 +45,8 @@ class AnnouncementForm extends Component
             'description' => $this->description,
         ]);
 
+        $this->emitTo('cards', 'loadAnnouncements');
+        
         session()->flash('success','Annuncio creato correttamente');
 
         $this->clearForm();
