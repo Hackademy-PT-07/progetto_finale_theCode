@@ -3,10 +3,13 @@ import 'bootstrap';
 
 const hamburger = document.getElementById('hamburger')
 const dropMenu = document.getElementById('dropMenu')
+const dropList = document.getElementById('dropList')
 
 hamburger.addEventListener('click', () => {
     dropMenu.classList.toggle('show')
+    dropList.classList.toggle('show')
 })
 dropMenu.addEventListener('click', () => {
     dropMenu.classList.remove('show')
+    dropList.classList.remove('show')
 })

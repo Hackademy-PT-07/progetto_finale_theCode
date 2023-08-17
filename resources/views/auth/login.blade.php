@@ -1,37 +1,45 @@
 <x-auth-main>
     <x-slot:title>Login</x-slot>
+        <div class="form-box container-fluid">
+        <div class="form-container row">
 
-    <div class="container h-100vh">
-<section class="form-custom-container">
-    <form class="form-custom" action="/login" method="POST">
-        @csrf
-        <h3>Bentornato!</h3>
-        <span>accedi al tuo account</span>
+        <div class="col-12 col-md-6 form-left">
+            <form class="auth-form" action="/login" method="POST">
+                @csrf
+                <div class="text-center">
+                    <h3>Sign In</h3>
+                </div>
+                <input type="email" name="email" id="email" placeholder="your@email.com">
+                @error('email')<span class="error-span">Ops!{{$message}}</span>@enderror
+                <input type="password" name="password" id="password">
+                @error('password')<span class="error-span">Ops!{{$message}}</span>@enderror
+                <button type="submit" class="auth-btn">Accedi</button>
 
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="your@email.com" value="{{old('email')}}">
-            @error('email')<span class="error-span">Ops!{{$message}}</span>@enderror
+                <div class="sign-with">
+                    <span>or sign in with</span>
+                    <div class="icons">
+                        <i class="bi bi-facebook text-primary"></i>
+                        <i class="bi bi-google text-danger"></i>
+                        <i class="bi bi-linkedin text-primary"></i>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-12 col-md-6 form-right">
+            <div class="right-cont">
+                <h2>Welcome back!</h2>
+                <div class="form-paragraph">
+                    <p>Welcome back! We are so happy to have you here. It's great to see you again.
+                    </p>
+                    <p>Presto.it team</p>
+                </div>
+                <div class="w-100 ">
+                    <a href="/register" class="right-btn"> Not yet? Sign Up!</a>
+                </div>
+            </div>
+        </div>
         </div>
 
-        <div>
-            <label for="">Password</label>
-            <input type="password" name="password" id="password">
-            @error('password')<span class="error-span">Ops!{{$message}}</span>@enderror
-
-        </div>
-
-        <div class="form-btn-container">
-            <button type="submit" class="form-custom-btn">Accedi</button>
-        </div>
-
-        <div class="text-start pt-3">
-            <span>Nuovo qui?
-                <a href="/register">Registrati!</a>
-            </span>
-        </div>
-    </form>
-</section>
     </div>
 
 </x-auth-main>
