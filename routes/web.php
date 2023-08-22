@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,15 +20,23 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', [AnnouncementController::class, 'index'])->name('home');
+Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
 Route::middleware('auth')->group(function () {
 
     Route::get('/announcements/create', [AnnouncementController::class, 'create'])->name('announcements.create');
     Route::get('/announcements/announcement/{id}', [AnnouncementController::class, 'announcement'])->name('announcement');
+    Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
 
 });
 
-
+// Login from social
 Route::get('/auth/{provider}/redirect', [AuthController::class, 'render']);
 Route::get('/auth/{provider}/callback', [AuthController::class, 'callback']);
 
+// Revisor
+Route::middleware('isRevisor')->group(function () {
+    Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
+    Route::patch('/accetta/announcio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name('revisor.accept_announcement');
+    Route::patch('/rifiuta/announcio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement');
+});

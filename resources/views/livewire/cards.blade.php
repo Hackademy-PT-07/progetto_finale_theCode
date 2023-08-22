@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row py-5">
         <div class="col-12 col-md-5">
-            <form wire:submit.prevent="filterAnnouncements" class="category-form d-flex flex-column align-items-start mb-sm-5">
+            <form wire:submit.prevent="filterAnnouncements" class="category-form d-flex flex-column align-items-center mb-sm-5">
                 <div class="w-100 d-flex justify-center align-items-center">
                     <h3>Cosa cerchi oggi?</h3>
                 </div>
@@ -11,7 +11,7 @@
                 <div class="w-100 d-flex justify-center align-items-center">
                     <h3>In quale categoria?</h3>
                 </div>
-                <div class="text-center w-25">
+                <div>
                     <select id="category_id" name="category_id" class="category-select" wire:model.defer="category_id">
                         <option value=0 selected>Tutti</option>
                         @foreach($categories as $category)
