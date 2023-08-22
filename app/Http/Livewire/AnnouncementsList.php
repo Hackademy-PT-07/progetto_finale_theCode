@@ -29,9 +29,9 @@ class AnnouncementsList extends Component
         $this->__construct();
     }
 
-    public function editAnnouncement($announcement_id, $category_id)
+    public function editAnnouncement($announcement_id)
     {        
-        $this->emitTo('announcement-form', 'edit', $announcement_id, $category_id);
+        $this->emitTo('announcement-form', 'edit', $announcement_id);
     }
 
     public function deleteAnnouncement(Announcement $announcement)
