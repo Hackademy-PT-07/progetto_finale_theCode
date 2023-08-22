@@ -13,10 +13,7 @@ class AnnouncementController extends Controller
     public $announcements;
 
     public function index() {
-        $announcements = Announcement::paginate(4);
-        return view('announcements.announcements', [
-            'annoucements'=>$announcements,
-        ]);
+        return view('announcements.announcements');
     }
 
     public function announcement($id){

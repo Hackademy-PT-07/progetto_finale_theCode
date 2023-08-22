@@ -37,7 +37,7 @@ class Cards extends Component
                     $this->announcements = Announcement::search($this->search)->orderBy('created_at', 'desc')->paginate(4);
                 } else {
                     if ($this->category_id != 0) {
-                        $this->announcements = Announcement::search($this->category_id)->orderBy('created_at', 'desc')->paginate(4);
+                        $this->announcements = Announcement::orderBy('created_at', 'desc')->where('category_id', $this->category_id)->paginate(4);
                     }
                 }
             }
