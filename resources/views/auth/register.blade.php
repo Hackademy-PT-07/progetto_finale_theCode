@@ -20,9 +20,8 @@
                 <div class="sign-with">
                     <span>or sign up with</span>
                     <div class="icons">
-                        <i class="bi bi-facebook text-primary"></i>
-                        <i class="bi bi-google text-danger"></i>
-                        <i class="bi bi-linkedin text-primary"></i>
+                        <a href="/auth/github/redirect"><i class="bi bi-github text-dark"></i> </a>
+                        <a href="/auth/google/redirect"><i class="bi bi-google text-danger"></i></a>
                     </div>
                 </div>
             </form>

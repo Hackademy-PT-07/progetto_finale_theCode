@@ -1,7 +1,11 @@
 <?php
 
-use App\Http\Controllers\AnnouncementController;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +26,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/announcements/announcement/{id}', [AnnouncementController::class, 'announcement'])->name('announcement');
 
 });
+
+
+Route::get('/auth/{provider}/redirect', [AuthController::class, 'render']);
+Route::get('/auth/{provider}/callback', [AuthController::class, 'callback']);
+
