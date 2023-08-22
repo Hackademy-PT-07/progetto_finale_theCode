@@ -13,7 +13,6 @@ class Announcement extends Model
 
     protected $fillable = ['user_id', 'category_id', 'title', 'price', 'description'];
 
-
     public function toSearchableArray()
     {
         $category = $this->category;
@@ -36,10 +35,12 @@ class Announcement extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
     public function toBeRevisionedCount()
     {
         return Announcement::where('is_accepted', null)->count();
     }
+
     public function setAccepted($value)
     {
         $this->is_accepted = $value;
