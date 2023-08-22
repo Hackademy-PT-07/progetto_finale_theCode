@@ -3,9 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Announcement;
-use App\Models\Category;
 use Livewire\Component;
-use Illuminate\Support\Str;
 use Livewire\WithPagination;
 
 class Cards extends Component
