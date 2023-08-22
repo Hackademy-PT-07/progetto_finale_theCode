@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Announcement extends Model
 {
     use HasFactory;
-
     protected $fillable = ['user_id', 'category_id', 'title', 'price', 'description'];
 
     public function user()

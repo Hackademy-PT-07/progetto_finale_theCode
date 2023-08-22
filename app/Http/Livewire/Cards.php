@@ -10,6 +10,9 @@ class Cards extends Component
     public $announcements;
     public $categories;
     public $category_id;
+    protected $listeners = [
+        'filterByGenre'=> 'cardByGenre',
+    ];
 
     public function cardByGenre()
     {
@@ -20,8 +23,8 @@ class Cards extends Component
             $this->announcements = $categorySelected->announcements()->get();
         }
     }
-
     public function render()
+
     {
         return view('livewire.cards');
     }

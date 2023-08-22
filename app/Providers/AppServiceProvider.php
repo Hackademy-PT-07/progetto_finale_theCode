@@ -31,6 +31,5 @@ class AppServiceProvider extends ServiceProvider
         if(Schema::hasTable('announcements')) {
             View::share('announcements', Announcement::all()->sortByDesc('created_at'));
         }
-        Paginator::useBootstrapFive();
     }
 }

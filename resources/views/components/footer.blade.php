@@ -11,11 +11,11 @@
         <div class="socials">
 <h4>Follow us</h4>
             <ul class="socials-list">
-                <li class="social-list-item"><a href="#"></a><i class="bi bi-facebook"></i></li>
-                <li class="social-list-item"><a href="#"><i class="bi bi-instagram"></i></a></li>
-                <li class="social-list-item"><a href="#"><i class="bi bi-tiktok"></i></a></li>
-                <li class="social-list-item"><a href="#"><i class="bi bi-twitter"></i></a></li>
-                <li class="social-list-item"><a href="#"><i class="bi bi-youtube"></i></a></li>
+                <li class="social-list-item"><a href="https://it-it.facebook.com/"><i class="bi bi-facebook"></i></a></li>
+                <li class="social-list-item"><a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a></li>
+                <li class="social-list-item"><a href="https://www.tiktok.com/it-IT/"><i class="bi bi-tiktok"></i></a></li>
+                <li class="social-list-item"><a href="https://twitter.com/?lang=it"><i class="bi bi-twitter"></i></a></li>
+                <li class="social-list-item"><a href="https://www.youtube.com/?hl=it&gl=IT"><i class="bi bi-youtube"></i></a></li>
             </ul>
         </div>
         <div class="footer-right">

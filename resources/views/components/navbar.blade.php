@@ -9,7 +9,7 @@
         <div id="nav-right">
             @auth
             <div>
-                <span class="nav-mail">{{auth()->user()->email}}</span>
+                <span class="nav-mail">{{auth()->user()->name}}</span>
             </div>
 
             <div id="hamburger">
