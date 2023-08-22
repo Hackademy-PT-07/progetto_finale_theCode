@@ -41,7 +41,7 @@ main {
     min-height: 100vh;
     min-width: 100vw;
     background-color: #F7F8FB;
-    /* padding-top: 55px; */
+    padding-top: 55px;
 }
 
 a {

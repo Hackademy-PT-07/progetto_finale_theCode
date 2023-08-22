@@ -21,6 +21,7 @@ use App\Http\Controllers\RevisorController;
 
 Route::get('/', [AnnouncementController::class, 'index'])->name('home');
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
 
 Route::middleware('auth')->group(function () {
 
@@ -36,7 +37,6 @@ Route::get('/auth/{provider}/callback', [AuthController::class, 'callback']);
 
 // Revisor
 Route::middleware('isRevisor')->group(function () {
-    Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
     Route::patch('/accetta/announcio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name('revisor.accept_announcement');
     Route::patch('/rifiuta/announcio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement');
 });

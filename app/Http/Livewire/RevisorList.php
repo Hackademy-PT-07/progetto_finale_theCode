@@ -6,6 +6,7 @@ use Livewire\Component;
 
 class RevisorList extends Component
 {
+    public $announcements;
     public function showAnnouncement()
     {
         
