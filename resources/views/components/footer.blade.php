@@ -9,7 +9,7 @@
             </ul>
         </div>
         <div class="socials">
-<h4>Follow us</h4>
+            <h4>Follow us</h4>
             <ul class="socials-list">
                 <li class="social-list-item"><a href="https://it-it.facebook.com/"><i class="bi bi-facebook"></i></a></li>
                 <li class="social-list-item"><a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a></li>
@@ -21,6 +21,12 @@
         <div class="footer-right">
             <p>Built by <span class="footer-span">theCode</span></p>
             <p>copyright &copy; by theCode </p>
+        </div>
+        <div>
+            <ul class="footer-list">
+                            <li class="footer-list-item"><a href="{{route('become.revisor')}}">Lavora con noi</a></li> <br>
+                            <li class="footer-list-item"><a href="{{route('become.revisor')}}">Diventa revisore!</a></li>
+            </ul>
         </div>
         <div class="footerlogo-container">
             <div>

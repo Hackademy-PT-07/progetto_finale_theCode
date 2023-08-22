@@ -24,11 +24,11 @@ class Cards extends Component
     }
 
     public function filterAnnouncements()
-    {   
+    {
         if ($this->category_id == 0 && !$this->search) {
             $this->loadAnnouncements();
         } else {
-            if($this->category_id != 0 && $this->search) {
+            if ($this->category_id != 0 && $this->search) {
                 $this->announcements = Announcement::search($this->search)->orderBy('created_at', 'desc')->where('category_id', $this->category_id)->paginate(4);
             } else {
                 if ($this->search) {
@@ -44,7 +44,7 @@ class Cards extends Component
 
     public function loadAnnouncements()
     {
-        return $this->announcements = Announcement::orderBy('id', 'desc')->paginate(4);
+        return $this->announcements = Announcement::orderBy('id', 'desc')->where('is_accepted', true )->paginate(4);
     }
 
     public function getAnnouncementsLinks()

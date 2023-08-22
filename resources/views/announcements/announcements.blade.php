@@ -22,5 +22,17 @@
             <a href="{{route('announcements.create')}}" class="btn-home">Crea Annuncio</a>
         </div>
     </div>
+    <div class="download-box container">
+        <div class="row">
+            <h4>Scarica l'app ufficile di Presto.it!</h4>
+            <span>Cerca tra migliaia di annunci e inserisci i tuoi, ovunque tu sia.</span>
+            <div class="col-12 col-md-6">
+                <img src="storage/imgs/google-badge-removebg-preview.png" alt="google download">
+                <a href="">
+                </a>
+            </div>
+            <div class="col-12 col-md-6"></div>
+        </div>
+    </div>
 
 </x-main>

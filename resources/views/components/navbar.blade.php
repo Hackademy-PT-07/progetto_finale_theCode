@@ -23,6 +23,14 @@
                         <a href="{{$link}}">{{$key}}</a>
                     </li>
                     @endforeach
+                    @if(Auth::user()->is_revisor)
+                    <li>
+                        <a href="{{route('revisor.index')}}"  class="position-relative">Zona revisore</a>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{App\Models\Announcement::toBeRevisionedCount()}}
+                        </span>
+                    </li>
+                    @endif
                     <li>
                         <form action="/logout" method="POST" id="logout">
                             @csrf

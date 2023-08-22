@@ -40,7 +40,7 @@ body {
 main {
     min-height: 100vh;
     min-width: 100vw;
-    background-color: #fff;
+    background-color: #F7F8FB;
     /* padding-top: 55px; */
 }
 
@@ -559,8 +559,8 @@ footer>* {
     height: 1px;
     background-color: var(--light-black);
     position: absolute;
-    bottom: 0px;
-    left: 0px;
+    bottom: 5px;
+    left: 50px;
 }
 
 .custom-body .created span {
@@ -573,7 +573,8 @@ footer>* {
     transform: scale(1.1);
     z-index: 999;
 }
-.custom-card:hover .custom-body{
+
+.custom-card:hover .custom-body {
     opacity: 0;
 }
 
@@ -633,7 +634,7 @@ footer>* {
 /* annuncements page */
 
 .ann-section {
-    height: 90vh;
+    height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -711,13 +712,14 @@ footer>* {
 .category-select,
 .category-form input {
     outline: none;
-    border: none;
     height: 30px;
+    width: 250px;
     display: block;
     background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid lightgrey;
     border-radius: 3px;
     padding: 0 1rem;
-    margin-top: .8rem;
+    margin: .8rem auto;
     font-size: 1.4rem;
     font-weight: 300;
     margin-bottom: 10px;
@@ -725,7 +727,6 @@ footer>* {
 
 .category-select option {
     background-color: white;
-    color: var(--secondary-color);
 }
 
 .category-select:focus-visible {
@@ -887,28 +888,6 @@ footer>* {
 }
 
 /* login form end*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media only screen and (max-width: 1100px) {
     .ann-section img {
