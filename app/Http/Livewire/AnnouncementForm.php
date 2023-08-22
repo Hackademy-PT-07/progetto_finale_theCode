@@ -8,60 +8,62 @@ use App\Models\Category;
 
 class AnnouncementForm extends Component
 {
+    public $announcement;
 
-    public $title;
-    public $category;
-    public $price;
-    public $description;
+    protected $listeners = [
+        'edit'
+    ];
 
     protected function rules()
     {
         return [
-            'title' => 'required|max:50',
-            'category' => 'required',
-            'price' => 'required',
-            'description' => 'required',
+            'announcement.title' => 'required|max:50',
+            'announcement.category_id' => 'required',
+            'announcement.price' => 'required',
+            'announcement.description' => 'required',
         ];
     }
 
     protected $messages = [
-        'title.required' => 'Il campo titolo non può essere vuoto.',
-        'title.max:50' => 'Il campo titolo non può contenere più di 50 caratteri',
-        'category.required' => 'Il campo categoria non può essere vuoto.',
-        'price.required' => 'Il campo prezzo non può essere vuoto.',
-        'description.required' => 'Il campo descrizione non può essere vuoto.',
+        'announcement.title.required' => 'Il campo titolo non può essere vuoto.',
+        'announcement.title.max:50' => 'Il campo titolo non può contenere più di 50 caratteri',
+        'announcement.category_id.required' => 'Il campo categoria non può essere vuoto.',
+        'announcement.price.required' => 'Il campo prezzo non può essere vuoto.',
+        'announcement.description.required' => 'Il campo descrizione non può essere vuoto.',
     ];
+
+    public function mount()
+    {
+        $this->newAnnouncement();
+    }
 
     public function storeAnnouncement()
     {
-
         $this->validate();
 
-        Announcement::create([
-            'title' => $this->title,
-            'user_id' => auth()->user()->id,
-            'category_id' => $this->category,
-            'price' => $this->price,
-            'description' => $this->description,
-        ]);
+        $this->announcement->user_id = auth()->user()->id;
+        $this->announcement->save();
 
-        $this->emitTo('cards', 'loadAnnouncements');
-        
         session()->flash('success','Annuncio creato correttamente');
 
-        $this->clearForm();
+        $this->newAnnouncement(); 
+        
+        $this->emitTo('announcements-list', 'loadAnnouncements');
+    }
+
+    public function newAnnouncement () {
+        $this->announcement = new Announcement;
+    }
+
+    public function edit ($announcement_id) {
+        $announcementToEdit = Announcement::find($announcement_id);
+
+        $this->announcement = $announcementToEdit;
     }
 
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
-    }
-
-    public function clearForm () {
-        $this->title = '';
-        $this->category = '';
-        $this->price = '';
-        $this->description = '';
     }
 
     public function render()

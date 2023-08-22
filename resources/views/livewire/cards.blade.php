@@ -1,15 +1,16 @@
 <div class="container">
     <div class="row py-5">
         <div>
-            <form wire:submit.prevent="cardByGenre" class="category-form col-10 offset-1 mb-5">
+            <form wire:submit.prevent="filterAnnouncements" class="category-form col-10 offset-1 mb-5">
                 <div class="w-100 d-flex justify-center align-items-center">
-                    <h3>Una categoria in particolare?</h3>
+                <input wire:model="search" type="text" placeholder="Cerca annuncio">    
+                <h3>Una categoria in particolare?</h3>
                 </div>
                 <div class="text-center w-25">
                     <select id="category_id" name="category_id" class="category-select" wire:model.defer="category_id">
-                        <option value="0">Tutti</option>
+                        <option value=0 selected>Tutti</option>
                         @foreach($categories as $category)
-                        <option value="{{ $category->id }}" class="option">{{ $category->name }}</option>
+                        <option value="{{ $category->name }}" class="option">{{ $category->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -19,10 +20,10 @@
             </form>
         </div>
 
-        @forelse($announcements as $announcement)
+        @forelse($this->getAnnouncements() as $announcement)
         <div class="col-12 col-md-4 col-lg-3 my-2 p-3  overflow-hidden">
             <a href="{{route('announcement', $announcement)}}" class="card-link" target="_blank">
-                <div class="custom-card mx-auto">
+                <div class="custom-card overflow-hidden mx-auto">
                     <div class="custom-img">
                         <img src="https://picsum.photos/400?grayscale" alt="">
                         <div class="category">
@@ -37,7 +38,7 @@
                             <p>{{ $announcement->description }}</p>
                         </div>
                         <div class="price text-end w-100">
-                            <span>20.00€</span>
+                            <span>{{ $announcement->price }}€</span>
                         </div>
                         <div class="created text-end w-100">
                             <span>{{ $announcement->created_at->diffForHumans() }}</span>
@@ -53,5 +54,7 @@
             <a href="{{route('announcements.create')}}" class="btn-home">Pubblica</a>
         </div>
         @endforelse
+
+        {{ $this->getAnnouncementsLinks() }}
     </div>
 </div>

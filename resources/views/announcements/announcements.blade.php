@@ -10,7 +10,7 @@
 
         <h2 class="ann-title">Ultimi Annunci</h2>
         <div class="row border border-secondary-subtle pt-5 px-5">
-            <livewire:cards :announcements="$announcements" :categories='$categories'>
+            <livewire:cards :categories='$categories'>
         </div>
 
         <div class="homebtn-container">
