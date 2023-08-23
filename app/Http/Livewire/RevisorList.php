@@ -23,8 +23,8 @@ class RevisorList extends Component
     }
 
     public function loadAnnouncements()
-    {
-        $this->announcements = Announcement::where('is_accepted', null)->paginate(10);
+    {   
+        $this->announcements = Announcement::where('is_accepted', null)->Paginate(10);
     }
 
     public function showAnnouncement(Announcement $announcementToShow)
@@ -44,6 +44,8 @@ class RevisorList extends Component
 
     public function render()
     {
+        $this->loadAnnouncements();
+
         return view('livewire.revisor-list');
     }
 }
