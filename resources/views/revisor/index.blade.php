@@ -17,6 +17,5 @@
                             <livewire:preview-announcement />
                         </div>
         </div>
-    </div>
     </section>
 </x-main>

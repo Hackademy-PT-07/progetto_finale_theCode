@@ -26,4 +26,7 @@
             @endforelse
         </tbody>
     </table>
+
+    {{ $this->getAnnouncementsLinks() }}
+
 </div>
