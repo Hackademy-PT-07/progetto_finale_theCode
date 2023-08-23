@@ -24,7 +24,7 @@
         </div>
         <div>
             <ul class="footer-list">
-                            <li class="footer-list-item"><a href="{{route('become.revisor')}}">Lavora con noi</a></li> <br>
+                            <li class="footer-list-item"><a href="{{route('work.revisor')}}">Lavora con noi</a></li> <br>
                             <li class="footer-list-item"><a href="{{route('become.revisor')}}">Diventa revisore!</a></li>
             </ul>
         </div>

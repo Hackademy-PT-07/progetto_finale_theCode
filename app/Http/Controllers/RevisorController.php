@@ -30,8 +30,11 @@ class RevisorController extends Controller
         return redirect()->back()->with('message', 'annuncio accettato!');
 
     }
-    public function becomeRevisor(){
-        Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
+    public function worRequest(){
+        return view('revisor.work_with_us');
+    }
+    public function becomeRevisor(Request $request){
+        Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user(), $request));
         return redirect()->back()->with('message', 'Complimenti, hai chiesto di diventare revisore');
     }
 
