@@ -36,7 +36,7 @@ class RevisorController extends Controller
     }
 
     public function makeRevisor(User  $user){
-        Artisan::call('presto:makeUserRevisor', ['email =>$user->email']);
+        Artisan::call('presto:make-user-revisor', ['email' =>$user->email]);
         return redirect('/')->with('seccess', "L'utente è diventato revisore!");
     }
 }

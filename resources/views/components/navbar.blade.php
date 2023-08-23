@@ -24,9 +24,9 @@
                     </li>
                     @endforeach
                     @if(Auth::user()->is_revisor)
-                    <li>
+                    <li class="position-relative">
                         <a href="{{route('revisor.index')}}"  class="position-relative">Zona revisore</a>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <span class="position-absolute top-0 left-0 translate-middle badge bg-danger">
                             {{App\Models\Announcement::toBeRevisionedCount()}}
                         </span>
                     </li>

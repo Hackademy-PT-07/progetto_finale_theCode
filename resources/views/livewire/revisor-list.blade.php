@@ -1,22 +1,20 @@
 <div class="mt-5">
     <table class="table">
         <thead>
-            <h2>Annunci da revisionare</h2>
+            <h2 class="table-title">Annunci da revisionare</h2>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Utente</th>
-                <th scope="col">Data creazione</th>
-                <th scope="col"></th>
+                <th scope="col" class="revisor-head">Utente</th>
+                <th scope="col" class="revisor-head">Data creazione</th>
+                <th scope="col" class="reviso-head"></th>
             </tr>
         </thead>
         <tbody>
             @foreach( $announcements as $announcement )
             <tr scope="row">
-                <td >{{ $announcement->id }}</td>
-                <td>{{ $announcement->user->name }}</td>
-                <td>{{ $announcement->created_at }}</td>
-                <td>
-                    <button wire:click="showAnnouncement">Mostra</button>
+                <td class="revisor-td">{{ $announcement->user->name }}</td>
+                <td class="revisor-td">{{ $announcement->created_at }}</td>
+                <td class="revisor-td text-center">
+                    <button wire:click="showAnnouncement" class="revisor-show-btn">Mostra</button>
                 </td>
             </tr>
             @endforeach
