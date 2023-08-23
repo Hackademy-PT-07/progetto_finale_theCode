@@ -10,16 +10,19 @@
             </tr>
         </thead>
         <tbody>
-            @foreach( $announcements as $announcement )
+            @foreach( $this->getAnnouncements() as $announcement )
             <tr scope="row">
                 <td >{{ $announcement->id }}</td>
                 <td>{{ $announcement->user->name }}</td>
                 <td>{{ $announcement->created_at }}</td>
                 <td>
-                    <button wire:click="showAnnouncement">Mostra</button>
+                    <button wire:click="showAnnouncement({{ $announcement }})">Mostra</button>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+
+    {{ $this->getAnnouncementsLinks() }}
+
 </div>
