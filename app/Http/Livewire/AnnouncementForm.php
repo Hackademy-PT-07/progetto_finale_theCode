@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Models\Announcement;
 use Livewire\Component;
-use App\Models\Category;
 
 class AnnouncementForm extends Component
 {
@@ -44,20 +43,20 @@ class AnnouncementForm extends Component
         $this->announcement->user_id = auth()->user()->id;
         $this->announcement->save();
 
-        session()->flash('success','Annuncio creato correttamente');
+        session()->flash('success', 'Annuncio creato correttamente!');
 
-        $this->newAnnouncement(); 
-        
+        $this->newAnnouncement();
+
         $this->emitTo('announcements-list', 'loadAnnouncements');
     }
 
-    public function newAnnouncement () {
+    public function newAnnouncement()
+    {
         $this->announcement = new Announcement;
     }
 
-    public function edit ($announcement_id) {
-        $announcementToEdit = Announcement::find($announcement_id);
-
+    public function edit(Announcement $announcementToEdit)
+    {
         $this->announcement = $announcementToEdit;
     }
 
@@ -70,5 +69,4 @@ class AnnouncementForm extends Component
     {
         return view('livewire.announcement-form');
     }
-
 }

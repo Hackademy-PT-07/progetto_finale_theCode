@@ -35,6 +35,7 @@ class Announcement extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    
     static function toBeRevisionedCount()
     {
         return Announcement::where('is_accepted', null)->count();

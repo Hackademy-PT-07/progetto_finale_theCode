@@ -5,7 +5,7 @@
             <tr>
                 <th scope="col" class="revisor-head">Utente</th>
                 <th scope="col" class="revisor-head">Data creazione</th>
-                <th scope="col" class="reviso-head"></th>
+                <th scope="col" class="revisor-head"></th>
             </tr>
         </thead>
         <tbody>
@@ -14,7 +14,7 @@
                 <td class="revisor-td">{{ $announcement->user->name }}</td>
                 <td class="revisor-td">{{ $announcement->created_at }}</td>
                 <td class="revisor-td text-center">
-                    <button wire:click="showAnnouncement" class="revisor-show-btn">Mostra</button>
+                    <button wire:click="showAnnouncement({{ $announcement }})" class="revisor-show-btn">Mostra</button>
                 </td>
             </tr>
             @empty
@@ -27,6 +27,6 @@
         </tbody>
     </table>
 
-    {{ $this->getAnnouncementsLinks() }}
+    {{ $this->getAnnouncements()->links() }}
 
 </div>

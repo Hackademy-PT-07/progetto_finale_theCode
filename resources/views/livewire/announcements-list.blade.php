@@ -1,7 +1,7 @@
 <div class="mt-5">
     <table class="table">
         <thead>
-            <h1>Lista dei tuoi annunci</h1>
+            <h2 class="table-title">Lista dei tuoi annunci</h2>
             <tr>
                 <th scope="col" class="revisor-head">Titolo</th>
                 <th scope="col" class="revisor-head">Categoria</th>
@@ -36,4 +36,9 @@
             @endforeach
         </tbody>
     </table>
+
+    {{ $this->getAnnouncements()->links() }}
+
+    <x-delete-modal />
+
 </div>

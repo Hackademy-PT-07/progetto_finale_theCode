@@ -14,15 +14,14 @@ class RevisorController extends Controller
     public function index()
     {
         return view('revisor.index');
+
     }
 
     public function worRequest()
     {
         return view('revisor.work_with_us');
     }
-
-    public function becomeRevisor(Request $request)
-    {
+    public function becomeRevisor(Request $request){
         Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user(), $request));
         return redirect()->back()->with('success', 'Complimenti, hai chiesto di diventare revisore');
 

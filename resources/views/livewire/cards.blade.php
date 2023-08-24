@@ -62,7 +62,5 @@
 
             {{ $this->getAnnouncementsLinks() }}
         </div>
-
-
     </div>
 </div>
