@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            @forelse( $announcements as $announcement )
+            @forelse( $this->getAnnouncements() as $announcement )
             <tr scope="row">
                 <td class="revisor-td">{{ $announcement->user->name }}</td>
                 <td class="revisor-td">{{ $announcement->created_at }}</td>

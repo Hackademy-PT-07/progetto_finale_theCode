@@ -8,15 +8,33 @@ use App\Models\Announcement;
 
 class RevisorList extends Component
 {
-    public $announcements;
-    public function showAnnouncement()
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
+    protected $announcements;
+
+    protected $listeners = [
+        'loadAnnouncements',
+    ];
+
+    public function mount()
     {
-        return $this->announcements;
+        $this->loadAnnouncements();
     }
 
-    public function getAnnouncementsLinks()
+    public function loadAnnouncements()
     {
-        return $this->announcements->links();
+        $this->announcements = Announcement::where('is_accepted', null)->Paginate(10);
+    }
+
+    public function showAnnouncement(Announcement $announcementToShow)
+    {
+        $this->emitTo('preview-announcement', 'loadAnnouncementToShow', $announcementToShow);
+    }
+
+    public function getAnnouncements()
+    {
+        return $this->announcements;
     }
 
     public function render()

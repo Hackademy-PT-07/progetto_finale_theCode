@@ -46,8 +46,8 @@
     <p class="price">prezzo: <span>{{ $announcement->price }}€</span></p>
   </div>
   <div class="mx-auto revisor-card-btns">
-    <button class="btn-accept "><i class="bi bi-plus"></i>Accetta</button>
-    <button class="btn-reject"><i class="bi bi-x"></i>Rifiuta</button>
+    <button class="btn-accept" wire:click="acceptAnnouncement({{ $announcement }})"><i class="bi bi-plus"></i>Accetta</button>
+    <button class="btn-reject" wire:click="rejectAnnouncement({{ $announcement }})"><i class="bi bi-x"></i>Rifiuta</button>
   </div>
 
 </div>
