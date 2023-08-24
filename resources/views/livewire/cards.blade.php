@@ -1,32 +1,28 @@
 <div class="container">
-    <div class="row py-5">
-        <div class="col-12 col-md-5">
-            <form wire:submit.prevent="filterAnnouncements" class="category-form d-flex flex-column align-items-center mb-sm-5">
-                <div class="w-100 d-flex justify-center align-items-center">
+            <form wire:submit.prevent="filterAnnouncements" class="category-form row mb-sm-5">
+                <div class=" col-12 col-md-4 d-flex justify-center align-items-center">
                     <h3>Cosa cerchi oggi?</h3>
-                </div>
-                <div>
                     <input wire:model="search" type="text" placeholder="es.phone">
                 </div>
-                <div class="w-100 d-flex justify-center align-items-center">
+                <div class="col-12 col-md-4 d-flex justify-center align-items-center">
                     <h3>In quale categoria?</h3>
-                </div>
-                <div>
+                
                     <select id="category_id" name="category_id" class="category-select" wire:model.defer="category_id">
                         <option value=0 selected>Tutti</option>
                         @foreach($categories as $category)
                         <option value="{{ $category->id }}" class="option">{{ $category->name }}</option>
                         @endforeach
                     </select>
+                
                 </div>
-                <div class="homebtn-container-sort">
+
+                <div class="col-12 col-md-4 homebtn-container-sort text-center">
                     <button type="submit" class="btn-home">Filtra</button>
                 </div>
             </form>
-        </div>
-        <div class="col-12 col-md-6 offset-md-1">
+        <div class="row justify-content-evenly">
             @forelse($this->getAnnouncements() as $announcement)
-            <div class="col-12 mb-4 ">
+            <div class="col-12 col-md-5 mb-4 p-0">
                 <a href="{{route('announcement', $announcement)}}" class="card-link" target="_blank">
                     <div class="custom-card overflow-hidden">
                         <div class="category">

@@ -22,16 +22,21 @@
             <a href="{{route('announcements.create')}}" class="btn-home">Crea Annuncio</a>
         </div>
     </div>
-    <div class="download-box container">
-        <div class="row">
-            <h4>Scarica l'app ufficile di Presto.it!</h4>
+    <div class="download-box container text-center my-5 border border-black-50 rounded-3
+    pt-5">
+        <div class="row w-md-50 mx-auto">
+            <h4>Scarica l'app ufficiale di Presto.it!</h4>
             <span>Cerca tra migliaia di annunci e inserisci i tuoi, ovunque tu sia.</span>
-            <div class="col-12 col-md-6">
-                <img src="storage/imgs/google-badge-removebg-preview.png" alt="google download">
+            <div class="col-12 my-2">
                 <a href="">
+                <img src="storage/imgs/google-badge-removebg-preview.png" alt="google download" class="download-img">
                 </a>
             </div>
-            <div class="col-12 col-md-6"></div>
+            <div class="col-12 my-2">
+                <a href="">
+                <img src="storage/imgs/apple-badge-removebg-preview.png" alt="google download" class="download-img">
+                </a>
+            </div>
         </div>
     </div>
 

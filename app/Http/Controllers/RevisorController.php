@@ -30,7 +30,7 @@ class RevisorController extends Controller
         return redirect()->back()->with('message', 'annuncio accettato!');
 
     }
-    public function worRequest(){
+    public function workRequest(){
         return view('revisor.work_with_us');
     }
     public function becomeRevisor(Request $request){

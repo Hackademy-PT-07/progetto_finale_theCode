@@ -1,11 +1,10 @@
 <footer>
         <div>
             <ul class="footer-list">
+                <li class="footer-list-item"><a href="{{route('work.revisor')}}">Lavora con noi!</a></li> <br>
                 <li class="footer-list-item"><a href="#">Company</a></li>
                 <li class="footer-list-item"><a href="#">Contact Us</a></li>
-                <li class="footer-list-item"><a href="#">Carrers</a></li>
                 <li class="footer-list-item"><a href="#">Privacy Policy</a></li>
-                <li class="footer-list-item"><a href="#">Terms</a></li>
             </ul>
         </div>
         <div class="socials">
@@ -22,12 +21,7 @@
             <p>Built by <span class="footer-span">theCode</span></p>
             <p>copyright &copy; by theCode </p>
         </div>
-        <div>
-            <ul class="footer-list">
-                            <li class="footer-list-item"><a href="{{route('work.revisor')}}">Lavora con noi</a></li> <br>
-                            <li class="footer-list-item"><a href="{{route('become.revisor')}}">Diventa revisore!</a></li>
-            </ul>
-        </div>
+
         <div class="footerlogo-container">
             <div>
                 <a href="#">
