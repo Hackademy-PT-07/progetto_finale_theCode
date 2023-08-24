@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach( $announcements as $announcement )
+            @forelse( $announcements as $announcement )
             <tr scope="row">
                 <td class="revisor-td">{{ $announcement->user->name }}</td>
                 <td class="revisor-td">{{ $announcement->created_at }}</td>
@@ -17,7 +17,13 @@
                     <button wire:click="showAnnouncement" class="revisor-show-btn">Mostra</button>
                 </td>
             </tr>
-            @endforeach
+            @empty
+            <div class="col-12 mx-auto text-center search-msg">
+                <p>Non ci sono annunci da revisionare!</p>
+                <p>Vuoi tornare alla home?</p>
+                <a href="{{route('home')}}" class="btn-home">Home</a>
+            </div>
+            @endforelse
         </tbody>
     </table>
 </div>
