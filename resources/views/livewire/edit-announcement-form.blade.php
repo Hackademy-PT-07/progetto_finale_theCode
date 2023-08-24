@@ -5,6 +5,9 @@
         <h3>Seleziona un annuncio</h3>
         @else
         <h3>Annuncio #{{$announcement->id}}</h3>
+        <a href="" wire.model="refresh">
+            <i class="bi bi-arrow-clockwise refresh-btn"></i>
+        </a>
         @endif
         <x-success />
         <div>
@@ -31,7 +34,7 @@
         </div>
 
         <div class="form-btn-container">
-            <button type="submit" class="form-custom-btn" @if($isDisabled) disabled @endif>Modifica</button>
+            <button type="submit" class="form-custom-btn" @if($isDisabled) disabled style="background-color:gray; cursor:inherit;" @endif>Modifica</button>
         </div>
     </form>
 </div>

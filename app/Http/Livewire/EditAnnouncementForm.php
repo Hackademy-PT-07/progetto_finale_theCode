@@ -71,6 +71,11 @@ class EditAnnouncementForm extends Component
         $this->validateOnly($propertyName);
     }
 
+    public function refresh()
+    {  
+        $this->isDisabled = true;      
+    }
+
     public function render()
     {
         return view('livewire.edit-announcement-form');

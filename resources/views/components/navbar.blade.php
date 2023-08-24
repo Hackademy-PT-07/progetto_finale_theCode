@@ -23,11 +23,6 @@
                         <a href="{{$link}}">{{$key}}</a>
                     </li>
                     @endforeach
-                    @auth
-                    <li>
-                        <a href="{{route('personalArea')}}">Area Personale</a>
-                    </li>
-                    @endauth
                     @if(Auth::user()->is_revisor)
                     <li class="position-relative">
                         <a href="{{route('revisor.index')}}"  class="position-relative">Zona revisore</a>

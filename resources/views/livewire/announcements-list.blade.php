@@ -6,7 +6,7 @@
                 <th scope="col" class="revisor-head">Titolo</th>
                 <th scope="col" class="revisor-head">Categoria</th>
                 <th scope="col" class="revisor-head">Stato</th>
-                <th scope="col" class="revisor-head">Data creazione</th>
+                <th scope="col" class="revisor-head">Data</th>
                 <th scope="col" class="revisor-head"></th>
             </tr>
         </thead>
@@ -16,13 +16,13 @@
                 <td class="revisor-td">{{ $announcement->title }}</td>
                 <td class="revisor-td">{{ $announcement->category->name }}</td>
                 @if($announcement->is_accepted == 1)
-                <td class="revisor-td">Accettato</td>
+                <td class="revisor-td text-success">Accettato</td>
                 @elseif(is_Null($announcement->is_accepted))
-                <td class="revisor-td">In sospeso</td>
+                <td class="revisor-td text-warning">In sospeso</td>
                 @elseif($announcement->is_accepted == 0)
-                <td class="revisor-td">Scartato</td>
+                <td class="revisor-td text-danger">Scartato</td>
                 @endif
-                <td class="revisor-td">{{ $announcement->created_at }}</td>
+                <td class="revisor-td">{{ $announcement->updated_at->format('d/m/Y') }}</td>
                 <td class="revisor-td">
                     <button wire:click="editAnnouncement({{ $announcement }})" class="revisor-show-btn">
                         Modifica

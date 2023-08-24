@@ -15,6 +15,7 @@ class Navbar extends Component
             "Home" => route('home'),
             "Vendi" => route('announcements.create'),
             "Contatti" => route('home'),
+            "Area personale" => route('personalArea'),
         ];
 
     }

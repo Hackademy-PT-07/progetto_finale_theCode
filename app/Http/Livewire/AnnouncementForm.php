@@ -8,7 +8,6 @@ use Livewire\Component;
 class AnnouncementForm extends Component
 {
     public $announcement;
-    public $disabled = false;
 
     protected $listeners = [
         'edit'
