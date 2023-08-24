@@ -14,7 +14,7 @@
     --black: #414756;
     --light-black: #4a4e5888;
     --dark-black: #1b1c1d;
-    --bcg-color: white;
+    --bcg-color: rgb(245, 237, 237);
 }
 
 /* css reset start */
@@ -42,6 +42,7 @@ main {
     min-width: 100vw;
     background-color: var(--bcg-color);
     padding-top: 55px;
+    overflow: hidden;
 }
 
 a {
@@ -349,7 +350,6 @@ footer {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    z-index: 999;
 }
 
 .footer-list {
@@ -412,19 +412,15 @@ footer>* {
 
 /* footer end */
 
-.homebtn-container,
-.homebtn-container-sort {
+.homebtn-container {
     width: 100%;
     display: flex;
     justify-content: end;
     align-items: center;
     padding: 1rem;
+    text-align: center;
 }
 
-.homebtn-container-sort {
-    justify-content: center;
-    width: 30%;
-}
 
 .homebtn-container span {
     display: inline-block;
@@ -702,22 +698,21 @@ footer>* {
     justify-content: space-between;
     padding: 1rem;
     border-radius: 5px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 4px rgba(8, 7, 16, 0.6);
-    width: 75%;
+-webkit-box-shadow: 0px 4px 10px -5px rgba(0,0,0,0.75); 
+box-shadow: 0px 4px 10px -5px rgba(0,0,0,0.75);
+    width: 100%;
+    
 }
 
 .category-select,
 .category-form input {
     outline: none;
     height: 30px;
-    width: 250px;
-    display: block;
     background-color: rgba(255, 255, 255, 0.3);
     border: 2px solid lightgrey;
     border-radius: 3px;
     padding: 0 1rem;
-    margin: 0.8rem auto;
+    margin: 0.8rem;
     font-size: 1.4rem;
     font-weight: 300;
     margin-bottom: 10px;
@@ -734,6 +729,22 @@ footer>* {
 .search-msg p {
     font-size: 2rem;
     font-weight: 700;
+}
+.download-box {
+    background-color: white;
+}
+.download-box h4{
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.download-box span {
+    font-size: 1.5rem;
+}
+.download-img{
+    width: 250px;
+    height: 100px;
+    object-fit: cover;
 }
 
 /* forms */
@@ -893,7 +904,6 @@ footer>* {
     align-items: center;
     margin: 0 auto;
 }
-
 .apply-btn-box {
     width: 100%;
     display: flex;
@@ -901,7 +911,6 @@ footer>* {
     justify-content: center;
     flex-direction: column;
 }
-
 .apply-btn {
     height: 30px;
     border: none;
@@ -919,11 +928,9 @@ footer>* {
     transform: translateY(0);
     transition: all 0.2s ease-in;
 }
-
 .apply-btn {
     transform: translateY(3px);
 }
-
 .form-logo-container {
     display: flex;
     justify-content: center;
@@ -932,13 +939,11 @@ footer>* {
     height: 200px;
     overflow: hidden;
 }
-
 .form-logo {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .applyDesc-label {
     font-size: 1.5rem;
     font-weight: 500;
@@ -1142,11 +1147,6 @@ footer>* {
 
     .category {
         height: 15px;
-    }
-
-    .footer {
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
     }
 }
 
