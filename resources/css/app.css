@@ -69,11 +69,9 @@ ul {
     padding: 0 3rem;
     -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(
-        to right,
-        var(--primary-color),
-        var(--primary-color-dark)
-    );
+    background-image: linear-gradient(to right,
+            var(--primary-color),
+            var(--primary-color-dark));
     position: fixed;
     top: 0;
     z-index: 999;
@@ -408,7 +406,7 @@ footer {
     padding: 1rem;
 }
 
-footer > * {
+footer>* {
     margin: 2rem;
 }
 
@@ -635,11 +633,9 @@ footer > * {
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    background-image: linear-gradient(
-        to right,
-        var(--primary-color),
-        var(--primary-color-dark)
-    );
+    background-image: linear-gradient(to right,
+            var(--primary-color),
+            var(--primary-color-dark));
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 65vh, 0% 100%);
     clip-path: polygon(0 0, 100% 0, 100% 65vh, 0% 100%);
     padding-bottom: 50px;
@@ -819,6 +815,7 @@ box-shadow: 0px 4px 10px -5px rgba(0,0,0,0.75);
 .auth-form input:focus {
     border: 1px solid var(--primary-color);
 }
+
 .apply-form input:focus {
     border: 1px solid var(--accent-color);
 }
@@ -872,6 +869,7 @@ box-shadow: 0px 4px 10px -5px rgba(0,0,0,0.75);
     color: white;
     padding-bottom: 80px;
 }
+
 .apply-form-right {
     background-color: var(--accent-color);
     padding-top: 180px;
@@ -950,6 +948,7 @@ box-shadow: 0px 4px 10px -5px rgba(0,0,0,0.75);
     font-size: 1.5rem;
     font-weight: 500;
 }
+
 /* forms end*/
 
 /* revisor page */
@@ -958,6 +957,7 @@ box-shadow: 0px 4px 10px -5px rgba(0,0,0,0.75);
     font-weight: 600;
     letter-spacing: 1px;
 }
+
 .revisor-card {
     padding: 10px;
     background-color: #f2f2f2;
@@ -965,25 +965,31 @@ box-shadow: 0px 4px 10px -5px rgba(0,0,0,0.75);
     -webkit-box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.78);
     box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.78);
 }
+
 .revisor-card-details h3 {
     font-size: 2.8rem;
     font-weight: 700;
 }
+
 .revisor-card-details span {
     display: block;
     font-size: 1.3rem;
 }
+
 .revisor-card-details p {
     font-size: 1.5rem;
     font-weight: 500;
 }
+
 .price {
     font-size: 1.3rem;
 }
+
 .price span {
     display: inline;
     font-size: inherit;
 }
+
 .revisor-card-btns {
     width: 100%;
     display: flex;
@@ -991,6 +997,7 @@ box-shadow: 0px 4px 10px -5px rgba(0,0,0,0.75);
     align-items: center;
     padding: 20px 0;
 }
+
 .btn-accept,
 .btn-reject {
     display: flex;
@@ -1007,46 +1014,57 @@ box-shadow: 0px 4px 10px -5px rgba(0,0,0,0.75);
     transform: translateY(0);
     transition: all 0.2s ease-in;
 }
+
 .revisor-card-btns i {
     font-size: 2.2rem;
 }
+
 .btn-accept {
     border: 2px solid green;
 }
+
 .btn-reject {
     border: 2px solid red;
 }
+
 .btn-accept:hover {
     border: 2px solid transparent;
     background-color: green;
     color: white;
 }
+
 .btn-reject:hover {
     border: 2px solid transparent;
     background-color: red;
     color: white;
 }
+
 .btn-accept:active,
 .btn-reject:active,
 .revisor-show-btn:active {
     transform: translateY(4px);
 }
+
 .table-title {
     font-size: 3rem;
     text-align: center;
     margin-bottom: 40px;
 }
+
 .revisor-head {
     font-size: 1.7rem;
     font-weight: 800;
 }
+
 .revisor-td {
     font-size: 1.5rem;
     font-style: italic;
 }
+
 .revisor-td:first-child {
     font-weight: 600;
 }
+
 .revisor-show-btn {
     border-radius: 4px;
     padding: 3px 6px;
@@ -1062,9 +1080,11 @@ box-shadow: 0px 4px 10px -5px rgba(0,0,0,0.75);
     transform: translateY(0);
     transition: all 0.2s ease-in;
 }
+
 .revisor-show-btn:hover {
     background-color: var(--accent-color-dark);
 }
+
 /* revisor page end */
 
 @media only screen and (max-width: 1100px) {

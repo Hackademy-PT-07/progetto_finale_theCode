@@ -26,7 +26,7 @@ class AnnouncementsList extends Component
 
     public function loadAnnouncements()
     {
-        $this->__construct();
+        $this->announcements = Announcement::orderBy('updated_at', 'desc')->where('user_id', auth()->user()->id)->paginate(10);
     }
 
     public function editAnnouncement($announcement_id)
