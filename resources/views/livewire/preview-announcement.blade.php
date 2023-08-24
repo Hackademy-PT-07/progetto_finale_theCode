@@ -5,7 +5,7 @@
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner w-100 mx-auto" style="height: 300px;">
+    <div class="carousel-inner w-50 mx-auto" style="height: 300px;">
       <div class="carousel-item active rounded overflow-hidden" data-bs-interval="10000">
         <img src="https://picsum.photos/200/300" class="d-block object-fit-cover h-100 w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">

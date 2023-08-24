@@ -33,6 +33,31 @@ class RevisorList extends Component
     }
 
     public function getAnnouncements()
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
+    protected $announcements;
+
+    protected $listeners = [
+        'loadAnnouncements',
+    ];
+
+    public function mount()
+    {
+        $this->loadAnnouncements();
+    }
+
+    public function loadAnnouncements()
+    {
+        $this->announcements = Announcement::where('is_accepted', null)->Paginate(10);
+    }
+
+    public function showAnnouncement(Announcement $announcementToShow)
+    {
+        $this->emitTo('preview-announcement', 'loadAnnouncementToShow', $announcementToShow);
+    }
+
+    public function getAnnouncements()
     {
         return $this->announcements;
     }
