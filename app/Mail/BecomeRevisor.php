@@ -16,11 +16,13 @@ class BecomeRevisor extends Mailable
 
     public $user;
     public $description;
-    public function __construct(User $user,$request)
+
+    public function __construct(User $user, $request)
     {
         $this->user=$user;
         $this->description=$request->applyDesc;
     }
+
     public function build(){
         return $this->from('presto.it@noreply.com')->view('mail.become_revisor');
     }

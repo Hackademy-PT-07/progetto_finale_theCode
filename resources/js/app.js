@@ -13,3 +13,19 @@ dropMenu.addEventListener('click', () => {
     dropMenu.classList.remove('show')
     dropList.classList.remove('show')
 })
+
+//gestione modal eliminazione
+const deleteButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
+const confirmationButton = document.querySelector('#confirmationButton');
+
+for(let deleteButton of deleteButtons) {
+
+    deleteButton.addEventListener('click', e => {
+
+        const action = e.target.getAttribute('data-action');
+
+        confirmationButton.setAttribute('wire:click', action);
+
+    });
+
+};

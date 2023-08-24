@@ -8,7 +8,7 @@
             <form class="apply-form" action="{{route('become.revisor')}}" method="GET">
                 @csrf
                 <div class="text-center">
-                    <h3>Do you wanto to be a revisor?</h3>
+                    <h3>Do you want to be a revisor?</h3>
                     <h4>Just apply!</h4>
                 </div>
                 <input type="text" name="name" id="name" value="{{Auth()->user()->name}}" disabled>

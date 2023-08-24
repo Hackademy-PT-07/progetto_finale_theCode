@@ -5,9 +5,10 @@ namespace App\Http\Livewire;
 use App\Models\Announcement;
 use Livewire\Component;
 
-class AnnouncementForm extends Component
+class EditAnnouncementForm extends Component
 {
     public $announcement;
+    public $isDisabled = true;
 
     protected $listeners = [
         'edit'
@@ -41,9 +42,12 @@ class AnnouncementForm extends Component
         $this->validate();
 
         $this->announcement->user_id = auth()->user()->id;
+        $this->announcement->is_accepted = null;
         $this->announcement->save();
 
-        session()->flash('success', 'Annuncio creato correttamente!');
+        $this->isDisabled = true;
+
+        session()->flash('success', 'Annuncio modificato correttamente!');
 
         $this->newAnnouncement();
 
@@ -57,7 +61,9 @@ class AnnouncementForm extends Component
 
     public function edit(Announcement $announcementToEdit)
     {
+        $this->isDisabled = true;
         $this->announcement = $announcementToEdit;
+        $this->isDisabled = !$this->isDisabled;
     }
 
     public function updated($propertyName)
@@ -65,8 +71,13 @@ class AnnouncementForm extends Component
         $this->validateOnly($propertyName);
     }
 
+    public function refresh()
+    {  
+        $this->isDisabled = true;      
+    }
+
     public function render()
     {
-        return view('livewire.announcement-form');
+        return view('livewire.edit-announcement-form');
     }
 }
