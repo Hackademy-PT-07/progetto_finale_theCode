@@ -5,7 +5,7 @@
             <tr>
                 <th scope="col" class="revisor-head">Utente</th>
                 <th scope="col" class="revisor-head">Data creazione</th>
-                <th scope="col" class="reviso-head"></th>
+                <th scope="col" class="revisor-head"></th>
             </tr>
         </thead>
         <tbody>

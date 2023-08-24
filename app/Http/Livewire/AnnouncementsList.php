@@ -4,11 +4,15 @@ namespace App\Http\Livewire;
 
 use App\Models\Announcement;
 use App\Models\User;
+use Livewire\WithPagination;
 use Livewire\Component;
 
 class AnnouncementsList extends Component
 {
-    public $announcements;
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
+    protected $announcements;
 
     protected $listeners = [
         'loadAnnouncements',
@@ -19,30 +23,34 @@ class AnnouncementsList extends Component
         $this->loadAnnouncements();
     }
 
-    public function __construct()
-    {
-        $this->announcements = auth()->user()->announcements()->get()->sortByDesc('created_at');
-    }
-
     public function loadAnnouncements()
     {
-        $this->__construct();
+        $this->announcements = Announcement::orderBy('created_at', 'desc')->where('user_id', auth()->user()->id)->paginate(10);
     }
 
-    public function editAnnouncement($announcement_id)
-    {        
-        $this->emitTo('announcement-form', 'edit', $announcement_id);
-    }
-
-    public function deleteAnnouncement(Announcement $announcement)
+    public function getAnnouncements()
     {
-        $announcement->delete();
+        return $this->announcements;
+    }
 
+    public function editAnnouncement(Announcement $announcementToEdit)
+    {        
+        $this->emitTo('edit-announcement-form', 'edit', $announcementToEdit);
+    }
+
+    public function deleteAnnouncement(Announcement $announcementToDelete)
+    {
+        $announcementToDelete->delete();
+        
         $this->loadAnnouncements();
+
+        session()->flash('success', 'Annuncio eliminato correttamente!');
     }
 
     public function render()
     {
+        $this->loadAnnouncements();
+
         return view('livewire.announcements-list');
     }
 }

@@ -36,7 +36,7 @@ class PreviewAnnouncement extends Component
 
         $this->loadFirstAnnouncement();
 
-        session()->flash('success', 'Annuncio accettato');
+        session()->flash('success', 'Annuncio accettato!');
     }
 
     public function rejectAnnouncement(Announcement $announcement)
@@ -47,7 +47,7 @@ class PreviewAnnouncement extends Component
 
         $this->loadFirstAnnouncement();
 
-        session()->flash('success', 'Annuncio scartato');
+        session()->flash('success', 'Annuncio scartato!');
     }
 
     public function render()

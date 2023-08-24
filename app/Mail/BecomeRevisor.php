@@ -14,34 +14,15 @@ class BecomeRevisor extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     */
     public $user;
-    public function __construct(User $user)
+    public $description;
+
+    public function __construct(User $user, $request)
     {
         $this->user=$user;
+        $this->description=$request->applyDesc;
     }
 
-    /**
-     * Get the message envelope.
-     */
-    // public function envelope(): Envelope
-    // {
-    //     return new Envelope(
-    //         subject: 'Become Revisor',
-    //     );
-    // }
-
-    /**
-     * Get the message content definition.
-     */
-    // public function content(): Content
-    // {
-    //     return new Content(
-    //         view: 'view.name',
-    //     );
-    // }
     public function build(){
         return $this->from('presto.it@noreply.com')->view('mail.become_revisor');
     }
