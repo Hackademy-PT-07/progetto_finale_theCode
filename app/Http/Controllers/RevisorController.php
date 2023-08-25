@@ -21,7 +21,7 @@ class RevisorController extends Controller
     public function chronology()
     {
         $revisionedAnnouncements = Announcement::whereNotNull('is_accepted')->get();
-        return view('revisor.revisor-chronology', compact('revisionedAnnouncements'));
+        return view('revisor.revisor-chronology-list', compact('revisionedAnnouncements'));
     }
 
     public function worRequest()

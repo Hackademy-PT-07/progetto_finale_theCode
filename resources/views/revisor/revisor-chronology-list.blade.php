@@ -18,7 +18,7 @@
                 </div>
                 @else
                 <div class="col-12 col-md-8 mx-auto">
-                    <livewire:revisioned-announcements-list />
+                    <livewire:revisor-chronology-list />
                 </div>
                 @endif
             </div>

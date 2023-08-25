@@ -8,7 +8,7 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\StatusAnnouncement;
 
-class RevisionedAnnouncementsList extends Component
+class RevisorChronologyList extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
@@ -17,6 +17,10 @@ class RevisionedAnnouncementsList extends Component
 
     protected $announcements;
 
+    protected $listeners = [
+        'loadAnnouncements',
+    ];
+
     public function mount()
     {
         $this->loadAnnouncements();
@@ -24,7 +28,7 @@ class RevisionedAnnouncementsList extends Component
 
     public function loadAnnouncements()
     {
-        $this->announcements = Announcement::orderBy('updated_at', 'desc')->whereNotNull('is_accepted')->paginate(10);
+        $this->announcements = Announcement::orderBy('updated_at', 'asc')->whereNotNull('is_accepted')->paginate(10);
     }
 
     public function getAnnouncements()
@@ -36,7 +40,9 @@ class RevisionedAnnouncementsList extends Component
     {
         $announcement->setAccepted(null);
 
-        $this->sendEmail($announcement);
+        $this->emitTo('revisor-list', 'loadAnnouncements');
+
+        //$this->sendEmail($announcement);
     }
 
     public function sendEmail(Announcement $announcement)
@@ -48,6 +54,6 @@ class RevisionedAnnouncementsList extends Component
     {
         $this->loadAnnouncements();
 
-        return view('livewire.revisioned-announcements-list');
+        return view('livewire.revisor-chronology-list');
     }
 }

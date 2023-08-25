@@ -10,6 +10,7 @@ use App\Mail\StatusAnnouncement;
 class PreviewAnnouncement extends Component
 {
     public $announcement;
+    public $ciao = 'ciao';
 
     protected $listeners = [
         'loadAnnouncementToShow',
@@ -22,7 +23,7 @@ class PreviewAnnouncement extends Component
 
     public function loadFirstAnnouncement()
     {
-        $this->announcement = Announcement::where('is_accepted', null)->first();
+        $this->announcement = Announcement::orderBy('updated_at', 'asc')->where('is_accepted', null)->first();
 
         if ($this->announcement == null) {
             return redirect()->route('revisor.index');
@@ -39,12 +40,13 @@ class PreviewAnnouncement extends Component
         $announcement->setAccepted(true);
 
         $this->emitTo('revisor-list', 'loadAnnouncements');
+        $this->emitTo('revisor-chronology-list', 'loadAnnouncements');
 
         $this->loadFirstAnnouncement();
 
         session()->flash('success', 'Annuncio accettato!');
 
-        $this->sendEmail($announcement);
+        //$this->sendEmail($announcement);
     }
 
     public function rejectAnnouncement(Announcement $announcement)
@@ -52,12 +54,13 @@ class PreviewAnnouncement extends Component
         $announcement->setAccepted(false);
 
         $this->emitTo('revisor-list', 'loadAnnouncements');
+        $this->emitTo('revisor-chronology-list', 'loadAnnouncements');
 
         $this->loadFirstAnnouncement();
 
         session()->flash('success', 'Annuncio scartato!');
 
-        $this->sendEmail($announcement);
+        //$this->sendEmail($announcement);
     }
 
     public function sendEmail(Announcement $announcement)

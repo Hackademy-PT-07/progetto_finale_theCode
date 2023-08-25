@@ -1,7 +1,7 @@
 <div class="mt-5">
     <table class="table">
         <thead>
-            <h2 class="table-title">Lista annunci revisionati</h2>
+            <h2 class="table-title">Cronologia annunci revisionati</h2>
             <tr>
                 <th scope="col" class="revisor-head">Utente</th>
                 <th scope="col" class="revisor-head">Titolo</th>
@@ -23,12 +23,12 @@
                 <td class="revisor-td">{{ $announcement->updated_at->format('d/m/Y') }}</td>
                 <td class="revisor-td">
                     <!-- Button trigger modal -->
-                    <div wire:loading.remove.delay>
+                    <div wire:loading.remove.delay.long>
                         <button type="button" class="revisor-show-btn" data-bs-toggle="modal" data-bs-target="#modal" data-action="reviewAnnouncement({{ $announcement }})">
                             Revisiona
                         </button>
                     </div>
-                    <div wire:loading.delay>
+                    <div wire:loading.delay.long>
                         <button type="button" class="revisor-show-btn" style="background-color:gray; cursor:inherit;" disabled>
                             Invio email...
                         </button>

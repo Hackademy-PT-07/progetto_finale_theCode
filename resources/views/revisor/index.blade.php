@@ -25,6 +25,9 @@
                 </div>
                 @endif
             </div>
+            <div class="row mb-5 border border-black-50 rounded p-5">
+                <livewire:revisor-chronology-list />
+            </div>
         </div>
     </section>
 </x-main>
