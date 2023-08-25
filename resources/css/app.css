@@ -138,7 +138,7 @@ ul {
     transition: all 0.5s;
     transition-delay: 0.2s;
     transform: scale(0);
-    transform-origin: top right;
+    transform-origin: top;
 }
 
 #dropList {
@@ -1117,6 +1117,117 @@ footer > * {
 }
 
 /* revisor page end */
+
+/* creation-form */
+.creation-container{
+    overflow: hidden;
+    width: 100%;
+}
+.creation-form-header,
+.creation-form-cont{
+    display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+height: 75vh;
+}
+.creation-form-cont {
+    background-color: var(--primary-color);
+}
+.creation-form-header h1, 
+.creation-form h3{
+    font-size: 4rem;
+    font-weight: 700;
+}
+.creation-form-header p
+{
+    font-size: 1.5rem;
+}
+.creation-form-header li{
+    font-size: 1.9rem;
+    font-weight: 700;
+margin: 10px auto;
+}
+.creation-form-header li i{
+    font-size: 3rem;
+    margin-right: 20px;
+    color: var(--primary-color);
+}
+.creation-form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+.creation-form label{
+    font-size: 1.8rem;
+    font-weight:600;
+    width: 100px;
+}
+.input-container{
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.creation-form input,
+.input-container textarea,
+.input-container select{
+    border: none;
+    outline: none;
+    height: 25px;
+    padding: 0 2px;
+    border-radius:  3px;
+    width: 150px;
+        font-size: 1.2rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    transition: all .3s ease-in-out;
+}
+.creation-form input:focus,
+.input-container textarea:focus,
+.input-container select:focus{
+    border: 2px solid var(--accent-color);
+}
+.input-container select{
+    font-size: 1rem;
+    color: var(--light-black);
+}
+.input-container select .creation-option{
+    border-color: white;
+
+}
+.input-container textarea{
+    height: 50px;
+    width: 150px;
+}
+.creation-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.creation-btn button{
+    outline: none;
+    border: none;
+    width: 300px;
+    height: 30px;
+font-size: 2rem;
+background-color: var(--accent-color);
+color: white;
+letter-spacing: 1px;
+font-weight: 700;
+border-radius: 150px;
+transition: all .3s ease-in-out;
+}
+.creation-btn button:hover{
+    background-color: var(--accent-color-dark);
+}
+/* creation-form end */
 
 @media only screen and (max-width: 1100px) {
     .ann-section img {
