@@ -28,7 +28,7 @@ class RevisorChronologyList extends Component
 
     public function loadAnnouncements()
     {
-        $this->announcements = Announcement::orderBy('updated_at', 'asc')->whereNotNull('is_accepted')->paginate(10);
+        $this->announcements = Announcement::orderBy('updated_at', 'desc')->whereNotNull('is_accepted')->paginate(10);
     }
 
     public function getAnnouncements()
@@ -42,7 +42,7 @@ class RevisorChronologyList extends Component
 
         $this->emitTo('revisor-list', 'loadAnnouncements');
 
-        //$this->sendEmail($announcement);
+        $this->sendEmail($announcement);
     }
 
     public function sendEmail(Announcement $announcement)

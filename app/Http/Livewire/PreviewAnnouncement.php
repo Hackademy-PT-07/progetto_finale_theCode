@@ -46,7 +46,7 @@ class PreviewAnnouncement extends Component
 
         session()->flash('success', 'Annuncio accettato!');
 
-        //$this->sendEmail($announcement);
+        $this->sendEmail($announcement);
     }
 
     public function rejectAnnouncement(Announcement $announcement)
@@ -60,7 +60,7 @@ class PreviewAnnouncement extends Component
 
         session()->flash('success', 'Annuncio scartato!');
 
-        //$this->sendEmail($announcement);
+        $this->sendEmail($announcement);
     }
 
     public function sendEmail(Announcement $announcement)

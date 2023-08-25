@@ -25,7 +25,7 @@
                     <!-- Button trigger modal -->
                     <div wire:loading.remove.delay.long>
                         <button type="button" class="revisor-show-btn" data-bs-toggle="modal" data-bs-target="#modal" data-action="reviewAnnouncement({{ $announcement }})">
-                            Revisiona
+                            Modifica stato
                         </button>
                     </div>
                     <div wire:loading.delay.long>
