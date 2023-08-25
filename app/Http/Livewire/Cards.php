@@ -28,13 +28,13 @@ class Cards extends Component
             $this->loadAnnouncements();
         } else {
             if ($this->category_id != 0 && $this->search) {
-                $this->announcements = Announcement::search($this->search)->orderBy('created_at', 'desc')->where('category_id', $this->category_id)->where('is_accepted', true)->paginate(4);
+                $this->announcements = Announcement::search($this->search)->orderBy('created_at', 'desc')->where('category_id', $this->category_id)->where('is_accepted', true)->paginate(6);
             } else {
                 if ($this->search) {
-                    $this->announcements = Announcement::search($this->search)->orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(4);
+                    $this->announcements = Announcement::search($this->search)->orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(6);
                 } else {
                     if ($this->category_id != 0) {
-                        $this->announcements = Announcement::orderBy('created_at', 'desc')->where('category_id', $this->category_id)->where('is_accepted', true)->paginate(4);
+                        $this->announcements = Announcement::orderBy('created_at', 'desc')->where('category_id', $this->category_id)->where('is_accepted', true)->paginate(6);
                     }
                 }
             }
@@ -43,7 +43,7 @@ class Cards extends Component
 
     public function loadAnnouncements()
     {
-        return $this->announcements = Announcement::orderBy('id', 'desc')->where('is_accepted', true)->paginate(4);
+        return $this->announcements = Announcement::orderBy('id', 'desc')->where('is_accepted', true)->paginate(6);
     }
 
     public function getAnnouncements()

@@ -24,18 +24,20 @@ class MakeUserRevisor extends Command
     /**
      * Execute the console command.
      */
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
     }
+    
     public function handle()
     {
-        $user = User::where ('email', $this->argument ('email'))->first();
-        if(!$user){
+        $user = User::where('email', $this->argument('email'))->first();
+        if (!$user) {
             $this->error('utente non trovato');
             return;
-                }
-                $user->is_revisor=true;
-                $user->save();
-                $this->info("L'utente {$user->name} è ora un revisore.");
+        }
+        $user->is_revisor = true;
+        $user->save();
+        $this->info("L'utente {$user->name} è ora un revisore.");
     }
 }
