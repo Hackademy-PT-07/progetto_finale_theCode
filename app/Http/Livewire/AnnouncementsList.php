@@ -12,6 +12,8 @@ class AnnouncementsList extends Component
     protected $paginationTheme = 'bootstrap';
 
     protected $announcements;
+    public $modalTitle = "Conferma Cancellazione";
+    public $modalBody = "Attenzione! Sei sicuro di voler eliminare definitivamente l'annuncio?";
 
     protected $listeners = [
         'loadAnnouncements',

@@ -40,5 +40,6 @@ Route::get('/auth/{provider}/callback', [AuthController::class, 'callback']);
 Route::middleware('isRevisor')->group(function () {
 
     Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
+    Route::get('/revisor/chronology', [RevisorController::class, 'chronology'])->name('revisor.chronology');
 
 });

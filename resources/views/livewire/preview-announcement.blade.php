@@ -5,7 +5,7 @@
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner w-50 mx-auto" style="height: 300px;">
+    <div class="carousel-inner w-100 mx-auto" style="height: 300px;">
       <div class="carousel-item active rounded overflow-hidden" data-bs-interval="10000">
         <img src="https://picsum.photos/200/300" class="d-block object-fit-cover h-100 w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
@@ -45,9 +45,13 @@
     <p>{{ $announcement->description }}</p>
     <p class="price">prezzo: <span>{{ $announcement->price }}€</span></p>
   </div>
-  <div class="mx-auto revisor-card-btns">
-    <button class="btn-accept" wire:click="acceptAnnouncement({{ $announcement }})"><i class="bi bi-plus"></i>Accetta</button>
-    <button class="btn-reject" wire:click="rejectAnnouncement({{ $announcement }})"><i class="bi bi-x"></i>Rifiuta</button>
+  <div wire:loading.remove.delay>
+    <div class="mx-auto revisor-card-btns">
+      <button class="btn-accept" wire:click="acceptAnnouncement({{ $announcement }})"><i class="bi bi-plus"></i>Accetta</button>
+      <button class="btn-reject" wire:click="rejectAnnouncement({{ $announcement }})"><i class="bi bi-x"></i>Rifiuta</button>
+    </div>
   </div>
-
+    <div wire:loading.delay>
+        Invio email...
+    </div>
 </div>
