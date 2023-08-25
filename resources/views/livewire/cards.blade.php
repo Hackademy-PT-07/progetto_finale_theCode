@@ -36,7 +36,7 @@
                             <img src="https://picsum.photos/400?grayscale" alt="">
                         </div>
                         <div class="custom-body">
-                            <div class="title">
+                            <div class="title pt-2">
                                 <h3>{{ $announcement->title }}</h3>
                             </div>
                             <div class="desc">

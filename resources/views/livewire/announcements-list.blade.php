@@ -24,11 +24,12 @@
                 @endif
                 <td class="revisor-td">{{ $announcement->updated_at->format('d/m/Y') }}</td>
                 <td class="revisor-td">
-                    <button wire:click="editAnnouncement({{ $announcement }})" class="revisor-show-btn">
+                    <button wire:click="editAnnouncement({{ $announcement }})" class="revisor-show-btn" style="background-color:green;">
                         Modifica
                     </button>
                     <!-- Button trigger modal -->
-                    <button type="button" class="revisor-show-btn" data-bs-toggle="modal" data-bs-target="#deleteModal" data-action="deleteAnnouncement({{ $announcement }})">
+                    <button type="button" class="revisor-show-btn" data-bs-toggle="modal" data-bs-target="#deleteModal" 
+                    data-action="deleteAnnouncement({{ $announcement }})" style="background-color:red;">
                         Elimina
                     </button>
                 </td>

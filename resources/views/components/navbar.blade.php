@@ -26,15 +26,15 @@
                     @if(Auth::user()->is_revisor)
                     <li class="position-relative">
                         <a href="{{route('revisor.index')}}"  class="position-relative">Zona revisore</a>
-                        <span class="position-absolute top-0 left-0 translate-middle badge bg-danger">
+                        <span class="position-absolute top-0 right-0 translate-middle badge bg-danger">
                             {{App\Models\Announcement::toBeRevisionedCount()}}
                         </span>
                     </li>
                     @endif
-                    <li>
-                        <form action="/logout" method="POST" id="logout">
+                    <li class="p-0 m-0">
+                        <form action="/logout" method="POST" id="logout" class="p-0 m-0">
                             @csrf
-                                <button type="submit" class="btn btn-danger w-100 logout">Log Out</button>
+                                <button type="submit" class=" logout-btn mb-2 mb-md-0">Log Out</button>
                         </form>
                     </li>
                 </ul>
