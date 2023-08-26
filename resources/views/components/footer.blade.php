@@ -1,5 +1,5 @@
 <footer>
-        <div>
+        <div class="col-12 col-md-4">
             <ul class="footer-list">
                 @guest
                 <li class="footer-list-item"><a href="{{route('work.revisor')}}">Lavora con noi!</a></li> <br>
@@ -9,7 +9,7 @@
                 <li class="footer-list-item"><a href="#">Privacy Policy</a></li>
             </ul>
         </div>
-        <div class="socials">
+        <div class="socials col-12 col-md-4">
             <h4>Follow us</h4>
             <ul class="socials-list">
                 <li class="social-list-item"><a href="https://it-it.facebook.com/"><i class="bi bi-facebook"></i></a></li>
@@ -19,20 +19,20 @@
                 <li class="social-list-item"><a href="https://www.youtube.com/?hl=it&gl=IT"><i class="bi bi-youtube"></i></a></li>
             </ul>
         </div>
-        <div class="footer-right">
+        <div class="footer-right col-12 col-md-4">
             <p>Built by <span class="footer-span">theCode</span></p>
             <p>copyright &copy; by theCode </p>
+                    <div class="pi">
+    <p>P.I. 0011223344556677</p>
+</div>
         </div>
 
-        <div class="footerlogo-container">
+        <!-- <div class="footerlogo-container">
             <div>
                 <a href="#">
                     <img src="/storage/imgs/logo-nobcg.png" alt="logo" class="footer-logo w-100">
                 </a>
             </div>
-        </div>
-        <div class="pi">
-    <p>P.I. 0011223344556677</p>
-</div>
+        </div> -->
 
 </footer>

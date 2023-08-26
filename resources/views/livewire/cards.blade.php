@@ -1,10 +1,10 @@
 <div class="container">
             <form wire:submit.prevent="filterAnnouncements" class="category-form row mb-sm-5">
-                <div class=" col-12 col-md-4 d-flex justify-center align-items-center">
+                <div class=" col-12 col-md-3 d-flex flex-column justify-center align-items-center">
                     <h3>Cosa cerchi oggi?</h3>
                     <input wire:model="search" type="text" placeholder="es.phone">
                 </div>
-                <div class="col-12 col-md-4 d-flex justify-center align-items-center">
+                <div class="col-12 col-md-2 d-flex flex-column justify-center align-items-center">
                     <h3>In quale categoria?</h3>
                 
                     <select id="category_id" name="category_id" class="category-select" wire:model.defer="category_id">
@@ -13,18 +13,25 @@
                         <option value="{{ $category->id }}" class="option">{{ $category->name }}</option>
                         @endforeach
                     </select>
-                
+                </div>
+                <div class=" col-12 col-md-2 d-flex flex-column justify-center align-items-center">
+                    <h3>Cosa cerchi oggi?</h3>
+                    <input wire:model="search" type="text" placeholder="es.phone">
+                    </div>
+                    <div class=" col-12 col-md-2 d-flex flex-column justify-center align-items-center">
+                    <h3>Cosa cerchi oggi?</h3>
+                    <input wre:model="search" type="text" placeholder="es.phone">
                 </div>
 
-                <div class="col-12 col-md-4 homebtn-container-sort text-center">
-                    <button type="submit" class="btn-home">Filtra</button>
+                <div class="col-2 homebtn-container-sort">
+                    <button type="submit" class="btn-home"><i class="bi bi-search"></i></button>
                 </div>
             </form>
         <div class="row justify-content-evenly">
             @forelse($this->getAnnouncements() as $announcement)
-            <div class="col-12 col-md-5 mb-4 p-0">
+            <div class="col-12 col-md-9 me-auto mb-4 p-0">
                 <a href="{{route('announcement', $announcement)}}" class="card-link" target="_blank">
-                    <div class="custom-card overflow-hidden">
+                    <div class="custom-card overflow-hidden shadow">
                         <div class="category">
                             <span>{{ $announcement->category->name }}</span>
                         </div>

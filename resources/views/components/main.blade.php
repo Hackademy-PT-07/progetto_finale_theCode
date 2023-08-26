@@ -11,7 +11,7 @@
 
 
 <body>
-    <header>
+    <heade>
         <x-navbar />
     </header>
 
