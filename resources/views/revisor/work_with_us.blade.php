@@ -1,8 +1,8 @@
-<x-auth-main>
+<x-main>
         <x-slot:title>Work with us</x-slot>
         <x-success />
-        <div class="form-box container-fluid">
-        <div class="form-container row">
+        <div class="form-box container">
+        <div class="form-container row w-100">
 
         <div class="col-12 col-md-6 form-left">
             <form class="apply-form" action="{{route('become.revisor')}}" method="GET">
@@ -44,4 +44,4 @@
 
     </div>
 
-</x-auth-main>
+</x-main>

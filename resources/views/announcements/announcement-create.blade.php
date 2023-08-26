@@ -2,7 +2,7 @@
 
     <section class="container d-flex justify-center align-content-center" style="padding-top: 55px;">
         <div class="row border border-black-50 rounded-5 shadow-lg creation-container mb-sm-5">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 px-0">
                 <div class="creation-form-header">
                 <h1>Comincia a guadagnare!</h1>
                 <p>Pubblica un annuncio ed entra nella famiglia di Presto.it!</p>

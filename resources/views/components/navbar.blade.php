@@ -1,11 +1,11 @@
-<div>
+<div class="container">
     <nav id="nav">
         <div id="nav-left">
             <a href="{{route('home')}}">
-                <img src="/storage/imgs/logo-nobcg.png" alt="logo" class="logo">
+                <img src="/storage/imgs/logo_img-removebg-preview.png" alt="logo" class="logo">
             </a>
+            <span class="logo_name">Presto.it</span>
         </div>
-
         <div id="nav-right">
             @auth
             <div>
@@ -15,9 +15,19 @@
             <div id="hamburger">
                 <i class="bi bi-list"></i>
             </div>
+                    @else
+                    <ul class="auth-btns">
+                        <li>
+                            <a href="/login">Accedi</a>
+                        </li>
+                        <li>
+                            <a href="/register">Registrati</a>
+                        </li>
+                    </ul>
+                    @endauth
 
-            <div id="dropMenu">
-                <ul id="dropList">
+
+                            <ul id="dropList" class="shadow">
                     @foreach($navLinks as $key => $link)
                     <li>
                         <a href="{{$link}}">{{$key}}</a>
@@ -34,35 +44,11 @@
                     <li class="p-0 m-0">
                         <form action="/logout" method="POST" id="logout" class="p-0 m-0">
                             @csrf
-                                <button type="submit" class=" logout-btn mb-2 mb-md-0">Log Out</button>
+                                <button type="submit" class=" logout-btn mb-2 mb-md-0"><i class="bi bi-box-arrow-right"></i>Log Out</button>
                         </form>
                     </li>
                 </ul>
-            </div>
-                    <!-- <ul>
-                        @foreach($navLinks as $key => $link)
-                            <li>
-                                <a href="{{$link}}">{{$key}}</a>
-                            </li>
-                        @endforeach
-                            <li>
-                                <span>{{auth()->user()->email}}</span>
-                            </li> -->
-                           
-                    <!-- </ul> -->
-
-                    
-                    @else
-                    <ul class="auth-btns">
-                        <li>
-                            <a href="/login">Accedi</a>
-                        </li>
-                        <li>
-                            <a href="/register">Registrati</a>
-                        </li>
-                    </ul>
-                    @endauth
-            </nav>
             
         </div>
+    </nav>
 </div>
