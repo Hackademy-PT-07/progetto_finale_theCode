@@ -23,7 +23,7 @@ class PreviewAnnouncement extends Component
 
     public function loadFirstAnnouncement()
     {
-        $this->announcement = Announcement::orderBy('updated_at', 'asc')->where('is_accepted', null)->first();
+        $this->announcement = Announcement::where('is_accepted', null)->orderBy('updated_at', 'asc')->first();
 
         if ($this->announcement == null) {
             return redirect()->route('revisor.index');

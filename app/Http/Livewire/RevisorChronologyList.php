@@ -28,7 +28,7 @@ class RevisorChronologyList extends Component
 
     public function loadAnnouncements()
     {
-        $this->announcements = Announcement::orderBy('updated_at', 'desc')->whereNotNull('is_accepted')->paginate(10);
+        $this->announcements = Announcement::whereNotNull('is_accepted')->orderBy('updated_at', 'desc')->paginate(10);
     }
 
     public function getAnnouncements()
