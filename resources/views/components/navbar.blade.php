@@ -9,7 +9,7 @@
         <div id="nav-right">
             @auth
             <div>
-                <span class="nav-mail">{{auth()->user()->name}}</span>
+                <span class="nav-mail"><i class="fa-solid fa-user"></i> {{auth()->user()->name}}</span>
             </div>
 
             <div id="hamburger">
@@ -35,8 +35,8 @@
                     @endforeach
                     @if(Auth::user()->is_revisor)
                     <li class="position-relative">
-                        <a href="{{route('revisor.index')}}"  class="position-relative">Zona revisore</a>
-                        <span class="position-absolute top-0 right-0 translate-middle badge bg-danger">
+                        <a href="{{route('revisor.index')}}"  class="position-relative">Zona revisore <i class="fa-solid fa-bell"></i></a>
+                        <span class="position-absolute top-0 translate-middle badge bg-danger">
                             {{App\Models\Announcement::toBeRevisionedCount()}}
                         </span>
                     </li>

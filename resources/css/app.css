@@ -112,9 +112,15 @@ ul {
     font-weight: 600;
     font-size: 1.2rem;
     padding: 0.5rem;
+    transition: all .2s ease-in-out;
 }
 .logout-btn i {
     margin-right: 5px;
+}
+.logout-btn:hover{
+    background-color: red;
+    color: white;
+    transform: scale(1.1);
 }
 .auth-btns {
     display: flex;
@@ -228,12 +234,10 @@ ul {
 .form-custom {
     display: inline-block;
     width: 43rem;
-    /* background-color: rgba(179, 160, 160, 0.304); */
     padding: 1rem 2rem;
     border-radius: 10px;
-    backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .creation-form .form-custom {
@@ -296,7 +300,6 @@ ul {
 }
 
 .option {
-    background-color: lightgray;
     font-weight: 500;
 }
 
@@ -421,7 +424,7 @@ footer {
 .homebtn-container {
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     padding: 1rem;
     text-align: center;
@@ -429,7 +432,7 @@ footer {
 
 .homebtn-container span {
     display: inline-block;
-    font-size: 1.3rem;
+    font-size: 3rem;
     font-weight: 700;
 }
 
@@ -518,7 +521,7 @@ footer {
     border-radius: 8px;
     position: relative;
     padding: 10px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     /* -webkit-box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.67);
     box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.67); */
     display: flex;
@@ -1252,7 +1255,9 @@ footer {
     background-color: var(--accent-color-dark);
 }
 /* creation-form end */
-
+.badge{
+    right: 20px;
+}
 @media only screen and (max-width: 1100px) {
     .ann-section img {
         width: 50%;
@@ -1297,6 +1302,9 @@ footer {
     #dropList.show {
         opacity: 1;
     }
+    .badge{
+    right: 120px;
+}
     .category-card {
         display: flex;
         align-items: center;
@@ -1334,6 +1342,9 @@ footer {
     .homebtn-container-sort {
         width: 100%;
         justify-content: end;
+    }
+    .homebtn-container span{
+        font-size: 2rem;
     }
     .footer-list,
     .socials,

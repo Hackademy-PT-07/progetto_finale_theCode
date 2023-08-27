@@ -7,7 +7,7 @@
         <h2 class="ann-title my-5">Esplora le categorie</h2>
 
             <div class="col-6 col-md-2 my-2 offset-md-1">
-                <div class="category-card shadow" style="--bcg:#b06680;">
+                <div class="category-card shadow" style="--bcg:#b06680;"value="1">
                 <i class="fa-solid fa-car-side"></i> <span>Auto</span>
                 </div>
             </div>
@@ -73,7 +73,7 @@
 
         </section>
 
-        <div class="homebtn-container">
+        <div class="homebtn-container w-100">
             <div>
                 <span>Comincia a guadagnare!</span>
                 <span>Vendi ciò che non usi più!</span>

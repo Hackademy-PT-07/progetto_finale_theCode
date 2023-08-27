@@ -8,6 +8,7 @@ use App\Models\Category;
 class AnnouncementController extends Controller
 {
     public $announcements;
+    public $category_id;
 
     public function index()
     {
@@ -32,7 +33,6 @@ class AnnouncementController extends Controller
     }
     public function categoryPage()
     {
-        
         return view('announcements.announcementsByCategory');
     }
 }
