@@ -4,11 +4,9 @@ import 'bootstrap';
 const hamburger = document.getElementById('hamburger')
 const dropList = document.getElementById('dropList')
 
+// gestione menù
 hamburger.addEventListener('click', () => {
     dropList.classList.toggle('show')
-})
-dropMenu.addEventListener('click', () => {
-    dropList.classList.remove('show')
 })
 
 //gestione modal eliminazione
@@ -26,3 +24,12 @@ for(let modalButton of modalButtons) {
     });
 
 };
+// creazione colori card
+function colorGenerator(){
+    let color1 = Math.floor(Math.random()*255);
+    let color2 = Math.floor(Math.random()*255);
+    let color3 = Math.floor(Math.random()*255);
+    let opacity =Math.random().toFixed(2);
+    let rgbaString = `rgba(${color1}, ${color2}, ${color3}, ${opacity})`;
+    return rgbaString;
+}

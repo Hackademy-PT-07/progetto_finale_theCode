@@ -1,5 +1,5 @@
-<div class="container">
-            <form wire:submit.prevent="filterAnnouncements" class="category-form row mb-sm-5">
+<div class="container mx-auto">
+            <form wire:submit.prevent="filterAnnouncements" class="category-form row mb-sm-5 mx-0">
                 <div class=" col-12 col-md-3 d-flex flex-column justify-center align-items-center">
                     <h3>Cosa cerchi oggi?</h3>
                     <input wire:model="search" type="text" placeholder="es.phone">

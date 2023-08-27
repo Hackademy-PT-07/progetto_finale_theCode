@@ -23,7 +23,7 @@ Route::get('/', [AnnouncementController::class, 'index'])->name('home');
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
 Route::middleware('auth')->group(function () {
-
+    // Route::get('/announcements/genre/{category}', [AnnouncementController::class, 'categoryPage'])->name('announcements.genre');
     Route::get('/announcements/create', [AnnouncementController::class, 'create'])->name('announcements.create');
     Route::get('/announcements/announcement/{id}', [AnnouncementController::class, 'announcement'])->name('announcement');
     Route::get('/area-personale', [AnnouncementController::class, 'personalArea'])->name('personalArea');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Announcement;
+use App\Models\Category;
 
 class AnnouncementController extends Controller
 {
@@ -28,5 +29,10 @@ class AnnouncementController extends Controller
     public function personalArea()
     {
         return view('auth.personal-area');
+    }
+    public function categoryPage()
+    {
+        
+        return view('announcements.announcementsByCategory');
     }
 }
