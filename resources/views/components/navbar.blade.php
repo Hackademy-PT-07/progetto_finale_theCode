@@ -26,9 +26,11 @@
                 @if(auth()->user()->is_revisor)
                 <li class="position-relative">
                     <a href="{{route('revisor.index')}}" class="position-relative">Zona revisore <i class="fa-solid fa-bell"></i></a>
+                    @if(App\Models\Announcement::toBeRevisionedCount())
                     <span class="position-absolute top-0 translate-middle badge bg-danger">
                         {{App\Models\Announcement::toBeRevisionedCount()}}
                     </span>
+                    @endif
                 </li>
                 @else
                 <li>
