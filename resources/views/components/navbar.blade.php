@@ -1,4 +1,9 @@
 <div class="container">
+    <div class="langs" style="margin-top: 20px; height: 30px;">
+        <x-_locale lang='it' nation='it' />
+        <x-_locale lang='en' nation='gb' />
+        <x-_locale lang='es' nation='es' />
+    </div>
     <nav id="nav">
         <div id="nav-left">
             <a href="{{route('home')}}">
@@ -34,7 +39,7 @@
                 </li>
                 @else
                 <li>
-                    <a href="{{ route('work.revisor') }}">Diventa revisore</a>
+                    <a href="{{route('work.revisor')}}">{{__('ui.bacomeRevisor')}}</a>
                 </li>
                 @endif
                 <li class="p-0 m-0">

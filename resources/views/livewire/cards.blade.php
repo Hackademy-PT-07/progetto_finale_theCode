@@ -1,11 +1,11 @@
 <div class="container mx-auto">
     <form wire:submit.prevent="filterAnnouncements" class="category-form row mb-sm-5 mx-0">
         <div class=" col-12 col-md-3 d-flex flex-column justify-center align-items-center">
-            <h3>Cosa cerchi oggi?</h3>
+            <h3>{{__('ui.whatToday')}}</h3>
             <input wire:model="search" type="text" placeholder="es.phone">
         </div>
         <div class="col-12 col-md-2 d-flex flex-column justify-center align-items-center">
-            <h3>In quale categoria?</h3>
+            <h3>{{__('ui.whichCategory')}}</h3>
 
             <select id="category_id" name="category_id" class="category-select" wire:model.defer="category_id">
                 <option value=0 selected>Tutti</option>
@@ -15,7 +15,7 @@
             </select>
         </div>
         <div class="col-12 col-md-2 d-flex flex-column justify-center align-items-center">
-        <h3>Come vuoi ordinarli?</h3>
+        <h3>{{__('ui.howToOrder')}}</h3>
             <select id="order" name="order" class="category-select" wire:model.defer="order">
                 <option value="newer" selected>Dal più recente</option>
                 <option value="older" class="option">Dal meno recente</option>
@@ -24,7 +24,7 @@
             </select>
         </div>
         <div class="col-12 col-md-2 d-flex flex-column justify-center align-items-center">
-            <h3>Fascia di prezzo?</h3>
+            <h3>{{__('ui.priceRange')}}</h3>
             <div class="row w-100">
                 <div class="col-6">
                     <select id="minPrice" name="minPrice" class="category-select" wire:model.defer="minPrice">

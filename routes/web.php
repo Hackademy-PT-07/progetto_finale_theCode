@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LangController;
 use App\Http\Controllers\RevisorController;
 
 /*
@@ -46,3 +47,5 @@ Route::middleware('isRevisor')->group(function () {
     Route::get('/revisor/chronology', [RevisorController::class, 'chronology'])->name('revisor.chronology');
 
 });
+
+Route::post('/lingua/{lang}', [LangController::class, 'setLenguage'])->name('setLanguageLocale');
