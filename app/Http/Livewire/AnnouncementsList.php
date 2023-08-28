@@ -27,6 +27,10 @@ class AnnouncementsList extends Component
     public function loadAnnouncements()
     {
         $this->announcements = Announcement::where('user_id', auth()->user()->id)->orderBy('updated_at', 'desc')->paginate(10);
+
+        if ($this->announcements == null) {
+            return redirect()->route('auth.personal-area');
+        }
     }
 
     public function getAnnouncements()

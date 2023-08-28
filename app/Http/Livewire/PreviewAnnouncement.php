@@ -38,6 +38,7 @@ class PreviewAnnouncement extends Component
     public function acceptAnnouncement(Announcement $announcement)
     {
         $announcement->setAccepted(true);
+        $announcement->setRevisionedBy(auth()->user()->id);
 
         $this->emitTo('revisor-list', 'loadAnnouncements');
         $this->emitTo('revisor-chronology-list', 'loadAnnouncements');
@@ -52,6 +53,7 @@ class PreviewAnnouncement extends Component
     public function rejectAnnouncement(Announcement $announcement)
     {
         $announcement->setAccepted(false);
+        $announcement->setRevisionedBy(auth()->user()->id);
 
         $this->emitTo('revisor-list', 'loadAnnouncements');
         $this->emitTo('revisor-chronology-list', 'loadAnnouncements');

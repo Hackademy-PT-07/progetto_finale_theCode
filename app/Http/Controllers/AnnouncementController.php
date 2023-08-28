@@ -27,6 +27,8 @@ class AnnouncementController extends Controller
 
     public function personalArea()
     {
-        return view('auth.personal-area');
+        $announcements = Announcement::where('user_id', '==',  auth()->user()->id)->get();
+
+        return view('auth.personal-area', compact('announcements'));
     }
 }
