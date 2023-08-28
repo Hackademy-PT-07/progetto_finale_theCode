@@ -24,7 +24,7 @@ class RevisorList extends Component
 
     public function loadAnnouncements()
     {
-        $this->announcements = Announcement::orderBy('updated_at', 'asc')->where('is_accepted', null)->Paginate(10);
+        $this->announcements = Announcement::where('user_id','!=', auth()->user()->id)->where('is_accepted', null)->orderBy('updated_at', 'asc')->Paginate(10);
     }
 
     public function showAnnouncement(Announcement $announcementToShow)

@@ -23,7 +23,7 @@ class PreviewAnnouncement extends Component
 
     public function loadFirstAnnouncement()
     {
-        $this->announcement = Announcement::orderBy('updated_at', 'asc')->where('is_accepted', null)->first();
+        $this->announcement = Announcement::where('user_id','!=', auth()->user()->id)->where('is_accepted', null)->orderBy('updated_at', 'asc')->first();
 
         if ($this->announcement == null) {
             return redirect()->route('revisor.index');
@@ -38,6 +38,7 @@ class PreviewAnnouncement extends Component
     public function acceptAnnouncement(Announcement $announcement)
     {
         $announcement->setAccepted(true);
+        $announcement->setRevisionedBy(auth()->user()->id);
 
         $this->emitTo('revisor-list', 'loadAnnouncements');
         $this->emitTo('revisor-chronology-list', 'loadAnnouncements');
@@ -46,12 +47,13 @@ class PreviewAnnouncement extends Component
 
         session()->flash('success', 'Annuncio accettato!');
 
-        //$this->sendEmail($announcement);
+        $this->sendEmail($announcement);
     }
 
     public function rejectAnnouncement(Announcement $announcement)
     {
         $announcement->setAccepted(false);
+        $announcement->setRevisionedBy(auth()->user()->id);
 
         $this->emitTo('revisor-list', 'loadAnnouncements');
         $this->emitTo('revisor-chronology-list', 'loadAnnouncements');
@@ -60,7 +62,7 @@ class PreviewAnnouncement extends Component
 
         session()->flash('success', 'Annuncio scartato!');
 
-        //$this->sendEmail($announcement);
+        $this->sendEmail($announcement);
     }
 
     public function sendEmail(Announcement $announcement)

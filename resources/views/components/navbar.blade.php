@@ -15,40 +15,46 @@
             <div id="hamburger">
                 <i class="bi bi-list"></i>
             </div>
-                    @else
-                    <ul class="auth-btns">
-                        <li>
-                            <a href="/login">Accedi</a>
-                        </li>
-                        <li>
-                            <a href="/register">Registrati</a>
-                        </li>
-                    </ul>
-                    @endauth
 
+            <ul id="dropList">
+                @foreach($navLinks as $key => $link)
+                <li>
+                    <a href="{{$link}}">{{$key}}</a>
+                </li>
+                @endforeach
 
-                            <ul id="dropList">
-                    @foreach($navLinks as $key => $link)
-                    <li>
-                        <a href="{{$link}}">{{$key}}</a>
-                    </li>
-                    @endforeach
-                    @if(Auth::user()->is_revisor)
-                    <li class="position-relative">
-                        <a href="{{route('revisor.index')}}"  class="position-relative">Zona revisore <i class="fa-solid fa-bell"></i></a>
-                        <span class="position-absolute top-0 translate-middle badge bg-danger">
-                            {{App\Models\Announcement::toBeRevisionedCount()}}
-                        </span>
-                    </li>
+                @if(auth()->user()->is_revisor)
+                <li class="position-relative">
+                    <a href="{{route('revisor.index')}}" class="position-relative">Zona revisore <i class="fa-solid fa-bell"></i></a>
+                    @if(App\Models\Announcement::toBeRevisionedCount())
+                    <span class="position-absolute top-0 translate-middle badge bg-danger">
+                        {{App\Models\Announcement::toBeRevisionedCount()}}
+                    </span>
                     @endif
-                    <li class="p-0 m-0">
-                        <form action="/logout" method="POST" id="logout" class="p-0 m-0">
-                            @csrf
-                                <button type="submit" class=" logout-btn mb-2 mb-md-0"><i class="bi bi-box-arrow-right"></i>Log Out</button>
-                        </form>
-                    </li>
-                </ul>
-            
+                </li>
+                @else
+                <li>
+                    <a href="route('work.revisor')">Diventa revisore</a>
+                </li>
+                @endif
+                <li class="p-0 m-0">
+                    <form action="/logout" method="POST" id="logout" class="p-0 m-0">
+                        @csrf
+                        <button type="submit" class=" logout-btn mb-2 mb-md-0"><i class="bi bi-box-arrow-right"></i>Log Out</button>
+                    </form>
+                </li>
+
+            </ul>
+            @else
+            <ul class="auth-btns">
+                <li>
+                    <a href="/login">Accedi</a>
+                </li>
+                <li>
+                    <a href="/register">Registrati</a>
+                </li>
+            </ul>
+            @endauth
         </div>
     </nav>
 </div>
