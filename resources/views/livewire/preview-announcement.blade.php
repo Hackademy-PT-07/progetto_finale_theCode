@@ -6,6 +6,17 @@
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner w-100 mx-auto" style="height: 300px;">
+      @if($announcement->images->isNotEmpty())
+      @foreach($announcement->images as $image)
+      <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="10000">
+        <img src="{{ Storage::url($image->path) }}" class="d-block object-fit-cover h-100 w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      @endforeach
+      @else
       <div class="carousel-item active rounded overflow-hidden" data-bs-interval="10000">
         <img src="https://picsum.photos/200/300" class="d-block object-fit-cover h-100 w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
@@ -28,6 +39,7 @@
         </div>
       </div>
     </div>
+    @endif
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -51,7 +63,7 @@
       <button class="btn-reject" wire:click="rejectAnnouncement({{ $announcement }})"><i class="bi bi-x"></i>Rifiuta</button>
     </div>
   </div>
-    <div wire:loading.delay>
-        Invio email...
-    </div>
+  <div wire:loading.delay>
+    Invio email...
+  </div>
 </div>

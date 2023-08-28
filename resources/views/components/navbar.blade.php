@@ -34,7 +34,7 @@
                 </li>
                 @else
                 <li>
-                    <a href="route('work.revisor')">Diventa revisore</a>
+                    <a href="{{ route('work.revisor') }}">Diventa revisore</a>
                 </li>
                 @endif
                 <li class="p-0 m-0">
