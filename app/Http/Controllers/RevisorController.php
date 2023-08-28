@@ -24,7 +24,7 @@ class RevisorController extends Controller
         return view('revisor.revisor-chronology-list', compact('revisionedAnnouncements'));
     }
 
-    public function worRequest()
+    public function workRequest()
     {
         return view('revisor.work_with_us');
     }

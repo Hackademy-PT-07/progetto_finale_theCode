@@ -15,6 +15,34 @@
             <div id="hamburger">
                 <i class="bi bi-list"></i>
             </div>
+
+            <ul id="dropList">
+                @foreach($navLinks as $key => $link)
+                <li>
+                    <a href="{{$link}}">{{$key}}</a>
+                </li>
+                @endforeach
+
+                @if(auth()->user()->is_revisor)
+                <li class="position-relative">
+                    <a href="{{route('revisor.index')}}" class="position-relative">Zona revisore <i class="fa-solid fa-bell"></i></a>
+                    <span class="position-absolute top-0 translate-middle badge bg-danger">
+                        {{App\Models\Announcement::toBeRevisionedCount()}}
+                    </span>
+                </li>
+                @else
+                <li>
+                    <a href="route('work.revisor')">Diventa revisore</a>
+                </li>
+                @endif
+                <li class="p-0 m-0">
+                    <form action="/logout" method="POST" id="logout" class="p-0 m-0">
+                        @csrf
+                        <button type="submit" class=" logout-btn mb-2 mb-md-0"><i class="bi bi-box-arrow-right"></i>Log Out</button>
+                    </form>
+                </li>
+
+            </ul>
             @else
             <ul class="auth-btns">
                 <li>
@@ -25,28 +53,6 @@
                 </li>
             </ul>
             @endauth
-
-
-            <ul id="dropList">
-                @foreach($navLinks as $key => $link)
-                <li>
-                    <a href="{{$link}}">{{$key}}</a>
-                </li>
-                @endforeach
-                <li class="position-relative">
-                    <a href="{{route('revisor.index')}}" class="position-relative">Zona revisore <i class="fa-solid fa-bell"></i></a>
-                    <span class="position-absolute top-0 translate-middle badge bg-danger">
-                        {{App\Models\Announcement::toBeRevisionedCount()}}
-                    </span>
-                </li>
-                <li class="p-0 m-0">
-                    <form action="/logout" method="POST" id="logout" class="p-0 m-0">
-                        @csrf
-                        <button type="submit" class=" logout-btn mb-2 mb-md-0"><i class="bi bi-box-arrow-right"></i>Log Out</button>
-                    </form>
-                </li>
-            </ul>
-
         </div>
     </nav>
 </div>

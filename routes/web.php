@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/announcements/create', [AnnouncementController::class, 'create'])->name('announcements.create');
     Route::get('/announcements/announcement/{id}', [AnnouncementController::class, 'announcement'])->name('announcement');
     Route::get('/area-personale', [AnnouncementController::class, 'personalArea'])->name('personalArea');
-    Route::get('/work/revisor', [RevisorController::class, 'worRequest'])->name('work.revisor');
+    Route::get('/work/revisor', [RevisorController::class, 'workRequest'])->name('work.revisor');
     Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
 
 });
