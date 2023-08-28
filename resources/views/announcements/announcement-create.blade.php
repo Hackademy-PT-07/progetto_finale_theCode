@@ -1,4 +1,6 @@
 <x-main>
+        <x-slot:title>Crea</x-slot:title>
+
 
     <section class="container d-flex justify-center align-content-center" style="padding-top: 55px;">
         <div class="row border border-black-50 rounded-5 shadow-lg creation-container mb-sm-5">

@@ -242,7 +242,6 @@ ul {
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 0;
-    padding-top: 50px;
 }
 
 .creation-form {
@@ -951,7 +950,8 @@ footer {
 
 .apply-form-right {
     background-color: var(--accent-color);
-    padding-top: 180px;
+    padding-bottom: 0;
+    padding-top: 50px;
 }
 
 .form-right p {

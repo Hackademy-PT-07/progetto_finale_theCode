@@ -1,4 +1,6 @@
 <x-main>
+        <x-slot:title>Area Personale</x-slot:title>
+
     <section style="padding-top: 30px;">
         <div class="container">
             <div class="row ">

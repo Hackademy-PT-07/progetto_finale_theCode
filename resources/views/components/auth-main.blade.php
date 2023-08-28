@@ -10,8 +10,16 @@
 
 
 <body>
-    <main id="auth-main">
+    <main>
+    <div class="langs p-md-5 " style="    background-color: #eee;">
+        <x-_locale lang='it' nation='it' />
+        <x-_locale lang='en' nation='gb' />
+        <x-_locale lang='es' nation='es' />
+    </div>
+        <section id="auth-main">
         {{$slot}}
+        </section>
+
     </main>
 </body>
 
