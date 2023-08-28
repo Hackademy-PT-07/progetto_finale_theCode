@@ -4,11 +4,9 @@ import 'bootstrap';
 const hamburger = document.getElementById('hamburger')
 const dropList = document.getElementById('dropList')
 
+// gestione menù
 hamburger.addEventListener('click', () => {
     dropList.classList.toggle('show')
-})
-dropMenu.addEventListener('click', () => {
-    dropList.classList.remove('show')
 })
 
 //gestione modal eliminazione

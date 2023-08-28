@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit.prevent="storeAnnouncement" class="form-custom mt-5">
+    <form wire:submit.prevent="storeAnnouncement" class="form-custom mt-5 shadow-lg">
         @csrf
         @if($isDisabled)
         <h3>Seleziona un annuncio</h3>

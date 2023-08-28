@@ -1,24 +1,79 @@
 <x-main>
     <x-slot:title>Homepage</x-slot:title>
 
-<!-- 
-    <section class="ann-section">
-        <img src="/storage/imgs/logo-nobcg-crop.png">
-    </section> -->
-
-
-
-
     <section class="cards-section">
     <div class="container pb-3">
+        <div class="row">
+        <h2 class="ann-title my-5">Esplora le categorie</h2>
 
-        <h2 class="ann-title">Ultimi Annunci</h2>
+            <div class="col-6 col-md-2 my-2 offset-md-1">
+                <div class="category-card shadow" style="--bcg:#b06680;"value="1">
+                <i class="fa-solid fa-car-side"></i> <span>Auto</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-2 my-2">
+                <div class="category-card shadow" style="--bcg:#FF971A;">
+                <i class="fa-solid fa-motorcycle"></i> <span>Moto</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-2 my-2">
+                <div class="category-card shadow" style="--bcg:#97ECF1;">
+                <i class="fa-solid fa-ship"></i> <span>Nautica</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-2 my-2">
+                <div class="category-card shadow" style="--bcg:#77DD77;">
+                <i class="fa-solid fa-gamepad"></i> <span>Videogiochi</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-2 my-2">
+                <div class="category-card shadow"  style="--bcg:#fb6f92;">
+                <i class="fa-solid fa-mobile"></i> <span>Cellulari</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-2 my-2 offset-md-1">
+                <div class="category-card shadow" style="--bcg:#61f4de;">
+                <i class="fa-solid fa-laptop"></i> <span>Computer</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-2 my-2">
+                <div class="category-card shadow"  style="--bcg:#949494;">
+                <i class="fa-solid fa-coins"></i> <span>Collezionismo</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-2 my-2">
+                <div class="category-card shadow" style="--bcg:#FF6961;">
+                <i class="fa-solid fa-music"></i> <span>Musica</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-2 my-2">
+                <div class="category-card shadow"  style="--bcg:#b19CD9;">
+               <i class="fa-solid fa-film"></i> <span>Film</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-2 my-2">
+                <div class="category-card shadow"  style="--bcg:#ffcc00;">
+                <i class="fa-solid fa-book"></i> <span>Libri</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="ann-title my-5">Ultimi Annunci</h2>
 
             <livewire:cards :categories=$categories />
 
         </section>
 
-        <div class="homebtn-container">
+        <div class="homebtn-container w-100">
             <div>
                 <span>Comincia a guadagnare!</span>
                 <span>Vendi ciò che non usi più!</span>

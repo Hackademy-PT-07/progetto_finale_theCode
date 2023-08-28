@@ -7,7 +7,7 @@
 /* variabili */
 
 :root {
-    --nav-color: #070d59;
+    --nav-color: #CAE7FA;
     --primary-color: #0090ff;
     --primary-color-dark: #00599e;
     --accent-color: #f35582;
@@ -48,6 +48,7 @@ main {
     /* background-color: var(--bcg-color); */
     /* padding-top: 55px; */
     overflow: hidden;
+    margin-top: 30px;
 }
 
 a {
@@ -72,35 +73,38 @@ ul {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 5px 1rem 0 1rem;
-    border-top: 1px solid var(--light-black);
+    padding: 5px 1rem;
     border-radius: 5px 5px 0 0;
     position: relative;
     margin-top: 20px;
-    margin-bottom: 70px;
+background-color: var(--nav-color);
+z-index: 999;
 }
 
 #nav-left {
     display: flex;
     justify-content: start;
     align-items: center;
-    height: 80px;
+    height: 100%;
     padding-left: 30px;
     width: 50%;
+    overflow: hidden;
 }
 
 #nav #nav-right {
-    height: 80px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 #nav #nav-left a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-left: 20px;
 }
 .logo {
-    height: 80px;
+    height: 70px;
     object-fit: cover;
 }
 
@@ -113,9 +117,15 @@ ul {
     font-weight: 600;
     font-size: 1.2rem;
     padding: 0.5rem;
+    transition: all .2s ease-in-out;
 }
 .logout-btn i {
     margin-right: 5px;
+}
+.logout-btn:hover{
+    background-color: red;
+    color: white;
+    transform: scale(1.1);
 }
 .auth-btns {
     display: flex;
@@ -133,13 +143,12 @@ ul {
 #nav #nav-right #hamburger i {
     display: block;
     font-size: 3rem;
-    color: var(--nav-color);
+    color: #424F8A;
 }
 
 #dropList {
     display: flex;
     align-items: center;
-    background-color: transparent;
     width: 100%;
     height: 50px;
     padding: 10px 0;
@@ -150,6 +159,7 @@ ul {
     transition: all 0.2s ease-in;
     -webkit-box-shadow: -1px 9px 15px -14px rgba(0, 0, 0, 0.87);
     box-shadow: -1px 9px 15px -14px rgba(0, 0, 0, 0.87);
+    background-color: var(--nav-color);
 }
 
 #dropList li,
@@ -173,11 +183,12 @@ ul {
 .logo_name {
     margin-left: 5px;
     font-size: 3rem;
-    letter-spacing: 1px;
-    font-weight: 600;
+    letter-spacing: 2px;
+    font-weight: 900;
     text-transform: none;
     text-align: center;
     font-family: "Dancing Script", cursive;
+    color: #424F8A;
 }
 #dropList li > a {
     display: block;
@@ -217,6 +228,8 @@ ul {
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 0;
+    padding-top: 50px;
 }
 
 .creation-form {
@@ -229,12 +242,10 @@ ul {
 .form-custom {
     display: inline-block;
     width: 43rem;
-    /* background-color: rgba(179, 160, 160, 0.304); */
     padding: 1rem 2rem;
     border-radius: 10px;
-    backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .creation-form .form-custom {
@@ -297,7 +308,6 @@ ul {
 }
 
 .option {
-    background-color: lightgray;
     font-weight: 500;
 }
 
@@ -422,7 +432,7 @@ footer {
 .homebtn-container {
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     padding: 1rem;
     text-align: center;
@@ -430,7 +440,7 @@ footer {
 
 .homebtn-container span {
     display: inline-block;
-    font-size: 1.3rem;
+    font-size: 3rem;
     font-weight: 700;
 }
 
@@ -471,7 +481,45 @@ footer {
     width: 50%;
     margin: 0 auto;
 }
-
+/* category card */
+.category-card {
+    height: 80px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    padding: 0 5px;
+}
+.category-card:hover {
+    background-color: white;
+    border: 2px solid var(--bcg);
+    transform: scale(1.1);
+}
+.category-card:hover.category-card i {
+    background-color: var(--bcg);
+}
+.category-card i {
+    background-color: rgb(237, 235, 235);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+.category-card span {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+/* category card end */
 /* custom card */
 
 .custom-card {
@@ -481,7 +529,7 @@ footer {
     border-radius: 8px;
     position: relative;
     padding: 10px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     /* -webkit-box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.67);
     box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.67); */
     display: flex;
@@ -711,15 +759,14 @@ footer {
     background-color: white;
     width: 100%;
 }
-.category-form h3{
+.category-form h3 {
     font-size: 1.5rem;
 }
-.homebtn-container-sort{
+.homebtn-container-sort {
     display: flex;
     justify-content: center;
     align-items: end;
 }
-
 
 .category-select,
 .category-form input {
@@ -768,18 +815,18 @@ footer {
 /* forms */
 .form-box,
 .apply-form {
-    height: 100vh;
-    width: 100vw;
-}
+    width: 100%;
+height: 100vh;}
 
 .form-container {
-    width: 1000px;
+    width: 75%;
     height: 75%;
     margin: 20px auto;
     -webkit-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.6);
     box-shadow: 6px 6px 12px 0px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     overflow: hidden;
+    flex-wrap: wrap-reverse;
 }
 
 .form-left,
@@ -788,7 +835,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
 .auth-form,
@@ -883,6 +929,7 @@ footer {
 
 .form-right {
     flex-direction: column;
+    flex-wrap: wrap;
     background-color: var(--primary-color);
     color: white;
     padding-bottom: 80px;
@@ -1109,7 +1156,6 @@ footer {
 .creation-container {
     overflow: hidden;
     width: 100%;
-
 }
 .creation-form-header,
 .creation-form-cont {
@@ -1119,9 +1165,8 @@ footer {
     flex-direction: column;
     height: 75vh;
 }
-.creation-form-header{
+.creation-form-header {
     background-color: white;
-
 }
 .creation-form-cont {
     background-color: var(--primary-color);
@@ -1218,7 +1263,9 @@ footer {
     background-color: var(--accent-color-dark);
 }
 /* creation-form end */
-
+.badge{
+    right: 20px;
+}
 @media only screen and (max-width: 1100px) {
     .ann-section img {
         width: 50%;
@@ -1235,8 +1282,7 @@ footer {
         font-size: 50%;
     }
     #nav {
-        width: 100vw;
-        border-bottom: 1px solid var(--light-black);
+        width: 100%;
     }
 
     #nav #nav-left {
@@ -1253,34 +1299,36 @@ footer {
         width: 100%;
         display: flex;
         flex-direction: column;
-        /* bottom: 300px; */
-        bottom: -270px;
-
+        bottom: -260px;
+        left: 0px;
         height: fit-content;
-        background-color: white;
         opacity: 0;
         z-index: 999;
-        transition: all 0.3s;
+        transition: all 0.5s;
     }
     #dropList.show {
         opacity: 1;
     }
-
+    .badge{
+    right: 120px;
+}
+    .category-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        border: 1px solid var(--bcg);
+    }
+    .category-card i {
+        background-color: var(--bcg);
+    }
     .ann-section {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
         clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
         height: 75vh;
     }
 
-    .ann-section img {
-        width: 75%;
-    }
-
     .ann-section h1 {
-        display: none;
-    }
-
-    .ann-img {
         display: none;
     }
 
@@ -1288,6 +1336,12 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .form-box{
+        padding: 0 10px;
+    }
+    .form-container{
+        width: 100%;
     }
 
     .category-form {
@@ -1297,6 +1351,13 @@ footer {
 
     .category {
         height: 15px;
+    }
+    .homebtn-container-sort {
+        width: 100%;
+        justify-content: end;
+    }
+    .homebtn-container span{
+        font-size: 2rem;
     }
     .footer-list,
     .socials,
