@@ -1,14 +1,14 @@
 <footer>
     <div class="col-12 col-md-4">
         <ul class="footer-list">
-            <li class="footer-list-item"><a href="{{route('work.revisor')}}">Lavora con noi!</a></li> <br>
+            <li class="footer-list-item"><a href="{{route('work.revisor')}}">{{__('ui.workWithUs')}}</a></li> <br>
             <li class="footer-list-item"><a href="#">Company</a></li>
             <li class="footer-list-item"><a href="#">Contact Us</a></li>
             <li class="footer-list-item"><a href="#">Privacy Policy</a></li>
         </ul>
     </div>
     <div class="socials col-12 col-md-4">
-        <h4>Follow us</h4>
+        <h4>{{__('ui.followUs')}}</h4>
         <ul class="socials-list">
             <li class="social-list-item"><a href="https://it-it.facebook.com/"><i class="bi bi-facebook"></i></a></li>
             <li class="social-list-item"><a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a></li>

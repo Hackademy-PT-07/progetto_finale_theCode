@@ -1,7 +1,7 @@
 <x-main>
         <x-slot:title>Work with us</x-slot>
         <x-success />
-        <div class="form-box container">
+        <div class="form-box container mt-5">
         <div class="form-container row w-100">
 
         <div class="col-12 col-md-6 form-left">
