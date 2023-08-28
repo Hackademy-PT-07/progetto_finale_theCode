@@ -1,6 +1,6 @@
 <x-main>
   <x-slot:title>Annuncio</x-slot:title>
-  <div class="container" style="padding-top: 55px;">
+  <div class="container">
     <div class="row">
       <div class="col-12 col-md-6 p-5">
         <div id="carouselExampleDark" class="carousel carousel-dark slide">

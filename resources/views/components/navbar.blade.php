@@ -27,7 +27,7 @@
                     @endauth
 
 
-                            <ul id="dropList" class="shadow">
+                            <ul id="dropList">
                     @foreach($navLinks as $key => $link)
                     <li>
                         <a href="{{$link}}">{{$key}}</a>

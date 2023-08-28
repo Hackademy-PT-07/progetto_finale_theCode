@@ -7,7 +7,7 @@
 /* variabili */
 
 :root {
-    --nav-color: #070d59;
+    --nav-color: #CAE7FA;
     --primary-color: #0090ff;
     --primary-color-dark: #00599e;
     --accent-color: #f35582;
@@ -48,6 +48,7 @@ main {
     /* background-color: var(--bcg-color); */
     /* padding-top: 55px; */
     overflow: hidden;
+    margin-top: 30px;
 }
 
 a {
@@ -72,34 +73,38 @@ ul {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 5px 1rem 0 1rem;
+    padding: 5px 1rem;
     border-radius: 5px 5px 0 0;
     position: relative;
     margin-top: 20px;
-    margin-bottom: 70px;
+background-color: var(--nav-color);
+z-index: 999;
 }
 
 #nav-left {
     display: flex;
     justify-content: start;
     align-items: center;
-    height: 80px;
+    height: 100%;
     padding-left: 30px;
     width: 50%;
+    overflow: hidden;
 }
 
 #nav #nav-right {
-    height: 80px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 #nav #nav-left a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-left: 20px;
 }
 .logo {
-    height: 80px;
+    height: 70px;
     object-fit: cover;
 }
 
@@ -138,13 +143,12 @@ ul {
 #nav #nav-right #hamburger i {
     display: block;
     font-size: 3rem;
-    color: var(--nav-color);
+    color: #424F8A;
 }
 
 #dropList {
     display: flex;
     align-items: center;
-    background-color: transparent;
     width: 100%;
     height: 50px;
     padding: 10px 0;
@@ -155,6 +159,7 @@ ul {
     transition: all 0.2s ease-in;
     -webkit-box-shadow: -1px 9px 15px -14px rgba(0, 0, 0, 0.87);
     box-shadow: -1px 9px 15px -14px rgba(0, 0, 0, 0.87);
+    background-color: var(--nav-color);
 }
 
 #dropList li,
@@ -178,11 +183,12 @@ ul {
 .logo_name {
     margin-left: 5px;
     font-size: 3rem;
-    letter-spacing: 1px;
-    font-weight: 600;
+    letter-spacing: 2px;
+    font-weight: 900;
     text-transform: none;
     text-align: center;
     font-family: "Dancing Script", cursive;
+    color: #424F8A;
 }
 #dropList li > a {
     display: block;
@@ -222,6 +228,8 @@ ul {
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 0;
+    padding-top: 50px;
 }
 
 .creation-form {
@@ -807,18 +815,18 @@ footer {
 /* forms */
 .form-box,
 .apply-form {
-    height: 100vh;
-    width: 100vw;
-}
+    width: 100%;
+height: 100vh;}
 
 .form-container {
-    width: 1000px;
+    width: 75%;
     height: 75%;
     margin: 20px auto;
     -webkit-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.6);
     box-shadow: 6px 6px 12px 0px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     overflow: hidden;
+    flex-wrap: wrap-reverse;
 }
 
 .form-left,
@@ -827,7 +835,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
 .auth-form,
@@ -922,6 +929,7 @@ footer {
 
 .form-right {
     flex-direction: column;
+    flex-wrap: wrap;
     background-color: var(--primary-color);
     color: white;
     padding-bottom: 80px;
@@ -1274,7 +1282,7 @@ footer {
         font-size: 50%;
     }
     #nav {
-        width: 100vw;
+        width: 100%;
     }
 
     #nav #nav-left {
@@ -1291,13 +1299,12 @@ footer {
         width: 100%;
         display: flex;
         flex-direction: column;
-        bottom: -270px;
-        left: -5px;
+        bottom: -260px;
+        left: 0px;
         height: fit-content;
-        background-color: white;
         opacity: 0;
         z-index: 999;
-        transition: all 0.3s;
+        transition: all 0.5s;
     }
     #dropList.show {
         opacity: 1;
@@ -1329,6 +1336,12 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .form-box{
+        padding: 0 10px;
+    }
+    .form-container{
+        width: 100%;
     }
 
     .category-form {
