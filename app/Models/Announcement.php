@@ -38,7 +38,7 @@ class Announcement extends Model
     
     static function toBeRevisionedCount()
     {
-        return Announcement::where('user_id','!=', auth()->user()->id)->where('is_accepted', null)->count();
+        return Announcement::where('user_id','!=', 1)->where('is_accepted', null)->count();
     }
 
     public function setAccepted($value)
