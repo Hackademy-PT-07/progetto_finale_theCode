@@ -14,8 +14,9 @@ class RevisorController extends Controller
 {
     public function index()
     {
-        $notRevisionedAnnouncements = Announcement::where('is_accepted', null)->get();
-        return view('revisor.index', compact('notRevisionedAnnouncements'));
+        $notRevisionedAnnouncements = Announcement::where('user_id','!=', auth()->user()->id)->where('is_accepted', null)->get();
+        $revisionedAnnouncementsByUser = Announcement::where('user_id','!=', auth()->user()->id)->where('revisioned_by', auth()->user()->id)->get();
+        return view('revisor.index', compact('notRevisionedAnnouncements', 'revisionedAnnouncementsByUser'));
     }
 
     public function chronology()

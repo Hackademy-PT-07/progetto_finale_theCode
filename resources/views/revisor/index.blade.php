@@ -25,10 +25,16 @@
                 </div>
                 @endif
             </div>
+            @if($revisionedAnnouncementsByUser->isNotEmpty())
             <div class="row mb-5 border border-black-50 rounded p-5">
                 <livewire:revisor-chronology-list />
             </div>
-
+            @else
+            <div class="col-12 mx-auto text-center search-msg mt-5">
+                <h2>Cronologia annunci revisionati</h2>
+                <p>Non hai ancora revisionato nessun annuncio!</p>
+            </div>
+            @endif
         </div>
     </section>
 </x-main>
