@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Announcement;
-use App\Models\Category;
 
 class AnnouncementController extends Controller
 {
@@ -29,10 +28,11 @@ class AnnouncementController extends Controller
 
     public function personalArea()
     {
-        $announcements = Announcement::where('user_id', '==',  auth()->user()->id)->get();
+        $announcements = Announcement::where('user_id', auth()->user()->id)->get();
 
         return view('auth.personal-area', compact('announcements'));
     }
+
     public function categoryPage()
     {
         return view('announcements.announcementsByCategory');

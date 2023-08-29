@@ -2,12 +2,19 @@
 
 namespace App\Http\Livewire;
 
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Livewire\Component;
+use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\File;
 
 class AnnouncementForm extends Component
 {
+    use WithFileUploads;
+
     public $announcement;
+    public $temporaryImages;
+    public $images = [];
 
     protected $listeners = [
         'edit'
@@ -20,6 +27,8 @@ class AnnouncementForm extends Component
             'announcement.category_id' => 'required',
             'announcement.price' => 'required',
             'announcement.description' => 'required',
+            'temporaryImages.*' => 'image|max:1024',
+            'images.*' => 'image|max:1024',
         ];
     }
 
@@ -36,12 +45,41 @@ class AnnouncementForm extends Component
         $this->newAnnouncement();
     }
 
+    public function updatedTemporaryImages()
+    {
+        if($this->validate([
+            'temporaryImages.*' => 'image|max:1024',
+        ])) {
+            foreach ($this->temporaryImages as $image) {
+                $this->images[] = $image;
+            }
+        }
+    }
+
+    public function removeImage($key)
+    {
+        if (in_array($key, array_keys($this->images))) {
+            unset($this->images[$key]);
+        }
+    }
+
     public function storeAnnouncement()
     {
         $this->validate();
 
         $this->announcement->user_id = auth()->user()->id;
         $this->announcement->save();
+        if(count($this->images)) {
+            foreach ($this->images as $image) {
+                //$this->announcement->images()->create(['path' => $image->store('imgs', 'public')]);
+                $newFileName = "announcements/{$this->announcement->id}";
+                $newImage = $this->announcement->images()->create(['path' => $image->store($newFileName, 'public')]);
+
+                dispatch(new ResizeImage($newImage->path, 400, 300));
+            }
+
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
+        }
 
         session()->flash('success', 'Annuncio creato correttamente!');
 
@@ -53,6 +91,8 @@ class AnnouncementForm extends Component
     public function newAnnouncement()
     {
         $this->announcement = new Announcement;
+        $this->images = [];
+        $this->temporaryImages = [];
     }
 
     public function edit(Announcement $announcementToEdit)
