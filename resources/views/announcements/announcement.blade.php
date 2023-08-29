@@ -14,7 +14,7 @@
             @if($announcement->images->isNotEmpty())
             @foreach($announcement->images as $image)
             <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="10000">
-              <img src="{{ Storage::url($image->path) }}" class="d-block object-fit-cover h-100 w-100" alt="...">
+              <img src="{{$announcement->images()->first()->getUrl(400,300) ?? 'https://picsum.photos/400?grayscale'}}" class="d-block object-fit-cover h-100 w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p>
