@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row ">
                 <div class="col-12 text-center">
-                    <h1 class="welcome-revisor">{{Auth()->User()->name}} benvenuto nella tua area personale!</h1>
+                    <h1 class="welcome-revisor">{{Auth()->User()->name}} {{__('personal_area.title')}}</h1>
                     <x-success />
                 </div>
             </div>
@@ -14,9 +14,9 @@
             <div class="row mb-5 border border-black-50 rounded p-5">
                 @if($announcements->isEmpty())
                 <div class="col-12 mx-auto text-center search-msg">
-                    <p>Non hai nessun annuncio online!</p>
-                    <p>Vuoi crearne uno?</p>
-                    <a href="{{route('announcements.create')}}" class="btn-home">Crea annuncio</a>
+                    <p>{{__('personal_area.noAdd')}}</p>
+                    <p>{{__('personal_area.createQuestion')}}</p>
+                    <a href="{{route('announcements.create')}}" class="btn-home">{{__('ui.createAnn')}}</a>
                 </div>
                 @else
                 <div class="col-12 col-md-5 mb-5 mb-md-0">

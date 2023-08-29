@@ -1,0 +1,21 @@
+<?php
+return [
+    'title' => 'bienvenido a tu área personal!',
+    'noAdd' => '¡No tienes anuncios en línea!',
+    'createQuestion' => '¿Quieres crear uno?',
+    'formHead' => 'Crear anuncio',
+    'formTitle' => 'Título',
+    'formCategory' => 'Categoría',
+    'formCategoryChoise' => 'Elegir la categoría',
+    'formPrice' => 'Precio',
+    'formDesc' => 'Descripción',
+    'state' => 'Estado',
+    'date' => 'Fecha',
+    'outstanding' => 'pendiente',
+    'accepted' => 'aceptado',
+    'rejected' => 'rechazado',
+    'edit'=>'editar',
+    'delete' => 'cancelar',
+    'cancel' => 'cancelar',
+    'confirm' => 'confirma',
+];

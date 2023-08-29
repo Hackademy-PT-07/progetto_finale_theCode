@@ -1,0 +1,21 @@
+<?php
+return [
+'title'=>'benvenuto nella tua area personale!',
+'noAdd'=>'Non hai nessun annuncio online!',
+'createQuestion' =>'Vuoi crearne uno?',
+'formHead' =>'Crea annuncio',
+'formTitle' => 'Titolo',
+'formCategory' => 'Categoria',
+'formCategoryChoise' => 'Scegli categoria',
+'formPrice'=>'Prezzo',
+'formDesc'=>'Descrizione',
+'state'=> 'Stato',
+'date'=> 'Data',
+    'outstanding' => 'in sospeso',
+    'accepted' => 'accettato',
+    'rejected' => 'rifiutato',
+    'edit' => 'Modifca',
+    'delete'=>'cancella',
+    'cancel'=>'cancella',
+    'confirm'=> 'conferma',
+];
