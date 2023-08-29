@@ -23,4 +23,8 @@ return [
     'createAnn' => 'Crear anuncio',
     'workWithUs' => 'Trabaja con nosotros!!',
     'followUs' => 'Síganos',
+    'publish' => '¡Publica un anuncio y únete a la familia Presto.it!',
+    'fastSearch' => '¡Búsqueda rápida!',
+    'payment' => '¡Pagos seguros!',
+    'tracking' => '¡Envío rastreado!',
 ];

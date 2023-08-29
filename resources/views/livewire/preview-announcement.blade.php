@@ -8,24 +8,11 @@
     <div class="carousel-inner w-100 mx-auto" style="height: 300px;">
       <div class="carousel-item active rounded overflow-hidden" data-bs-interval="10000">
         <img src="https://picsum.photos/200/300" class="d-block object-fit-cover h-100 w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
       </div>
       <div class="carousel-item rounded-3 overflow-hidden" data-bs-interval="2000">
         <img src="https://picsum.photos/200/300" class="d-block object-fit-cover w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
       <div class="carousel-item rounded-3 overflow-hidden">
         <img src="https://picsum.photos/200/300" class="d-block object-fit-cover w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
-        </div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">

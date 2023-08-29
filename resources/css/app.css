@@ -475,23 +475,23 @@ footer {
 }
 
 .success-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 1.8rem;
-    background-color: green;
-    border-radius: 3rem;
-    color: black;
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: #77dd77;
+    color: white;
     width: 50%;
+    height: 50px;
+    border-radius: 5px;
     margin: 0 auto;
+    padding: 2px 8px;
 }
 
 .error-component {
-    text-align: center;
-    font-size: 1.8rem;
-    background-color: red;
-    border-radius: 3rem;
-    color: white;
-    width: 50%;
-    margin: 0 auto;
+    background-color: #ff6961;
 }
 /* category card */
 .category-card {

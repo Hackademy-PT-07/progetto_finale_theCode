@@ -1,12 +1,12 @@
 <?php
 return [
-    'sell' => 'sell',
+    'sell' => 'Sell',
     'personalArea' => 'personal area',
     'bacomeRevisor' => 'become revisor',
     'exploreCategories' => 'Explore categories',
-    'cars' => 'cars',
-    'motorcycle' => 'motorcycle',
-    'boating' => 'boating',
+    'cars' => 'Cars',
+    'motorcycle' => 'Motorcycle',
+    'boating' => 'Boating',
     'video_games' => 'Video games',
     'phone' => 'Phones',
     'collecting' => 'Collecting',
@@ -23,6 +23,11 @@ return [
     'createAnn' => 'Create Ad',
     'workWithUs' => 'Join us!',
     'followUs' => 'Follow us',
+    'publish' => 'Post an ad and join the Presto.it family!',
+    'fastSearch' => 'Quick search!',
+    'payment' => 'Secure payments!',
+    'tracking' => 'Tracked Shipping!',
+
 
 
 ];

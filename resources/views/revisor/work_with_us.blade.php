@@ -1,6 +1,10 @@
 <x-main>
         <x-slot:title>Work with us</x-slot>
-        <x-success />
+        <div class="container" style="">
+            <div class="col-12 text-center mx-auto" style="width: 50%;margin-top: 100px;">
+
+            </div>
+        </div>
         <div class="form-box container mt-5">
         <div class="form-container row w-100">
 
@@ -10,6 +14,8 @@
                 <div class="text-center">
                     <h3>{{__('workRequest.title')}}</h3>
                     <h4>{{__('workRequest.sub')}}</h4>
+                            <x-success />
+
                 </div>
                 <input type="text" name="name" id="name" value="{{Auth()->user()->name}}" disabled>
                 @error('name')<span class="error-span">Ops!{{$message}}</span>@enderror

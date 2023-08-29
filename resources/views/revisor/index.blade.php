@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row ">
                 <div class="col-12 text-center">
-                    <h1 class="welcome-revisor">{{Auth()->User()->name}} benvenuto nella tua area revisore!</h1>
+                    <h1 class="welcome-revisor">{{Auth()->User()->name}} {{__('revisor_area.header')}}</h1>
                     <x-success />
                 </div>
             </div>
@@ -12,8 +12,8 @@
             <div class="row mb-5 border border-black-50 rounded p-5">
                 @if($notRevisionedAnnouncements->isEmpty())
                 <div class="col-12 mx-auto text-center search-msg">
-                    <p>Non ci sono annunci da revisionare!</p>
-                    <p>Vuoi tornare alla home?</p>
+                    <p>{{__('revisor_area.noAdds')}}</p>
+                    <p>{{__('revisor_area.backHome')}}</p>
                     <a href="{{route('home')}}" class="btn-home">Home</a>
                 </div>
                 @else

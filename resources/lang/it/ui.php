@@ -1,10 +1,10 @@
 <?php
 return[
-    'sell' =>'vendi',
+    'sell' =>'Vendi',
     'personalArea' =>'Area Personale',
     'bacomeRevisor' => 'diventa revisore',
     'exploreCategories' => 'Esplora le categorie',
-    'cars' => 'auto',
+    'cars' => 'Auto',
     'motorcycle' => 'Moto',
     'boating' => 'Nautica',
     'video_games' => 'Videogiochi',
@@ -20,6 +20,10 @@ return[
     'priceRange'=> 'Fascia di prezzo',
     'startSelling1' =>'Comincia a guadagnare!',
     'startSelling2' =>'Vendi ciò che non usi più!',
+    'publish'=>'Pubblica un annuncio ed entra nella famiglia di Presto.it!',
+    'fastSearch' =>'Ricerca Veloce!',
+    'payment' =>'Pagamenti Sicuri!',
+    'tracking' =>'Spedizioni Tracciabili!',
     'createAnn' => 'Crea Annuncio',
     'workWithUs' => 'Lavora con noi!',
     'followUs' => 'Seguici',
