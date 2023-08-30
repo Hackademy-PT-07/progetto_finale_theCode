@@ -1,5 +1,5 @@
 
-<div class="container d-flex justify-center align-content-center" style="padding-top: 55px;">
+<div class="container d-flex justify-center align-content-center flex-wrap" style="padding-top: 55px;">
         
     <div class="row border border-black-50 rounded-5 shadow-lg creation-container mb-sm-5">
     
@@ -18,9 +18,9 @@
             
     <div class=" col-12 col-md-6 p-0">
         <div class="creation-form-header creation-form-cont">
-            <form wire:submit.prevent="storeAnnouncement" class="creation-form mt-5">
+            <form wire:submit.prevent="storeAnnouncement" class="creation-form mt-5 conainer">
             @csrf
-                <h3>{{__('personal_area.formHead')}}</h3>
+                <h3 class="mb-3">{{__('personal_area.formHead')}}</h3>
                 <x-success />
             
             <div class="input-container">
@@ -47,24 +47,23 @@
 
             <div class="input-container">
                 <label for="description">{{__('personal_area.formDesc')}}</label>
-                <textarea name="description" id="description" wire:model="announcement.description" class="shadow"></textarea>
+                <textarea name="description" id="description" wire:model="announcement.description" class="shadow" style="width: 250px;"></textarea>
                     @error('description')<span class="error-span">Ops!{{$message}}</span>@enderror
             </div>
         
             <div class="input-container">
                 <label for="images">Inserisci immagini</label>
-                <input type="file" name="images" id="images" wire:model="temporaryImages" multiple class="shadow">
+                <input type="file" name="images" id="images" wire:model="temporaryImages" multiple class="shadow text-black-50">
                     @error('temporaryImages.*')<span class="error-span">Ops!{{$message}}</span>@enderror
             </div>
    
             <div class="creation-btn">
-                <button type="submit" class="shadow">{{__('ui.sell')}}!</button>
+                <button type="submit" class="shadow floatingItem">{{__('ui.sell')}}!</button>
             </div>
             </form>
         </div>
     </div>
 </div>
-                
 @if(!empty($images))
     <div class="row border border-black-50 rounded-5 shadow-lg creation-container mt-3 py-3 mb-sm-5">
         <h3>Anteprima foto</h3>

@@ -51,10 +51,7 @@
                     <div class="category">
                         <span>{{ $announcement->category->name }}</span>
                     </div>
-                    <div class="card-banner">
-                        <i class="bi bi-search"></i>
-                        <span>click for details</span>
-                    </div>
+
                     <div class="custom-img">
                         <img src="{{$announcement->images()->get()->isNotEmpty() ? $announcement->images()->first()->getUrl(400,300) : 'https://picsum.photos/400?grayscale'}}" alt="">
                     </div>

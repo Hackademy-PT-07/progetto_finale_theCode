@@ -1,6 +1,6 @@
 <?php
 return [
-    'title' => 'bienvenido a tu área personal!',
+    'title' => 'bienvenido en tu área personal!',
     'noAdd' => '¡No tienes anuncios en línea!',
     'createQuestion' => '¿Quieres crear uno?',
     'formHead' => 'Crear anuncio',
