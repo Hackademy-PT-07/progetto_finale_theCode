@@ -21,7 +21,7 @@ use App\Http\Controllers\RevisorController;
 */
 
 Route::get('/', [AnnouncementController::class, 'index'])->name('home');
-Route::get('/announcements/{category_id}', [AnnouncementController::class, 'announcements'])->name('announcements');
+
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
 Route::middleware('auth')->group(function () {
@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
 
 });
+
+Route::get('/announcements/{category_id}', [AnnouncementController::class, 'announcements'])->name('announcements');
 
 // Login from social
 Route::get('/auth/{provider}/redirect', [AuthController::class, 'render']);
