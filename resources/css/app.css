@@ -16,7 +16,42 @@
     --dark-black: #1b1c1d;
     --bcg-color: rgb(245, 237, 237);
 }
+/* animations */
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+    25% {
+        transform: translate(0, -2px);
+    }
+    50% {
+        transform: translate(0, 2px);
+    }
+    75% {
+        transform: translate(0, -5px);
+    }
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+/* animations end */
+/* utility */
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
 
+}
+.show{
+        opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+}
+/* utility end */
+.floatingItem {
+    animation: floating 2s ease-in-out infinite;
+}
 /* css reset start */
 *,
 *::before,
@@ -442,24 +477,38 @@ footer {
 /* footer end */
 
 .homebtn-container {
-    width: 100%;
+    height: 75vh;
+    background-image: linear-gradient(
+        140deg,
+        rgba(255, 255, 255, 0) 55%,
+        #004fce
+    );
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+}
+.sell_box {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    text-align: center;
+    flex-direction: column;
+    height: 100%;
 }
 
-.homebtn-container span {
-    display: inline-block;
+.sell_box span {
+    display: block;
     font-size: 3rem;
     font-weight: 700;
+    margin: 20px 0;
+    letter-spacing: 2px;
 }
-
-.homebtn-container span:last-child {
-    padding-right: 1rem;
+.sell_box .btn-home {
+    margin-top: 30px;
 }
-
+.cards_img{
+    width: 550px;
+    top: -50px;
+    right: 15px;
+}
 .btn-home {
     font-size: 1.5rem;
     font-weight: 800;
@@ -504,6 +553,7 @@ footer {
     cursor: pointer;
     border: 1px solid transparent;
     transition: all 0.2s ease;
+        transition-delay:calc(var(--i)*.2s);
     padding: 0 5px;
 }
 .category-card:hover {
@@ -542,12 +592,10 @@ footer {
     position: relative;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.9);
-    /* -webkit-box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.67);
-    box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.67); */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: transform 0.2s ease-in-out;
+    /* transition: all 0.2s ease-in-out; */
 }
 
 .custom-card .custom-img {
@@ -633,14 +681,6 @@ footer {
     z-index: 999;
 }
 
-.custom-card:hover .custom-body {
-    opacity: 0;
-}
-
-.custom-card:hover .card-banner {
-    transform: scale(1);
-}
-
 .category {
     display: flex;
     justify-content: center;
@@ -657,35 +697,6 @@ footer {
     font-weight: 600;
     box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
     border-radius: 2px 0 5px 5px;
-}
-
-.card-banner {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: scale(0);
-    transition: all 0.5s;
-    transform-origin: top;
-    backdrop-filter: blur(1px);
-    z-index: 999;
-}
-
-.card-banner i {
-    color: var(--accent-color-dark);
-    font-size: 2rem;
-    margin-right: 10px;
-}
-
-.card-banner span {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--accent-color);
-    letter-spacing: 0.5px;
 }
 
 /* custom card end */
@@ -1178,6 +1189,7 @@ footer {
     align-items: center;
     flex-direction: column;
     height: 75vh;
+    padding: 10px;
 }
 .creation-form-header {
     background-color: white;
@@ -1187,7 +1199,7 @@ footer {
 }
 .creation-form-header h1,
 .creation-form h3 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
 }
 .creation-form-header p {
@@ -1198,6 +1210,7 @@ footer {
     font-weight: 700;
     margin: 10px auto;
 }
+
 .creation-form-header li i {
     font-size: 3rem;
     margin-right: 20px;
@@ -1222,25 +1235,34 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 .creation-form input,
 .input-container textarea,
 .input-container select {
     border: none;
     outline: none;
-    height: 25px;
+    height: 30px;
     padding: 0 2px;
     border-radius: 3px;
-    width: 150px;
+    width: 250px;
     font-size: 1.2rem;
     font-weight: 600;
     border: 2px solid transparent;
     transition: all 0.3s ease-in-out;
 }
+.creation-form input[type="file"] {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2px;
+}
 .creation-form input:focus,
 .input-container textarea:focus,
 .input-container select:focus {
-    border: 2px solid var(--accent-color);
+    border-radius: 3px;
+    border: 2px solid var(--light-black);
 }
 .input-container select {
     font-size: 1rem;
@@ -1280,6 +1302,7 @@ footer {
 .badge {
     right: 20px;
 }
+
 @media only screen and (max-width: 1100px) {
     .ann-section img {
         width: 50%;
@@ -1372,6 +1395,50 @@ footer {
     }
     .homebtn-container span {
         font-size: 2rem;
+    }
+    .input-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .creation-form h3,
+    .creation-form-header h1 {
+        font-size: 3rem;
+    }
+    .input-container label {
+        font-size: 2rem;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .homebtn-container {
+        height: 75vh;
+        background-image: none;
+        overflow: hidden;
+        border-radius: 8px 8px 0 0;
+    }
+    .sell_box {
+        height: 100%;
+        padding-bottom: 50px;
+    }
+    .sell_box span {
+        font-size: 3rem;
+        color: black;
+        font-weight: 800;
+        margin-bottom: 5px;
+    }
+    .cards_img {
+        z-index: -1;
+        top: -560px;
+        left: -80px;
+        opacity: 0.7;
+    }
+    .sell_box .btn-home {
+        width: 150px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 1px;
+        font-size: 1.9rem;
     }
     .footer-list,
     .socials,
