@@ -34,16 +34,16 @@
                     <select id="category_id" name="category_id" wire:model.defer="announcement.category_id" class="d-inline shadow">
                         <option value="">{{__('personal_area.formCategoryChoise')}}</option>
                             @foreach($categories as $category)
-                        <option value="{{ $category->id }}" class="creation-option">{{ $category->name }}</option>
-                        @endforeach
-                    </select>
-            </div>
+                            <option value="{{ $category->id }}" class="creation-option">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
-            <div class="input-container">
-                <label for="price">{{__('personal_area.formPrice')}}</label>
-                <input type="number" name="price" id="price" wire:model="announcement.price" class="shadow">
-                    @error('price')<span class="error-span">Ops!{{$message}}</span>@enderror
-            </div>
+                    <div class="input-container">
+                        <label for="price">{{__('personal_area.formPrice')}}</label>
+                        <input type="number" name="price" id="price" wire:model="announcement.price" class="shadow">
+                        @error('price')<span class="error-span">Ops!{{$message}}</span>@enderror
+                    </div>
 
             <div class="input-container">
                 <label for="description">{{__('personal_area.formDesc')}}</label>
@@ -67,13 +67,13 @@
 @if(!empty($images))
     <div class="row border border-black-50 rounded-5 shadow-lg creation-container mt-3 py-3 mb-sm-5">
         <h3>Anteprima foto</h3>
-            @foreach($images as $key => $image)
-               <div class="col">
-                  <img src="{{$image->temporaryUrl()}}" alt="">
-                    <button type="button" class="btn btn-danger" wire:click="removeImage({{$key}})">Cancella</button>
-                </div>
-            @endforeach
+        @foreach($images as $key => $image)
+        <div class="col">
+            <img src="{{$image->temporaryUrl()}}" alt="">
+            <button type="button" class="btn btn-danger" wire:click="removeImage({{$key}})">Cancella</button>
+        </div>
+        @endforeach
     </div>
-@endif
+    @endif
 
-</div>      
+</div>

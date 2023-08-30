@@ -12,14 +12,23 @@ class Cards extends Component
     protected $paginationTheme = 'bootstrap';
 
     protected $announcements;
-    public $categories;
-    public $category_id;
-
     public $search;
+    public $category_id;
+    public $where;
+
+    protected $listeners = [
+        'loadResearch',
+    ];
 
     public function mount()
     {
         $this->loadAnnouncements();
+    }
+
+    public function loadResearch($searchRequest, $category_idRequest)
+    {
+        $this->search = $searchRequest;
+        $this->category_id = $category_idRequest;
     }
 
     public function filterAnnouncements()
@@ -46,6 +55,11 @@ class Cards extends Component
         return $this->announcements = Announcement::where('is_accepted', true)->orderBy('id', 'desc')->paginate(6);
     }
 
+    public function loadSixAnnouncements()
+    {
+        return $this->announcements = Announcement::where('is_accepted', true)->orderBy('id', 'desc')->get()->take(6);
+    }
+
     public function getAnnouncements()
     {
         return $this->announcements;
@@ -58,7 +72,11 @@ class Cards extends Component
 
     public function render()
     {
-        $this->filterAnnouncements();
+        if ($this->where == 'home') {
+            $this->loadSixAnnouncements();
+        } else {
+            $this->filterAnnouncements();
+        }
 
         return view('livewire.cards');
     }

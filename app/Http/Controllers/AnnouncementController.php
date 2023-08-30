@@ -6,12 +6,11 @@ use App\Models\Announcement;
 
 class AnnouncementController extends Controller
 {
-    public $announcements;
-    public $category_id;
-
     public function index()
     {
-        return view('announcements.announcements');
+        $home = "home";
+
+        return view('announcements.home', compact('home'));
     }
 
     public function announcement($id)
@@ -19,6 +18,11 @@ class AnnouncementController extends Controller
         $announcement = Announcement::find($id);
 
         return view('announcements.announcement', compact('announcement'));
+    }
+
+    public function announcements($category_id)
+    {
+        return view('announcements.announcements', compact('category_id'));
     }
 
     public function create()
@@ -31,10 +35,5 @@ class AnnouncementController extends Controller
         $announcements = Announcement::where('user_id', auth()->user()->id)->get();
 
         return view('auth.personal-area', compact('announcements'));
-    }
-
-    public function categoryPage()
-    {
-        return view('announcements.announcementsByCategory');
     }
 }
