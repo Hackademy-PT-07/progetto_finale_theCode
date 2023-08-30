@@ -31,7 +31,7 @@
             </div>
             @else
             <div class="col-12 mx-auto text-center search-msg mt-5">
-                <h2>Cronologia annunci revisionati</h2>
+                <h1>Cronologia annunci revisionati</h1>
                 <p>Non hai ancora revisionato nessun annuncio!</p>
             </div>
             @endif
