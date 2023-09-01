@@ -13,7 +13,7 @@ class Navbar extends Component
     {
         $this->navLinks = [
             "Home" => route('home'),
-            "annunci" => route('announcements', 0),
+            __('ui.ads') => route('announcements', 0),
             __('ui.sell') => route('announcements.create'),
             __('ui.personalArea') => route('personalArea'),
         ];

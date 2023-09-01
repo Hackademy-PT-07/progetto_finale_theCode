@@ -1,6 +1,7 @@
 <?php
 return[
     'sell' =>'Vendi',
+    'ads' => 'Annunci',
     'personalArea' =>'Area Personale',
     'bacomeRevisor' => 'diventa revisore',
     'exploreCategories' => 'Esplora le categorie',

@@ -1,6 +1,7 @@
 <?php
 return [
     'sell' => 'Sell',
+    'ads' => 'Ads',
     'personalArea' => 'personal area',
     'bacomeRevisor' => 'become revisor',
     'exploreCategories' => 'Explore categories',

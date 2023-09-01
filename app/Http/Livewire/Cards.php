@@ -62,9 +62,9 @@ class Cards extends Component
         return $this->announcements = Announcement::where('is_accepted', true)->orderBy('id', 'desc')->paginate(6);
     }
 
-    public function loadSixAnnouncements()
+    public function loadHomeAnnouncements()
     {
-        return $this->announcements = Announcement::where('is_accepted', true)->orderBy('id', 'desc')->get()->take(6);
+        return $this->announcements = Announcement::where('is_accepted', true)->orderBy('id', 'desc')->get()->take(12);
     }
 
     public function getAnnouncements()
@@ -80,7 +80,7 @@ class Cards extends Component
     public function render()
     {
         if ($this->where == 'home') {
-            $this->loadSixAnnouncements();
+            $this->loadHomeAnnouncements();
             return view('livewire.home-cards');
 
         } else {
