@@ -15,6 +15,7 @@ class Cards extends Component
     public $search;
     public $category_id;
     public $where;
+    public $param;
 
     protected $listeners = [
         'loadResearch',
@@ -22,6 +23,12 @@ class Cards extends Component
 
     public function mount()
     {
+        if(is_numeric($this->param)) {
+            $this->category_id = $this->param;
+        } else { 
+            $this->search = $this->param;
+        }
+        
         $this->loadAnnouncements();
     }
 

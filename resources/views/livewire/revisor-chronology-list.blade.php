@@ -1,7 +1,11 @@
 <div class="mt-5">
     <table class="table">
         <thead>
-            <h2 class="table-title">{{__('revisor_area.title2')}}</h2>
+            <div class="d-flex">
+                <button wire:click="$emitTo('switch-table', 'switchTable')"><i class="fa-solid fa-repeat"></i></button>
+
+                <h2 class="table-title">{{__('revisor_area.title2')}}</h2>
+            </div>
             <tr>
                 <th scope="col" class="revisor-head">{{__('revisor_area.user')}}</th>
                 <th scope="col" class="revisor-head">{{__('revisor_area.title')}}</th>
@@ -24,9 +28,7 @@
                 <td class="revisor-td">
                     <!-- Button trigger modal -->
                     <div wire:loading.remove.delay.long>
-                        <button type="button" class="revisor-show-btn" data-bs-toggle="modal" data-bs-target="#modal" data-action="reviewAnnouncement({{ $announcement }})">
-                            {{__('revisor_area.statusChange')}}
-                        </button>
+                        <button type="button" class="btn btn-danger" wire:click="reviewAnnouncement({{ $announcement }})">{{__('revisor_area.statusChange')}}</button>
                     </div>
                     <div wire:loading.delay.long>
                         <button type="button" class="revisor-show-btn" style="background-color:gray; cursor:inherit;" disabled>
@@ -40,7 +42,5 @@
     </table>
 
     {{ $this->getAnnouncements()->links() }}
-
-    <x-modal :title="$modalTitle" :body="$modalBody" />
 
 </div>

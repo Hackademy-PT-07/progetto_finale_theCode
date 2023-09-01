@@ -20,9 +20,9 @@ class AnnouncementController extends Controller
         return view('announcements.announcement', compact('announcement'));
     }
 
-    public function announcements($category_id)
+    public function announcements($param)
     {
-        return view('announcements.announcements', compact('category_id'));
+        return view('announcements.announcements', compact('param'));
     }
 
     public function create()

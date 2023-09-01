@@ -10,10 +10,11 @@ use App\Mail\StatusAnnouncement;
 class PreviewAnnouncement extends Component
 {
     public $announcement;
-    public $ciao = 'ciao';
+    public $disabledCard = false;
 
     protected $listeners = [
         'loadAnnouncementToShow',
+        'loadFirstAnnouncement',
     ];
 
     public function mount()
@@ -23,11 +24,8 @@ class PreviewAnnouncement extends Component
 
     public function loadFirstAnnouncement()
     {
+        $this->disabledCard = false;
         $this->announcement = Announcement::where('user_id','!=', auth()->user()->id)->where('is_accepted', null)->orderBy('updated_at', 'asc')->first();
-
-        if ($this->announcement == null) {
-            return redirect()->route('revisor.index');
-        }
     }
 
     public function loadAnnouncementToShow(Announcement $announcementToShow)
@@ -72,6 +70,10 @@ class PreviewAnnouncement extends Component
 
     public function render()
     {
+        if (is_null($this->announcement)) {
+            $this->disabledCard = true;
+        }
+
         return view('livewire.preview-announcement');
     }
 }

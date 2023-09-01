@@ -1,6 +1,6 @@
 <x-main>
         <x-slot:title>Work with us</x-slot>
-        <div class="container" style="">
+        <div class="container">
             <div class="col-12 text-center mx-auto" style="width: 50%;margin-top: 100px;">
 
             </div>

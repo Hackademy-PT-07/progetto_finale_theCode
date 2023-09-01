@@ -16,11 +16,11 @@
                 <td class="revisor-td">{{ $announcement->title }}</td>
                 <td class="revisor-td">{{ $announcement->category->name }}</td>
                 @if(is_Null($announcement->is_accepted))
-                <td class="revisor-td text-warning">{{__('personal_area.rejected')}}</td>
+                <td class="revisor-td text-warning">{{__('personal_area.outstanding')}}</td>
                 @elseif($announcement->is_accepted)
                 <td class="revisor-td text-success">{{__('personal_area.accepted')}}</td>
                 @else
-                <td class="revisor-td text-danger">{{__('personal_area.outstanding')}}</td>
+                <td class="revisor-td text-danger">{{__('personal_area.rejected')}}</td>
                 @endif
                 <td class="revisor-td">{{ $announcement->updated_at->format('d/m/Y') }}</td>
                 <td class="revisor-td">

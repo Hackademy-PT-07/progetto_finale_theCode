@@ -41,6 +41,21 @@ class RevisorList extends Component
     {
         $this->loadAnnouncements();
 
+        if (is_null($this->announcements) || $this->announcements->isEmpty()) {
+            return <<<'blade'
+                <div class="col-12 mx-auto text-center search-msg mt-5">
+                    <div class="d-flex">
+                        <div class="col-12 mx-auto text-center search-msg">
+                            <p>{{__('revisor_area.noAdds')}}</p>
+                            <p>{{__('revisor_area.backHome')}}</p>
+                            <a href="{{route('home')}}" class="btn-home">Home</a>
+                        </div>
+                        <button wire:click="$emitTo('switch-table', 'switchTable')"><i class="fa-solid fa-repeat"></i></button>
+                    </div>
+                </div>
+            blade;
+        }
+
         return view('livewire.revisor-list');
     }
 }

@@ -29,10 +29,6 @@ class RevisorChronologyList extends Component
     public function loadAnnouncements()
     {
         $this->announcements = Announcement::where('revisioned_by', auth()->user()->id)->orderBy('updated_at', 'desc')->paginate(10);
-
-        if ($this->announcements == null) {
-            return redirect()->route('revisor.index');
-        }
     }
 
     public function getAnnouncements()
@@ -46,6 +42,8 @@ class RevisorChronologyList extends Component
         $announcement->setRevisionedBy(null);
 
         $this->emitTo('revisor-list', 'loadAnnouncements');
+        $this->emitTo('preview-announcement', 'loadFirstAnnouncement');
+
 
         //$this->sendEmail($announcement);
     }
@@ -58,6 +56,18 @@ class RevisorChronologyList extends Component
     public function render()
     {
         $this->loadAnnouncements();
+
+        if (is_null($this->announcements) || $this->announcements->isEmpty()) {
+            return <<<'blade'
+                <div class="col-12 mx-auto text-center search-msg mt-5">
+                    <div class="d-flex">
+                        <button wire:click="$emitTo('switch-table', 'switchTable')"><i class="fa-solid fa-repeat"></i></button>
+                        <h1>Cronologia annunci revisionati</h1>
+                    </div>
+                    <p>Non hai ancora revisionato nessun annuncio!</p>
+                </div>
+            blade;
+        }
 
         return view('livewire.revisor-chronology-list');
     }

@@ -1,7 +1,11 @@
 <x-main>
 
-    <livewire:search-form :categories=$categories :category_id=$category_id />
-    
-    <livewire:cards :category_id=$category_id />
+    <div class="container pb-3">
+        <div class="row mt-5">
+            <livewire:search-form :categories=$categories :param=$param />
+        </div>
+    </div>    
+
+    <livewire:cards :param=$param />
 
 </x-main>

@@ -4,8 +4,13 @@
 
     <section class="cards-section">
         <div class="container pb-3">
+
+            <div class="row mt-5">
+                <livewire:search-form :categories=$categories :where="$home"/>
+            </div>
+
             <div class="row">
-                <h2 class="ann-title my-5">{{__('ui.exploreCategories')}}</h2>
+                <h2 class="ann-title mb-5">{{__('ui.exploreCategories')}}</h2>
 
                 <div class="col-6 col-md-2 my-2 offset-md-1">
                     <a href="{{ route('announcements', 1) }}">
@@ -16,7 +21,7 @@
                 </div>
 
                 <div class="col-6 col-md-2 my-2">
-                    <a href="{{ route('announcements', 1) }}">
+                    <a href="{{ route('announcements', 2) }}">
                         <div class="category-card shadow hidden" style="--bcg:#FF971A;--i:2;">
                             <i class="fa-solid fa-motorcycle"></i> <span>{{__('ui.motorcycle')}}</span>
                         </div>
@@ -24,7 +29,7 @@
                 </div>
 
                 <div class="col-6 col-md-2 my-2">
-                    <a href="{{ route('announcements', 1) }}">
+                    <a href="{{ route('announcements', 3) }}">
                         <div class="category-card shadow hidden" style="--bcg:#97ECF1;--i:3;">
                             <i class="fa-solid fa-ship"></i> <span>{{__('ui.boating')}}</span>
                         </div>
@@ -32,7 +37,7 @@
                 </div>
 
                 <div class="col-6 col-md-2 my-2 ">
-                    <a href="{{ route('announcements', 1) }}">
+                    <a href="{{ route('announcements', 4) }}">
                         <div class="category-card shadow hidden" style="--bcg:#77DD77; --i:4;">
                             <i class="fa-solid fa-gamepad"></i> <span>{{__('ui.video_games')}}</span>
                         </div>
@@ -40,7 +45,7 @@
                 </div>
 
                 <div class="col-6 col-md-2 my-2">
-                    <a href="{{ route('announcements', 1) }}">
+                    <a href="{{ route('announcements', 5) }}">
                         <div class="category-card shadow hidden" style="--bcg:#fb6f92;--i:5;">
                             <i class="fa-solid fa-mobile"></i> <span>{{__('ui.phone')}}</span>
                         </div>
@@ -48,7 +53,7 @@
                 </div>
 
                 <div class="col-6 col-md-2 my-2 offset-md-1">
-                    <a href="{{ route('announcements', 1) }}">
+                    <a href="{{ route('announcements', 6) }}">
                         <div class="category-card shadow hidden" style="--bcg:#61f4de;--i:6;">
                             <i class="fa-solid fa-laptop"></i> <span>Computer</span>
                         </div>
@@ -56,7 +61,7 @@
                 </div>
 
                 <div class="col-6 col-md-2 my-2">
-                    <a href="{{ route('announcements', 1) }}">
+                    <a href="{{ route('announcements', 7) }}">
                         <div class="category-card shadow hidden" style="--bcg:#949494;--i:7;">
                             <i class="fa-solid fa-coins"></i> <span>{{__('ui.collecting')}}</span>
                         </div>
@@ -64,7 +69,7 @@
                 </div>
 
                 <div class="col-6 col-md-2 my-2">
-                    <a href="{{ route('announcements', 1) }}">
+                    <a href="{{ route('announcements', 8) }}">
                         <div class="category-card shadow hidden" style="--bcg:#FF6961;--i:8;">
                             <i class="fa-solid fa-music"></i> <span>{{__('ui.music')}}</span>
                         </div>
@@ -72,7 +77,7 @@
                 </div>
 
                 <div class="col-6 col-md-2 my-2">
-                    <a href="{{ route('announcements', 1) }}">
+                    <a href="{{ route('announcements', 9) }}">
                         <div class="category-card shadow hidden" style="--bcg:#b19CD9;--i:9;">
                             <i class="fa-solid fa-film"></i> <span>{{__('ui.film')}}</span>
                         </div>
@@ -80,7 +85,7 @@
                 </div>
 
                 <div class="col-6 col-md-2 my-2">
-                    <a href="{{ route('announcements', 1) }}">
+                    <a href="{{ route('announcements', 10) }}">
                         <div class="category-card shadow hidden" style="--bcg:#ffcc00;--i:10;">
                             <i class="fa-solid fa-book"></i> <span>{{__('ui.books')}}</span>
                         </div>

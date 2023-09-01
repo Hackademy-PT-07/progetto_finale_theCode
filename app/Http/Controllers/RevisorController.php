@@ -14,15 +14,12 @@ class RevisorController extends Controller
 {
     public function index()
     {
-        $notRevisionedAnnouncements = Announcement::where('user_id','!=', auth()->user()->id)->where('is_accepted', null)->get();
-        $revisionedAnnouncementsByUser = Announcement::where('user_id','!=', auth()->user()->id)->where('revisioned_by', auth()->user()->id)->get();
-        return view('revisor.index', compact('notRevisionedAnnouncements', 'revisionedAnnouncementsByUser'));
+        return view('revisor.index');
     }
 
     public function chronology()
     {
-        $revisionedAnnouncements = Announcement::whereNotNull('is_accepted')->get();
-        return view('revisor.revisor-chronology-list', compact('revisionedAnnouncements'));
+        return view('revisor.revisor-chronology-list');
     }
 
     public function workRequest()

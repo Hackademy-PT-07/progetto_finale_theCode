@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::get('/announcements/{category_id}', [AnnouncementController::class, 'announcements'])->name('announcements');
+Route::get('/announcements/{param}', [AnnouncementController::class, 'announcements'])->name('announcements');
 
 // Login from social
 Route::get('/auth/{provider}/redirect', [AuthController::class, 'render']);
