@@ -36,15 +36,14 @@
 }
 /* animations end */
 /* utility */
-.hidden{
+.hidden {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
     transition: all 1s;
-
 }
-.show{
-        opacity: 1;
+.show {
+    opacity: 1;
     filter: blur(0px);
     transform: translateX(0);
 }
@@ -477,6 +476,7 @@ footer {
 /* footer end */
 
 .homebtn-container {
+    margin-top: 100px;
     height: 75vh;
     background-image: linear-gradient(
         140deg,
@@ -500,11 +500,12 @@ footer {
     font-weight: 700;
     margin: 20px 0;
     letter-spacing: 2px;
+    transition-delay: calc(var(--i) * 0.3s);
 }
 .sell_box .btn-home {
     margin-top: 30px;
 }
-.cards_img{
+.cards_img {
     width: 550px;
     top: -50px;
     right: 15px;
@@ -551,16 +552,16 @@ footer {
     align-items: center;
     background-color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
-    border: 1px solid transparent;
+    border: 2px solid var(--bcg);
     transition: all 0.2s ease;
-        transition-delay:calc(var(--i)*.2s);
+    transition-delay: calc(var(--i) * 0.1s);
     padding: 0 5px;
 }
-.category-card:hover {
+/* .category-card:hover {
     background-color: white;
     border: 2px solid var(--bcg);
     transform: scale(1.1);
-}
+} */
 .category-card:hover.category-card i {
     background-color: var(--bcg);
 }
@@ -570,14 +571,14 @@ footer {
     width: 50px;
     border-radius: 50%;
     margin-right: 10px;
-    font-size: 2rem;
+    font-size: 1.7rem;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease;
 }
 .category-card span {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     letter-spacing: 1px;
     font-weight: 600;
 }
@@ -595,7 +596,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* transition: all 0.2s ease-in-out; */
+    transition: all 0.2s ease-in-out;
 }
 
 .custom-card .custom-img {
@@ -700,6 +701,121 @@ footer {
 }
 
 /* custom card end */
+/* homecard */
+.cardWrapper {
+  border-radius: 10px;
+  height: 300px;
+  display: flex;
+  overflow: auto;
+}
+.cardWrapper::-webkit-scrollbar {
+  display: none;
+}
+.homeCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 180px;
+  height: 250px;
+  padding: 4px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.653);
+}
+.homeCard-link {
+  width: fit-content;
+}
+.homeCard-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 85%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.homeCard-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.homeCard-title {
+  display: block;
+  text-align: start;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  overflow: hidden;
+  padding: 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+    text-overflow: ellipsis;
+}
+.homeCard-price {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: rgb(124, 122, 122);
+}
+.homeCard-category {
+  position: absolute;
+  top: -7px;
+  right: -15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2px;
+  width: 60px;
+  height: 18px;
+  border-radius: 5px;
+  color: white;
+  background-color: var(--accent-color);
+  z-index: 999;
+}
+.homeCard-date {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgba(124, 122, 122, 0.548);
+  padding-right: 2px;
+}
+.homeCard:hover {
+  transform: translateY(-8px);
+  background-color: white;
+}
+
+.arrowBox {
+  bottom: -30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 30px;
+}
+.arrowBox span {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.arrowBox i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+/* homecard end */
 
 /* annuncements page */
 
@@ -789,8 +905,17 @@ footer {
     display: flex;
     justify-content: center;
     align-items: end;
+    height: 100%;
 }
-
+.homebtn-container-sort .search-btn{
+    outline: none;
+    border: none;
+    width: 100px;
+    height: 100%;
+}
+.homebtn-container-sort .search-btn i{
+    font-size: 1.8rem;
+}
 .category-select,
 .category-form input {
     outline: none;
@@ -1336,7 +1461,7 @@ footer {
         width: 100%;
         display: flex;
         flex-direction: column;
-        bottom: -220px;
+        bottom: -260px;
         left: 0px;
         height: fit-content;
         opacity: 0;

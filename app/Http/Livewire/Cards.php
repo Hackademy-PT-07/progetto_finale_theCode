@@ -81,10 +81,13 @@ class Cards extends Component
     {
         if ($this->where == 'home') {
             $this->loadSixAnnouncements();
+            return view('livewire.home-cards');
+
         } else {
             $this->filterAnnouncements();
+            return view('livewire.cards');
+
         }
 
-        return view('livewire.cards');
     }
 }
