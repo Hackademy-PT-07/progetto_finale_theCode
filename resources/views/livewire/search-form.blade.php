@@ -40,7 +40,7 @@
         </div>
 
         <div class="col-2 homebtn-container-sort">
-            <button type="submit" class="btn-home"><i class="bi bi-search"></i></button>
+            <button type="submit" class="search-btn"><i class="bi bi-search"></i></button>
         </div>
     </form>
 </div>
