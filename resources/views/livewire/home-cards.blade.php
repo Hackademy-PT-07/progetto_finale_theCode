@@ -1,7 +1,7 @@
         <div>
         @if($this->getAnnouncements())
-        <div class="container position-relative">
-        <div class="cardWrapper">
+        <div class="container position-relative ">
+        <div class="cardWrapper shadow">
         @forelse($this->getAnnouncements() as $announcement)
                 <div class="scrollItem">
                     <a href="{{route('announcement', $announcement)}}" class="d-block mx-auto homeCard-link">
