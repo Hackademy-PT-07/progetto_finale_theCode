@@ -3,7 +3,7 @@ return[
     'sell' =>'Vendi',
     'ads' => 'Annunci',
     'personalArea' =>'Area Personale',
-    'bacomeRevisor' => 'diventa revisore',
+    'becomeRevisor' => 'Diventa revisore',
     'exploreCategories' => 'Esplora le categorie',
     'cars' => 'Auto',
     'motorcycle' => 'Moto',

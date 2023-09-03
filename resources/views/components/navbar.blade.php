@@ -30,7 +30,7 @@
 
                 @if(auth()->user()->is_revisor)
                 <li class="position-relative">
-                    <a href="{{route('revisor.index')}}" class="position-relative">Zona revisore <i class="fa-solid fa-bell"></i></a>
+                    <a href="{{route('revisor.index')}}" class="position-relative">{{__('ui.revisorZone')}}<i class="fa-solid fa-bell"></i></a>
                     @if(App\Models\Announcement::toBeRevisionedCount())
                     <span class="position-absolute top-0 translate-middle badge bg-danger">
                         {{App\Models\Announcement::toBeRevisionedCount()}}
@@ -39,7 +39,7 @@
                 </li>
                 @else
                 <li>
-                    <a href="{{route('work.revisor')}}">{{__('ui.bacomeRevisor')}}</a>
+                    <a href="{{route('work.revisor')}}">{{__('ui.becomeRevisor')}}</a>
                 </li>
                 @endif
                 <li class="p-0 m-0">
