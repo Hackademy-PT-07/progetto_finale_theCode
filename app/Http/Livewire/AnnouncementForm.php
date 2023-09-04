@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Jobs\AddWatermark;
 use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionSafeSearch;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Livewire\Component;
@@ -49,7 +51,7 @@ class AnnouncementForm extends Component
 
     public function updatedTemporaryImages()
     {
-        if($this->validate([
+        if ($this->validate([
             'temporaryImages.*' => 'image|max:1024',
         ])) {
             foreach ($this->temporaryImages as $image) {
@@ -71,15 +73,19 @@ class AnnouncementForm extends Component
 
         $this->announcement->user_id = auth()->user()->id;
         $this->announcement->save();
-        if(count($this->images)) {
+
+        if (count($this->images)) {
             foreach ($this->images as $image) {
                 //$this->announcement->images()->create(['path' => $image->store('imgs', 'public')]);
                 $newFileName = "announcements/{$this->announcement->id}";
                 $newImage = $this->announcement->images()->create(['path' => $image->store($newFileName, 'public')]);
 
-                dispatch(new ResizeImage($newImage->path, 400, 300));
-                dispatch(new GoogleVisionSafeSearch($newImage->id));
-                dispatch(new GoogleVisionLabelImage($newImage->id));
+                RemoveFaces::withChain([
+                    new ResizeImage($newImage->path, 400, 300),
+                    new AddWatermark($newImage->id),
+                    new GoogleVisionSafeSearch($newImage->id),
+                    new GoogleVisionLabelImage($newImage->id),
+                ])->dispatch($newImage->id);
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
