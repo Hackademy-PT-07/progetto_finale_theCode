@@ -9,7 +9,7 @@
       @if(!is_null($announcement) && $announcement->images->isNotEmpty())
       @foreach($announcement->images as $image)
       <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="10000">
-        <img src="{{$announcement->images()->first()->getUrl(400,300) ?? 'https://picsum.photos/200/300'}}" class="d-block object-fit-cover h-100 w-100" alt="...">
+        <img src="{{$announcement->images()->first()->getUrl(400,300) ?? 'https://picsum.photos/200/300'}}" class="d-block object-fit-cover img-fluid" alt="...">
       </div>
       @endforeach
       @else

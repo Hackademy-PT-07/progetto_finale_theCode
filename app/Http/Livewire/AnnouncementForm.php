@@ -82,7 +82,6 @@ class AnnouncementForm extends Component
 
                 RemoveFaces::withChain([
                     new ResizeImage($newImage->path, 400, 300),
-                    new AddWatermark($newImage->id),
                     new GoogleVisionSafeSearch($newImage->id),
                     new GoogleVisionLabelImage($newImage->id),
                 ])->dispatch($newImage->id);
