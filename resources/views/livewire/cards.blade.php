@@ -9,7 +9,7 @@
                     </div>
 
                     <div class="custom-img">
-                        <img src="{{$announcement->images()->get()->isNotEmpty() ? $announcement->images()->first()->getUrl(400,300) : 'https://picsum.photos/400?grayscale'}}" alt="">
+                        <img src="{{$announcement->images()->get()->isNotEmpty() ? $announcement->images()->first()->getUrl(300,300) : 'https://picsum.photos/400?grayscale'}}" alt="">
                     </div>
                     <div class="custom-body">
                         <div class="title pt-2">

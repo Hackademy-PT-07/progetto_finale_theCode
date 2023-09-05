@@ -7,7 +7,7 @@
                         <a href="{{route('announcement', $announcement)}}" class="d-block mx-auto homeCard-link">
                             <div class="homeCard shadow">
                                 <div class="homeCard-img shadow">
-                                    <img src="{{$announcement->images()->get()->isNotEmpty() ? $announcement->images()->first()->getUrl(400,300) : 'https://picsum.photos/400?grayscale'}}" alt="">
+                                    <img src="{{$announcement->images()->get()->isNotEmpty() ? $announcement->images()->first()->getUrl(300,300) : 'https://picsum.photos/400?grayscale'}}" alt="">
                                     <div class="homeCard-category shadow">{{ $announcement->category->name }}</div>
 
                                 </div>
