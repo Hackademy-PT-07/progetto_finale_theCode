@@ -59,7 +59,7 @@ class Cards extends Component
 
     public function loadAnnouncements()
     {
-        return $this->announcements = Announcement::where('is_accepted', true)->orderBy('id', 'desc')->paginate(6);
+        return $this->announcements = Announcement::where('is_accepted', true)->orderBy('id', 'desc')->paginate(15);
     }
 
     public function loadHomeAnnouncements()

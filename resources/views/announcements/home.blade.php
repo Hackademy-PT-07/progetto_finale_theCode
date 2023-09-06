@@ -5,12 +5,10 @@
     <section class="cards-section">
         <div class="container pb-3">
 
-            <div class="row mt-5">
-                <livewire:search-form :categories=$categories :where="$home"/>
-            </div>
 
-            <div class="row">
-                <h2 class="ann-title mb-5">{{__('ui.exploreCategories')}}</h2>
+
+            <div class="row category-section">
+                <h2 class="ann-title my-5">{{__('ui.exploreCategories')}}</h2>
 
                 <div class="col-6 col-md-3 col-lg-2 offset-lg-1 my-2">
                     <a href="{{ route('announcements', 1) }}">
@@ -94,6 +92,9 @@
             </div>
 
             <h2 class="ann-title my-5">{{__('ui.lastAnn')}}</h2>
+            <div class="row my-5">
+                <livewire:search-form :categories=$categories :where="$home"/>
+            </div>
             <livewire:cards :where="$home" />
 
         </div>

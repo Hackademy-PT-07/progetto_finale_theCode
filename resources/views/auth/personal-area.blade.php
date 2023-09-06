@@ -10,8 +10,8 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-4">
-            <div class="row mb-5 border border-black-50 rounded p-5">
+        <div class="container-fluid mt-4">
+            <div class="row mb-5 w-100 rounded p-5" style="backdrop-filter:blur(10px)">
                 @if($announcements->isEmpty())
                 <div class="col-12 mx-auto text-center search-msg">
                     <p>{{__('personal_area.noAdd')}}</p>
@@ -19,10 +19,10 @@
                     <a href="{{route('announcements.create')}}" class="btn-home">{{__('ui.createAnn')}}</a>
                 </div>
                 @else
-                <div class="col-12 col-md-5 mb-5 mb-md-0">
+                <div class="col-12 col-md-3 mb-5 mb-md-0 mx-auto">
                     <livewire:edit-announcement-form />
                 </div>
-                <div class="col-12 col-md-6 offset-md-1">
+                <div class="col-12 col-md-8 offset-md-1 mx-auto">
                     <livewire:announcements-list />
                 </div>
                 @endif

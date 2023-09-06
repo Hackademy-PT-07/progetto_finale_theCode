@@ -1,11 +1,10 @@
 <div class="mt-5">
-    <table class="table">
-        <thead>
-            <div class="d-flex">
-                <button wire:click="$emitTo('switch-table', 'switchTable')"><i class="fa-solid fa-repeat"></i></button>
-
+            <div class="revisor-titleBox">
                 <h2 class="table-title">{{__('revisor_area.title2')}}</h2>
+                <button wire:click="$emitTo('switch-table', 'switchTable')" class=" switchBtn shadow floatingItem"><i class="fa-solid fa-repeat"></i></button>
             </div>
+    <table class="table shadow revisor-table">
+        <thead>
             <tr>
                 <th scope="col" class="revisor-head">{{__('revisor_area.user')}}</th>
                 <th scope="col" class="revisor-head">{{__('revisor_area.title')}}</th>
