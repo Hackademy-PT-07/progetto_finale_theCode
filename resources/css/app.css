@@ -295,7 +295,7 @@ ul {
   width: 100%;
   padding: 1rem 2rem;
   border-radius: 5px;
-border-radius: 20px;
+  border-radius: 20px;
 }
 
 /* .creation-form .form-custom {
@@ -311,7 +311,6 @@ border-radius: 20px;
   align-items: center;
   /* padding: 2rem; */
 }
-
 
 /* .creation-form .form-custom input,
 .creation-form .form-custom select {
@@ -333,7 +332,8 @@ border-radius: 20px;
 .form-custom label {
   display: block;
   margin-top: 3rem;
-  font-size: 1.6rem;
+  padding-left: 10px;
+  font-size: 2rem;
   font-weight: 700;
 }
 
@@ -356,17 +356,17 @@ border-radius: 20px;
 .form-custom input,
 .form-custom select,
 .form-custom textarea::placeholder,
-.form-custom textarea{
+.form-custom textarea {
   color: var(--primary-color);
 }
 .form-custom input:focus,
 .form-custom select:focus,
-.form-custom textarea:focus{
+.form-custom textarea:focus {
   outline: none;
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
 }
-.form-custom textarea{
+.form-custom textarea {
   max-height: 100px;
   min-height: 5rem;
   padding: 1.2rem 1.5rem;
@@ -396,17 +396,17 @@ border-radius: 20px;
   transition: all 0.2s;
   border: none;
 }
-.personalTable{
+.personalTable {
   border-radius: 10px;
   width: 100%;
   height: 100%;
   margin-bottom: 50px;
 }
-.personalTable thead{
+.personalTable thead {
   height: 50px;
   width: 100%;
 }
-.personalTable thead tr th{
+.personalTable thead tr th {
   background-color: var(--nav-color);
   color: var(--primary-color-dark);
   border: 1px solid white;
@@ -418,29 +418,29 @@ border-radius: 20px;
   font-style: italic;
 }
 
-.personalTable tbody tr td{
+.personalTable tbody tr td {
   /* border: 1px solid var(--primary-color-dark); */
   height: 40px;
-text-align: start;
-padding: 0 10px;
-font-size: 1.5rem;
-text-transform: uppercase;
-text-overflow: ellipsis "[..]";
-overflow: hidden;
-white-space: nowrap;
+  text-align: start;
+  padding: 0 10px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-overflow: ellipsis "[..]";
+  overflow: hidden;
+  white-space: nowrap;
 }
-.personalTable tbody tr{
+.personalTable tbody tr {
   border-bottom: 1px solid var(--primary-color);
   background-color: white;
-  transition: all .1s ease-in;
+  transition: all 0.1s ease-in;
 }
-.personalTable tbody tr:hover{
+.personalTable tbody tr:hover {
   background-color: #ccc;
   cursor: pointer;
 }
-.personalTable-btn{
+.personalTable-btn {
   color: white;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   outline: none;
   border: none;
   padding: 2px 6px;
@@ -455,7 +455,7 @@ white-space: nowrap;
   display: inline-block;
   font-weight: 900;
   position: relative;
-} */ 
+} */
 
 /* .form-custom a::after {
   content: "";
@@ -611,12 +611,12 @@ footer {
 }
 
 .error-component {
-    color: red;
-    display: block;
-    width: 100%;
-    text-align: end;
-    padding-right: 100px;
-    margin-top: 5px;
+  color: red;
+  display: block;
+  width: 100%;
+  text-align: end;
+  padding-right: 100px;
+  margin-top: 5px;
 }
 /* category card */
 .category-card {
@@ -658,7 +658,7 @@ footer {
 
 /* .custom-card {
   /* border: 1px solid lightgray; */
-  /* width: 100%;
+/* width: 100%;
   height: 130px;
   border-radius: 5px;
   position: relative;
@@ -971,7 +971,7 @@ footer {
   border: none;
   outline: none;
   height: 30px;
-  width:150px;
+  width: 150px;
   border-radius: 50px;
   padding: 5px 10px;
   margin-left: 10px;
@@ -1111,10 +1111,10 @@ footer {
   width: 100%;
   height: 100vh;
 }
-.form-box{
-display: flex;
-justify-content: center;
-align-items: start;
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: start;
 }
 
 .form-container {
@@ -1144,12 +1144,12 @@ align-items: start;
   align-items: center;
   color: var(--black);
 }
-.apply-form textarea{
-    border: 2px solid rgba(128, 128, 128, 0.1);
+.apply-form textarea {
+  border: 2px solid rgba(128, 128, 128, 0.1);
 
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
-.apply-form textarea:focus{
+.apply-form textarea:focus {
   outline: none;
   border: 2px solid var(--accent-color);
 }
@@ -1181,7 +1181,7 @@ align-items: start;
   border-radius: 5px;
 }
 
-.auth-form input:focus{
+.auth-form input:focus {
   border: 1px solid var(--primary-color);
 }
 
@@ -1281,7 +1281,7 @@ align-items: start;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 30px ;
+  margin-top: 30px;
 }
 .apply-btn {
   height: 30px;
@@ -1333,10 +1333,8 @@ align-items: start;
 
 .revisor-card {
   padding: 10px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.78);
-  box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.78);
+  background-color: #eee;
+  border-radius: 20px;
   width: 100%;
 }
 
@@ -1418,7 +1416,7 @@ align-items: start;
 .revisor-show-btn:active {
   transform: translateY(4px);
 }
-.revisor-titleBox{
+.revisor-titleBox {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1428,7 +1426,7 @@ align-items: start;
 .table-title {
   font-size: 2rem;
 }
-.switchBtn{
+.switchBtn {
   background-color: #eee;
   border: none;
   outline: none;
@@ -1438,13 +1436,13 @@ align-items: start;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-.switchBtn:hover{
+.switchBtn:hover {
   background-color: var(--accent-color);
   color: white;
 }
-.search-msg{
+.search-msg {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1488,6 +1486,46 @@ align-items: start;
 
 .revisor-show-btn:hover {
   background-color: var(--accent-color-dark);
+}
+.revisorTable {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.revisorTable .revisor-head {
+  background-color: var(--primary-color);
+  height: 50px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-style: italic;
+}
+.accentHead{
+  background-color: var(--accent-color);
+}
+.revisorTable tr {
+  background-color: #eee;
+  transition: all 0.1s ease;
+}
+.revisorTable tr:hover {
+  background-color: #ccc;
+  color: white;
+}
+.revisorTable tr:hover .statusBtn {
+  color: white;
+}
+.revisorTable .revisor-td {
+  height: 40px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.178);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis " [..]";
+}
+.revisorBtn{
+  outline: none;
+  border: none;
+  color: gray;
+  background-color: transparent;
 }
 
 /* revisor page end */
@@ -1728,7 +1766,7 @@ align-items: start;
     width: 100%;
     margin-bottom: 20px;
   }
-    .category-form-btnBox {
+  .category-form-btnBox {
     width: 100%;
     margin: 10px 0;
     justify-content: end;
