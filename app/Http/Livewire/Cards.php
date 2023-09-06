@@ -44,13 +44,13 @@ class Cards extends Component
             $this->loadAnnouncements();
         } else {
             if ($this->category_id != 0 && $this->search) {
-                $this->announcements = Announcement::search($this->search)->where('category_id', $this->category_id)->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(6);
+                $this->announcements = Announcement::search($this->search)->where('category_id', $this->category_id)->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(15);
             } else {
                 if ($this->search) {
-                    $this->announcements = Announcement::search($this->search)->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(6);
+                    $this->announcements = Announcement::search($this->search)->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(15);
                 } else {
                     if ($this->category_id != 0) {
-                        $this->announcements = Announcement::where('category_id', $this->category_id)->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(6);
+                        $this->announcements = Announcement::where('category_id', $this->category_id)->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(15);
                     }
                 }
             }

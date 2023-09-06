@@ -15,16 +15,16 @@ class SearchForm extends Component
 
     public function mount()
     {
-        if(is_numeric($this->param)) {
+        if (is_numeric($this->param)) {
             $this->category_id = $this->param;
-        } else { 
+        } else {
             $this->search = $this->param;
         }
     }
 
     public function research()
     {
-        if($this->where) {
+        if ($this->where) {
             redirect()->route('announcements', $this->search ?? '');
         }
         $this->emitTo('cards', 'loadResearch', $this->search, $this->category_id);
@@ -32,9 +32,9 @@ class SearchForm extends Component
 
     public function render()
     {
-        if($this->where){
+        if ($this->where) {
             return view('livewire.search-form-home');
-        }else{
+        } else {
             return view('livewire.search-form');
         }
     }

@@ -93,6 +93,7 @@
             <div class="row my-5">
                 <livewire:search-form :categories=$categories :where="$home" />
             </div>
+            
             <livewire:cards :where="$home" />
 
         </div>

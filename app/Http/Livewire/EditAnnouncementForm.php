@@ -3,12 +3,14 @@
 namespace App\Http\Livewire;
 
 use App\Models\Announcement;
+use App\Models\Image;
 use Livewire\Component;
 
 class EditAnnouncementForm extends Component
 {
     public $announcement;
     public $isDisabled = true;
+    protected $announcementImages;
 
     protected $listeners = [
         'edit'
@@ -63,12 +65,24 @@ class EditAnnouncementForm extends Component
     {
         $this->isDisabled = true;
         $this->announcement = $announcementToEdit;
+        $this->announcementImages = $announcementToEdit->images()->get();
         $this->isDisabled = !$this->isDisabled;
     }
 
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
+    }
+
+    public function getImages()
+    {
+        return $this->announcementImages;
+    }
+
+    public function deleteImage($image_id)
+    {
+        $image = Image::find($image_id);
+        $image->delete();
     }
 
     public function refresh()
