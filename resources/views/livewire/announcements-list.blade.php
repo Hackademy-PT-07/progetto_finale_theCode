@@ -2,35 +2,35 @@
     <div class="revisor-titleBox">
         <h2 style="font-size: 3rem;">Lista dei tuoi annunci</h2>
     </div>
-    <table class="table table-hover table-bordered rounded personalTable">
+    <table class="personalTable shadow">
         <thead>
             <tr>
-                <th scope="col" class="revisor-head">{{__('personal_area.formTitle')}}</th>
-                <th scope="col" class="revisor-head">{{__('personal_area.formCategory')}}</th>
-                <th scope="col" class="revisor-head">{{__('personal_area.state')}}</th>
-                <th scope="col" class="revisor-head">{{__('personal_area.date')}}</th>
-                <th scope="col" class="revisor-head"></th>
+                <th scope="col" class="">{{__('personal_area.formTitle')}}</th>
+                <th scope="col" class="">{{__('personal_area.formCategory')}}</th>
+                <th scope="col" class="">{{__('personal_area.state')}}</th>
+                <th scope="col" class="">{{__('personal_area.date')}}</th>
+                <th scope="col" class=""></th>
             </tr>
         </thead>
         <tbody>
             @foreach($this->getAnnouncements() as $announcement)
             <tr scope="row">
-                <td class="revisor-td">{{ $announcement->title }}</td>
-                <td class="revisor-td">{{ $announcement->category->name }}</td>
+                <td class="fw-bold">{{ $announcement->title }}</td>
+                <td class="">{{ $announcement->category->name }}</td>
                 @if(is_Null($announcement->is_accepted))
-                <td class="revisor-td text-warning">{{__('personal_area.outstanding')}}</td>
+                <td class="text-warning fw-bold">{{__('personal_area.outstanding')}}</td>
                 @elseif($announcement->is_accepted)
-                <td class="revisor-td text-success">{{__('personal_area.accepted')}}</td>
+                <td class="text-success fw-bold">{{__('personal_area.accepted')}}</td>
                 @else
-                <td class="revisor-td text-danger">{{__('personal_area.rejected')}}</td>
+                <td class="text-danger fw-bold">{{__('personal_area.rejected')}}</td>
                 @endif
-                <td class="revisor-td">{{ $announcement->updated_at->format('d/m/Y') }}</td>
-                <td class="revisor-td">
-                    <button wire:click="editAnnouncement({{ $announcement }})" class="revisor-show-btn" style="background-color:green;">
+                <td class="">{{ $announcement->updated_at->format('d/m/Y') }}</td>
+                <td class="">
+                    <button wire:click="editAnnouncement({{ $announcement }})" class=" personalTable-btn shadow" style="background-color:green;">
                         {{__('personal_area.edit')}}
                     </button>
                     <!-- Button trigger modal -->
-                    <button type="button" class="revisor-show-btn" data-bs-toggle="modal" data-bs-target="#modal" data-action="deleteAnnouncement({{ $announcement }})" style="background-color: red;">
+                    <button type="button" class="personalTable-btn shadow" data-bs-toggle="modal" data-bs-target="#modal" data-action="deleteAnnouncement({{ $announcement }})" style="background-color: red;">
                         {{__('personal_area.delete')}}
                     </button>
                 </td>

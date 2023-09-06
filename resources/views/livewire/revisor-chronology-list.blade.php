@@ -3,7 +3,7 @@
                 <h2 class="table-title">{{__('revisor_area.title2')}}</h2>
                 <button wire:click="$emitTo('switch-table', 'switchTable')" class=" switchBtn shadow floatingItem"><i class="fa-solid fa-repeat"></i></button>
             </div>
-    <table class="table shadow revisor-table">
+    <table class="shadow personalTable">
         <thead>
             <tr>
                 <th scope="col" class="revisor-head">{{__('revisor_area.user')}}</th>

@@ -1,6 +1,6 @@
 <div class="revisor-card">
   <div id="carouselExampleDark" class="carousel carousel-dark slide">
-    <div class="carousel-inner w-100 mx-auto" style="height: 300px;">
+    <div class="carousel-inner mx-auto" style="height: 300px;">
       @if(!is_null($announcement) && $announcement->images->isNotEmpty())
       @foreach($announcement->images as $image)
       <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="10000">

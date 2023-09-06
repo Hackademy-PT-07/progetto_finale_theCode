@@ -3,7 +3,7 @@
         @csrf
         
         @if($isDisabled)
-        <h3 class="w-100" style="font-size: 2.5rem;">Seleziona annuncio</h3>
+        <h3 class="w-100 text-center" style="font-size: 2.5rem;">Seleziona annuncio</h3>
         @else
         <div class="revisor-titleBox">
         <h3 class="table-title">Annuncio #{{$announcement->id}}</h3>
@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-btn-container">
-            <button type="submit" class="form-custom-btn floatingItem" @if($isDisabled) disabled style="background-color:gray; cursor:inherit;" @endif>Modifica</button>
+            <button type="submit" class="form-custom-btn mx-auto" @if($isDisabled) disabled style="background-color:gray; cursor:inherit;" @endif>Modifica</button>
         </div>
     </form>
 </div>
