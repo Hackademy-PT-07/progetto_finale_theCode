@@ -25,7 +25,7 @@ class PreviewAnnouncement extends Component
     public function loadFirstAnnouncement()
     {
         $this->disabledCard = false;
-        $this->announcement = Announcement::where('user_id','!=', auth()->user()->id)->where('is_accepted', null)->orderBy('updated_at', 'asc')->first();
+        $this->announcement = Announcement::where('user_id', '!=', auth()->user()->id)->where('is_accepted', null)->orderBy('updated_at', 'asc')->first();
     }
 
     public function loadAnnouncementToShow(Announcement $announcementToShow)

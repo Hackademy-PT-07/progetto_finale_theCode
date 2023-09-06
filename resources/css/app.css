@@ -289,10 +289,9 @@ ul {
 }
 
 .form-custom {
-  display: flex;
+  /* display: flex;
   justify-content: start;
-  align-items: center;
-  flex-direction: column;
+  align-items: center; */
   width: 100%;
   padding: 1rem 2rem;
   border-radius: 5px;
@@ -343,10 +342,10 @@ border-radius: 20px;
 .form-custom textarea {
   display: block;
   height: 5rem;
-  min-width: 200px;
+  width: 100%;
   border-radius: 3px;
   padding: 0 1.5rem;
-  margin-top: 0.8rem;
+  margin-top: 0.8rem 0;
   font-size: 1.4rem;
   font-weight: 300;
   border: 1px solid var(--primary-color);
@@ -386,7 +385,7 @@ border-radius: 20px;
 
 .form-custom-btn {
   margin-top: 5rem;
-  width: 100%;
+  width: 75%;
   background-color: var(--accent-color);
   color: white;
   padding: 0.5rem 0;
@@ -397,10 +396,57 @@ border-radius: 20px;
   transition: all 0.2s;
   border: none;
 }
+.personalTable{
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 50px;
+}
+.personalTable thead{
+  height: 50px;
+  width: 100%;
+}
 .personalTable thead tr th{
-  margin-bottom: 10px;
+  background-color: var(--nav-color);
+  color: var(--primary-color-dark);
+  border: 1px solid white;
+  max-width: 50px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-style: italic;
 }
 
+.personalTable tbody tr td{
+  /* border: 1px solid var(--primary-color-dark); */
+  height: 40px;
+text-align: start;
+padding: 0 10px;
+font-size: 1.5rem;
+text-transform: uppercase;
+text-overflow: ellipsis "[..]";
+overflow: hidden;
+white-space: nowrap;
+}
+.personalTable tbody tr{
+  border-bottom: 1px solid var(--primary-color);
+  background-color: white;
+  transition: all .1s ease-in;
+}
+.personalTable tbody tr:hover{
+  background-color: #ccc;
+  cursor: pointer;
+}
+.personalTable-btn{
+  color: white;
+  letter-spacing: .2px;
+  outline: none;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin: 3px;
+}
 /* /* .form-custom-btn:hover {
   background-color: var(--accent-color-dark);
 } */
@@ -1291,6 +1337,7 @@ align-items: start;
   border-radius: 5px;
   -webkit-box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.78);
   box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.78);
+  width: 100%;
 }
 
 .revisor-card-details h3 {
