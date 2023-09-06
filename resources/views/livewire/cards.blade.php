@@ -1,32 +1,18 @@
 <div class="container mx-auto">
-    <div class="row justify-content-evenly">
+    <div class="row my-5" style="display:flex; justify-content:start; align-items:center; flex-wrap:wrap;">
         @forelse($this->getAnnouncements() as $announcement)
-        <div class="col-12 col-md-9 me-auto mb-4 p-0">
-            <a href="{{route('announcement', $announcement)}}" class="card-link" target="_blank">
-                <div class="custom-card overflow-hidden shadow">
-                    <div class="category">
-                        <span>{{ $announcement->category->name }}</span>
-                    </div>
-
-                    <div class="custom-img">
-                        <img src="{{$announcement->images()->get()->isNotEmpty() ? $announcement->images()->first()->getUrl(400,300) : 'https://picsum.photos/400?grayscale'}}" alt="">
-                    </div>
-                    <div class="custom-body">
-                        <div class="title pt-2">
-                            <h3>{{ $announcement->title }}</h3>
-                        </div>
-                        <div class="desc">
-                            <p>{{ $announcement->description }}</p>
-                        </div>
-                        <div class="price text-end w-100">
-                            <span>{{ $announcement->price }}</span>
-                        </div>
-                        <div class="created text-end w-100">
-                            <span>{{ $announcement->created_at->diffForHumans() }}</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
+        <div class="homeCard-link">
+                <a href="{{route('announcement', $announcement)}}" class="">
+                        <div class="homeCard shadow">
+                             <div class="homeCard-img shadow"> 
+                                <img src="{{$announcement->images()->get()->isNotEmpty() ? $announcement->images()->first()->getUrl(400,300) : 'https://picsum.photos/400?grayscale'}}" alt="">
+                        <div class="homeCard-category shadow">{{ $announcement->category->name }}</div>
+                            </div>
+                                <h3 class="homeCard-title">{{ $announcement->title }}</h3>
+                                <span class="homeCard-price"> {{ $announcement->price }}€</span>
+                                <span class="homeCard-date"> pubblicato {{ $announcement->created_at->diffForHumans() }}</span>
+                                   </div>
+                                         </a>
         </div>
         @empty
         <div class="col-12 mx-auto text-center search-msg">
@@ -37,7 +23,10 @@
         @endforelse
 
         @if(!$where)
+        <div class="my-5" style="display:flex; justify-content:center;">
         {{ $this->getAnnouncementsLinks() }}
+
+        </div>
         @endif
     </div>
 </div>

@@ -1,11 +1,11 @@
 <x-main>
         <x-slot:title>Work with us</x-slot>
-        <div class="container">
+        <!-- <div class="container">
             <div class="col-12 text-center mx-auto" style="width: 50%;margin-top: 100px;">
 
             </div>
-        </div>
-        <div class="form-box container mt-5">
+        </div> -->
+        <div class="form-box container rounded-5" style="padding-top: 55px;">
         <div class="form-container row w-100">
 
         <div class="col-12 col-md-6 form-left h-100">
@@ -15,16 +15,11 @@
                     <h3>{{__('workRequest.title')}}</h3>
                     <h4>{{__('workRequest.sub')}}</h4>
                             <x-success />
-
                 </div>
-                <input type="text" name="name" id="name" value="{{Auth()->user()->name}}" disabled>
-                @error('name')<span class="error-span">Ops!{{$message}}</span>@enderror
-                <input type="email" name="email" id="email" value="{{Auth()->user()->email}}" disabled>
-                @error('email')<span class="error-span">Ops!{{$message}}</span>@enderror
                 <label for="applyDesc" class="applyDesc-label">{{__('workRequest.textarea')}}</label>
-                <textarea id="applyDesc" name="applyDesc" style="width: 50%;" rows="4"></textarea>
+                <textarea id="applyDesc" name="applyDesc" style="width: 50%; border-radius: 10px;" rows="4" class="p-2"></textarea>
                 <div class="apply-btn-box">
-                <button type="submit" class="apply-btn">{{__('workRequest.btn')}}</button>
+                <button type="submit" class="apply-btn floatingItem">{{__('workRequest.btn')}}</button>
                 </div>
             </form>
         </div>

@@ -43,14 +43,14 @@ class RevisorList extends Component
 
         if (is_null($this->announcements) || $this->announcements->isEmpty()) {
             return <<<'blade'
-                <div class="col-12 mx-auto text-center search-msg mt-5">
-                    <div class="d-flex">
-                        <div class="col-12 mx-auto text-center search-msg">
+                <div class="mx-auto mt-5">
+                    <div class="revisor-titleBox">
+                        <button wire:click="$emitTo('switch-table', 'switchTable')" class=" switchBtn shadow floatingItem"><i class="fa-solid fa-repeat"></i></button>
+                        <div class="col-8 search-msg">
                             <p>{{__('revisor_area.noAdds')}}</p>
                             <p>{{__('revisor_area.backHome')}}</p>
                             <a href="{{route('home')}}" class="btn-home">Home</a>
                         </div>
-                        <button wire:click="$emitTo('switch-table', 'switchTable')"><i class="fa-solid fa-repeat"></i></button>
                     </div>
                 </div>
             blade;

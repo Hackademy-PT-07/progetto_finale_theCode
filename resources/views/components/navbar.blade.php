@@ -8,13 +8,15 @@
         <div id="nav-left">
             <a href="{{route('home')}}">
                 <img src="/storage/imgs/logo_img-removebg-preview.png" alt="logo" class="logo">
+                <span class="logo_name">Presto.it</span>
             </a>
-            <span class="logo_name">Presto.it</span>
         </div>
         <div id="nav-right">
             @auth
             <div>
+                <a href="{{route('personalArea')}}">
                 <span class="nav-mail"><i class="fa-solid fa-user"></i> {{auth()->user()->name}}</span>
+                </a>
             </div>
 
             <div id="hamburger">

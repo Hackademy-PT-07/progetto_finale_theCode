@@ -16,7 +16,7 @@
         <x-navbar />
     </header>
 
-    <main>
+    <main class="container">
         {{$slot}}
     </main>
 

@@ -29,6 +29,10 @@ class SearchForm extends Component
 
     public function render()
     {
-        return view('livewire.search-form');
+        if($this->where){
+            return view('livewire.search-form-home');
+        }else{
+            return view('livewire.search-form');
+        }
     }
 }
