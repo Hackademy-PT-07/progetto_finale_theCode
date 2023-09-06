@@ -612,7 +612,12 @@ footer {
 }
 
 .error-component {
-  background-color: #ff6961;
+    color: red;
+    display: block;
+    width: 100%;
+    text-align: end;
+    padding-right: 100px;
+    margin-top: 5px;
 }
 /* category card */
 .category-card {

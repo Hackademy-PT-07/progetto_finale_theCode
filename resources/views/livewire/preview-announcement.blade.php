@@ -4,7 +4,7 @@
       @if(!is_null($announcement) && $announcement->images->isNotEmpty())
       @foreach($announcement->images as $image)
       <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="10000">
-        <img src="{{$announcement->images()->first()->getUrl(400,300) ?? 'https://picsum.photos/200/300'}}" class="d-block object-fit-cover h-100 w-100" alt="...">
+        <img src="{{$image->getUrl() ?? 'https://picsum.photos/200/300'}}" class="d-block object-fit-cover img-fluid" alt="...">
       </div>
       @endforeach
       @else
@@ -35,6 +35,30 @@
       <p>{{ $announcement->description ?? "Descrizione"}}</p>
       <p class="price">prezzo: <span>{{ $announcement->price ?? ""}}€</span></p>
     </div>
+
+    <div>
+      <h5>Tags</h5>
+      <div>
+        @foreach ($announcement->images as $image)
+        @if(!is_null($image->labels))
+        @foreach ($image->labels as $label)
+        <span>{{ $label }},</span>
+        @endforeach
+        @endif
+        @endforeach
+      </div>
+    </div>
+    <div>
+      @foreach ($announcement->images as $image)
+      <h5>Revisione Immagini</h5>
+      <p>Adulti: <span class="{{ $image->adult }}"></span></p>
+      <p>Satira: <span class="{{ $image->spoof }}"></span></p>
+      <p>Medicina: <span class="{{ $image->medical }}"></span></p>
+      <p>Violenza: <span class="{{ $image->violence }}"></span></p>
+      <p>Contenuto Ammiccante: <span class="{{ $image->racy }}"></span></p>
+    </div>
+    @endforeach
+
     @if(!$disabledCard)
     <div wire:loading.remove.delay>
       <div class="mx-auto revisor-card-btns">

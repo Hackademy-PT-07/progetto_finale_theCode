@@ -2,8 +2,9 @@
 return [
     'sell' => 'Sell',
     'ads' => 'Ads',
-    'personalArea' => 'personal area',
-    'bacomeRevisor' => 'become revisor',
+    'personalArea' => 'Personal area',
+    'revisorZone' => 'Revisor zone',
+    'becomeRevisor' => 'Become revisor',
     'exploreCategories' => 'Explore categories',
     'cars' => 'Cars',
     'motorcycle' => 'Motorcycle',

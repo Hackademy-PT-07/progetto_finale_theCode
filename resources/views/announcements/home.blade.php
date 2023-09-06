@@ -1,11 +1,9 @@
 <x-main>
-    
+
     <x-slot:title>Homepage</x-slot:title>
 
     <section class="cards-section">
         <div class="container pb-3">
-
-
 
             <div class="row category-section">
                 <h2 class="ann-title my-5">{{__('ui.exploreCategories')}}</h2>
@@ -93,7 +91,7 @@
 
             <h2 class="ann-title my-5">{{__('ui.lastAnn')}}</h2>
             <div class="row my-5">
-                <livewire:search-form :categories=$categories :where="$home"/>
+                <livewire:search-form :categories=$categories :where="$home" />
             </div>
             <livewire:cards :where="$home" />
 
