@@ -2,17 +2,17 @@
     <div class="row my-5" style="display:flex; justify-content:start; align-items:center; flex-wrap:wrap;">
         @forelse($this->getAnnouncements() as $announcement)
         <div class="homeCard-link">
-                <a href="{{route('announcement', $announcement)}}" class="">
-                        <div class="homeCard shadow">
-                             <div class="homeCard-img shadow"> 
-                                <img src="{{$announcement->images()->get()->isNotEmpty() ? $announcement->images()->first()->getUrl(400,300) : 'https://picsum.photos/400?grayscale'}}" alt="">
+            <a href="{{route('announcement', $announcement)}}" class="">
+                <div class="homeCard shadow">
+                    <div class="homeCard-img shadow">
+                        <img src="{{$announcement->images()->get()->isNotEmpty() ? $announcement->images()->first()->getUrl(300,300) : 'https://picsum.photos/400?grayscale'}}" alt="">
                         <div class="homeCard-category shadow">{{ $announcement->category->name }}</div>
-                            </div>
-                                <h3 class="homeCard-title">{{ $announcement->title }}</h3>
-                                <span class="homeCard-price"> {{ $announcement->price }}€</span>
-                                <span class="homeCard-date"> pubblicato {{ $announcement->created_at->diffForHumans() }}</span>
-                                   </div>
-                                         </a>
+                    </div>
+                    <h3 class="homeCard-title">{{ $announcement->title }}</h3>
+                    <span class="homeCard-price"> {{ $announcement->price }}€</span>
+                    <span class="homeCard-date"> pubblicato {{ $announcement->created_at->diffForHumans() }}</span>
+                </div>
+            </a>
         </div>
         @empty
         <div class="col-12 mx-auto text-center search-msg">
@@ -24,8 +24,7 @@
 
         @if(!$where)
         <div class="my-5" style="display:flex; justify-content:center;">
-        {{ $this->getAnnouncementsLinks() }}
-
+            {{ $this->getAnnouncementsLinks() }}
         </div>
         @endif
     </div>

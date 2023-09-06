@@ -24,6 +24,9 @@ class SearchForm extends Component
 
     public function research()
     {
+        if($this->where) {
+            redirect()->route('announcements', $this->search ?? '');
+        }
         $this->emitTo('cards', 'loadResearch', $this->search, $this->category_id);
     }
 

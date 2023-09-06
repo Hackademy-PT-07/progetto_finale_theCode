@@ -15,13 +15,7 @@
                 </select>
         </div>
         <div class="col-2 category-form-btnBox">
-            @if($where)
-            <a href="{{ route('announcements', $search ?? '') }}">
-                <button type="button" class="btn-home"><i class="bi bi-search"></i></button>
-            </a>
-            @else
             <button type="submit" class="floatingItem text-center"><i class="bi bi-search"></i></button>
-            @endif
         </div>
     </form>
 </div>

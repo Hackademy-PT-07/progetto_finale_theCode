@@ -86,6 +86,5 @@ class Cards extends Component
             $this->filterAnnouncements();
             return view('livewire.cards');
         }
-
     }
 }

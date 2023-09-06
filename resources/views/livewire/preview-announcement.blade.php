@@ -49,7 +49,7 @@
       </div>
     </div>
     <div>
-    @foreach ($announcement->images as $image)
+      @foreach ($announcement->images as $image)
       <h5>Revisione Immagini</h5>
       <p>Adulti: <span class="{{ $image->adult }}"></span></p>
       <p>Satira: <span class="{{ $image->spoof }}"></span></p>
