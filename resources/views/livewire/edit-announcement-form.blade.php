@@ -14,12 +14,12 @@
 
         @endif
         <x-success />
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <label for="title">Titolo</label>
             <input type="text" name="title" id="title" wire:model="announcement.title" placeholder="Modifica titolo" @if($isDisabled) disabled @endif class="shadow">
             @error('title')<span class="error-span">Ops!{{$message}}</span>@enderror
         </div>
-        <div class="col-6">        
+        <div class="col-12 col-md-6">        
             <label for="category_id">Categoria</label>
          <select id="category_id" name="category_id" wire:model.defer="announcement.category_id" @if($isDisabled) disabled @endif class="shadow">
             <option value="">Modifica categoria</option>
@@ -29,13 +29,13 @@
         </select>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <label for="price">Prezzo</label>
             <input type="number" name="price" id="price" wire:model="announcement.price" placeholder="Modifica prezzo" @if($isDisabled) disabled @endif class="shadow">
             @error('price')<span class="error-span">Ops!{{$message}}</span>@enderror
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <label for="description">Descrizione</label>
             <textarea name="description" id="description" class="shadow" wire:model="announcement.description" placeholder="Modifica descrizione" @if($isDisabled) disabled @endif></textarea>
             <!-- <input type="text" name="description" id="description" wire:model="announcement.description" placeholder="Modifica descrizione" @if($isDisabled) disabled @endif> -->

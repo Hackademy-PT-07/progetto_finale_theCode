@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="creation-btn">
-                        <button type="submit" class="shadow floatingItem" wire:loading.remove.delay>{{__('ui.sell')}}!</button>
+                        <button type="submit" class="shadow floatingItem" wire:loading.remove.delay.longer>{{__('ui.sell')}}!</button>
                     </div>
                 </form>
             </div>
