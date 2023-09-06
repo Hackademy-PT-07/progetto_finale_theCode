@@ -19,11 +19,11 @@
                     <a href="{{route('announcements.create')}}" class="btn-home">{{__('ui.createAnn')}}</a>
                 </div>
                 @else
-                <div class="col-md-12 col-lg-3 mb-5 mb-md-0 mx-auto">
-                    <livewire:edit-announcement-form />
-                </div>
-                <div class="col-md-12 col-lg-8 offset-md-1 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <livewire:announcements-list />
+                </div>
+                <div class="col-md-12 mb-5 mb-md-0 mx-auto">
+                    <livewire:edit-announcement-form />
                 </div>
                 @endif
             </div>

@@ -25,7 +25,7 @@
                 <td class="text-danger fw-bold">{{__('personal_area.rejected')}}</td>
                 @endif
                 <td class="">{{ $announcement->updated_at->format('d/m/Y') }}</td>
-                <td class="">
+                <td class="text-center">
                     <button wire:click="editAnnouncement({{ $announcement }})" class=" personalTable-btn shadow" style="background-color:green;">
                         {{__('personal_area.edit')}}
                     </button>
