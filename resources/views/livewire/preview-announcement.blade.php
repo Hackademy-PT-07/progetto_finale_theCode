@@ -29,13 +29,14 @@
     </div>
 
     <div class="w-100 mx-auto mt-3 revisor-card-details">
-      <h3>{{ $announcement->title ?? "Titolo" }}</h3>
-      <span>{{ $announcement->category->name ?? "Categoria"}}</span>
-      <span>{{ $announcement->user->name ??  "Utente"}}</span>
-      <p>{{ $announcement->description ?? "Descrizione"}}</p>
-      <p class="price">prezzo: <span>{{ $announcement->price ?? ""}}€</span></p>
+      <h3>{{ $announcement->title ?? "..." }}</h3>
+      <span>{{ $announcement->category->name ?? "..."}}</span>
+      <span>{{ $announcement->user->name ??  "..."}}</span>
+      <p>{{ $announcement->description ?? "..."}}</p>
+      <p class="price">prezzo: <span>{{ $announcement->price ?? "..."}} €</span></p>
     </div>
 
+    @if(!is_null($announcement))
     <div>
       <h5>Tags</h5>
       <div>
@@ -49,15 +50,16 @@
       </div>
     </div>
     <div>
-      @foreach ($announcement->images as $image)
       <h5>Revisione Immagini</h5>
+      @foreach ($announcement->images as $image)
       <p>Adulti: <span class="{{ $image->adult }}"></span></p>
       <p>Satira: <span class="{{ $image->spoof }}"></span></p>
       <p>Medicina: <span class="{{ $image->medical }}"></span></p>
       <p>Violenza: <span class="{{ $image->violence }}"></span></p>
       <p>Contenuto Ammiccante: <span class="{{ $image->racy }}"></span></p>
+      @endforeach
     </div>
-    @endforeach
+    @endif
 
     @if(!$disabledCard)
     <div wire:loading.remove.delay>
