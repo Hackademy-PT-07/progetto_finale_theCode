@@ -922,6 +922,7 @@ footer {
   justify-content: start;
   padding:40px 30px;
   height: 100%;
+  min-height: 400px;
   background-color: white;
 }
 
@@ -1437,7 +1438,7 @@ padding: 2px 6px;
 }
 .revisor-titleBox {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 40px;
 }

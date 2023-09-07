@@ -1,21 +1,21 @@
 <x-main>
   <x-slot:title>Annuncio</x-slot:title>
   <div class="container">
-    <div class="row pt-5">
-      <div class="col-12 col-md-6 py-5">
+    <div class="row pt-5 my-5">
+      <div class="col-12 col-md-5 col-lg-6 py-3">
         <div id="carouselExampleDark" class="carousel carousel-dark slide">
 
-          <div class="carousel-inner rounded-5" style="height: 400px;" >
+          <div class="carousel-inner rounded-5 shadow mx-auto" style="height: 400px;" >
 
             @if($announcement->images->isNotEmpty())
             @foreach($announcement->images as $image)
-            <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="10000">
+            <div class="carousel-item @if($loop->first) active @endif h-100 w-100" data-bs-interval="10000">
               <img src="{{$image->getUrl() ?? 'https://picsum.photos/400?grayscale'}}" class="h-100 w-100 object-fit-cover" alt="...">
             </div>
             @endforeach
             @else
-            <div class="carousel-item active" data-bs-interval="10000">
-              <img src="https://picsum.photos/300" class="d-block object-fit-cover h-100 w-100" alt="...">
+            <div class="carousel-item active h-100 w-100" data-bs-interval="10000">
+              <img src="https://picsum.photos/300" class="object-fit-cover h-100 w-100" alt="...">
             </div>
             @endif
           </div>
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-6 py-5">
+      <div class="col-12 col-md-5 col-lg-6 py-3">
         <div class="ann shadow rounded-5 position-relative">
           <div class="ann-header">
             <h1>{{$announcement->title}}</h1>
@@ -53,7 +53,7 @@
 
       </div>
 
-      <div class="d-flex justify-content-end align-items-center">
+      <div class="d-flex justify-content-end align-items-center mt-5">
         <div class="me-4">
           <span style="font-size: 1.5rem;" class="fw-bold">Non era ciò che cercavi?</span></span>
           <span style="font-size: 1.5rem;" class="fw-bold">Torna agli annunci!</span>

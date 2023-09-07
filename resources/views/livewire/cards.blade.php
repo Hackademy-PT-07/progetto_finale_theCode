@@ -1,7 +1,7 @@
 <div class="container mx-auto">
     <div class="row my-5" style="display:flex; justify-content:start; align-items:center; flex-wrap:wrap;">
         @forelse($this->getAnnouncements() as $announcement)
-        <div class="homeCard-link">
+        <div class="homeCard-link mx-auto">
             <a href="{{route('announcement', $announcement)}}" class="">
                 <div class="homeCard shadow">
                     <div class="homeCard-img shadow">
