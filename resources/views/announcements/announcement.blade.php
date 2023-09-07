@@ -10,7 +10,7 @@
             @if($announcement->images->isNotEmpty())
             @foreach($announcement->images as $image)
             <div class="carousel-item @if($loop->first) active @endif h-100 w-100" data-bs-interval="10000">
-              <img src="{{$image->getUrl() ?? 'https://picsum.photos/400?grayscale'}}" class="h-100 w-100 object-fit-cover" alt="...">
+              <img src="{{$image->getUrl(600,400) ?? 'https://picsum.photos/400?grayscale'}}" class="h-100 w-100 object-fit-cover" alt="...">
             </div>
             @endforeach
             @else
@@ -41,12 +41,12 @@
             <p class="ann-desc">{{$announcement->description}}</p>
           </div>
           <div class="ann-price">
-            <p>Costo:
+            <p>{{__('personal_area.formPrice')}}: 
               <span>{{$announcement->price}}</span>€
             </p>
           </div>
               <p class="position-absolute bottom-0 end-0 pe-3">
-              publicato da:
+              {{__('personal_area.publBy')}}
               <span class="ann-user">{{$announcement->user->name}}</span>
             </p>
         </div>
@@ -55,10 +55,10 @@
 
       <div class="d-flex justify-content-end align-items-center mt-5">
         <div class="me-4">
-          <span style="font-size: 1.5rem;" class="fw-bold">Non era ciò che cercavi?</span></span>
-          <span style="font-size: 1.5rem;" class="fw-bold">Torna agli annunci!</span>
+          <span style="font-size: 1.5rem;" class="fw-bold">{{__('personal_area.wrongSearch')}}</span></span>
+          <span style="font-size: 1.5rem;" class="fw-bold">{{__('personal_area.goBack')}}</span>
         </div>
-        <a href="{{route('home')}}" class="btn-home">Vai!</a>
+        <a href="{{route('home')}}" class="btn-home">{{__('personal_area.go')}}</a>
       </div>
 
     </div>

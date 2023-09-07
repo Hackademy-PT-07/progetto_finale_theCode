@@ -29,4 +29,7 @@
             </div>
         </div>
     </section>
+
+    <x-modal />
+
 </x-main>

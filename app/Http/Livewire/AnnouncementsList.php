@@ -12,8 +12,6 @@ class AnnouncementsList extends Component
     protected $paginationTheme = 'bootstrap';
 
     protected $announcements;
-    public $modalTitle = "Conferma Cancellazione";
-    public $modalBody = "Attenzione! Sei sicuro di voler eliminare definitivamente l'annuncio?";
 
     protected $listeners = [
         'loadAnnouncements',
@@ -38,18 +36,14 @@ class AnnouncementsList extends Component
         return $this->announcements;
     }
 
-    public function editAnnouncement(Announcement $announcementToEdit)
-    {        
-        $this->emitTo('edit-announcement-form', 'edit', $announcementToEdit);
+    public function editAnnouncement(Announcement $announcementToEdit, $announcement_id)
+    {    
+        $this->emitTo('edit-announcement-form', 'edit', $announcementToEdit, $announcement_id);
     }
 
     public function deleteAnnouncement(Announcement $announcementToDelete)
     {
-        $announcementToDelete->delete();
-        
-        $this->loadAnnouncements();
-
-        session()->flash('success', 'Annuncio eliminato correttamente!');
+        $this->emitTo('edit-announcement-form', 'delete', $announcementToDelete);
     }
 
     public function render()

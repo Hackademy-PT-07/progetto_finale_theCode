@@ -1,9 +1,9 @@
 <?php
 return [
-    'header' => 'Welcome to your review area!',
+    'header' => 'welcome to your review area!',
     'noAdds' => 'There are no ads to review!',
     'backHome' => 'Back home?',
-    'title2' => 'Revised ad history',
+    'title2' => 'Ad history reviewed',
     'adToRev' => 'Announcements to review',
     'user' => 'User',
     'title' => 'Title',
@@ -12,6 +12,14 @@ return [
     'show' => 'Show',
     'statusChange' => 'Status change',
     'mail' => 'Sending mail...',
+    'noAddsChrono' => 'You haven\'t reviewed any ads yet!',
 
-
+    'revImgs' => 'Image review',
+    'adults' => 'Adults',
+    'satire' => 'Satire',
+    'medicine' => 'Medicine',
+    'violence' => 'Violence',
+    'winking' => 'Winking content',
+    'accept' => 'Accept',
+    'refuses' => 'Refuses',
 ];

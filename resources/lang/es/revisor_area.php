@@ -1,6 +1,6 @@
 <?php
 return [
-    'header' => '¡Bienvenido a tu área de reseñas!',
+    'header' => '¡bienvenido a tu área de reseñas!',
     'noAdds' => '¡No hay anuncios para revisar!',
     'backHome' => '¿Quieres volver a casa?',
     'title2' => 'Historial de anuncios revisado',
@@ -12,5 +12,14 @@ return [
     'show'=>'Mirar',
     'statusChange' => 'Cambio de estado',
     'mail' => 'Enviando mail...',
-
+    'noAddsChrono' => '¡Aún no has revisado ningún anuncio!',
+    
+    'revImgs' => 'Revision de imagen',
+    'adults' => 'Adultos',
+    'satire' => 'Sátira',
+    'medicine' => 'Medicamento',
+    'violence' => 'Violencia',
+    'winking' => 'Contenido guiño',
+    'accept' => 'Aceptar',
+    'refuses' => 'Rechazar',
 ];

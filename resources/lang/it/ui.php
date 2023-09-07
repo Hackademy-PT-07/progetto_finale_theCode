@@ -29,4 +29,9 @@ return[
     'createAnn' => 'Crea Annuncio',
     'workWithUs' => 'Lavora con noi!',
     'followUs' => 'Seguici',
+
+    'publ' => 'Pubblicato',
+    'adds' => 'Non ci sono annunci per questa ricerca!',
+    'createAdds' => 'Vuoi publicarne uno tuo?',
+    'create' => "Pubblica!"
 ];

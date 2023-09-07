@@ -11,9 +11,11 @@ class EditAnnouncementForm extends Component
     public $announcement;
     public $isDisabled = true;
     protected $announcementImages;
+    public $announcement_id;
 
     protected $listeners = [
-        'edit'
+        'edit',
+        'delete'
     ];
 
     protected function rules()
@@ -47,7 +49,8 @@ class EditAnnouncementForm extends Component
         $this->announcement->is_accepted = null;
         $this->announcement->save();
 
-        $this->isDisabled = true;
+        $this->announcement_id = null;
+        $this->refresh();
 
         session()->flash('success', 'Annuncio modificato correttamente!');
 
@@ -61,12 +64,24 @@ class EditAnnouncementForm extends Component
         $this->announcement = new Announcement;
     }
 
-    public function edit(Announcement $announcementToEdit)
+    public function edit(Announcement $announcementToEdit, $announcement_id)
     {
-        $this->isDisabled = true;
+        $this->refresh();
         $this->announcement = $announcementToEdit;
-        $this->announcementImages = $announcementToEdit->images()->get();
+        $this->announcement_id = $announcement_id;
+        $this->loadImages($announcement_id);
         $this->isDisabled = !$this->isDisabled;
+    }
+
+    public function delete(Announcement $announcementToDelete)
+    {
+        $this->refresh();
+        $this->announcement = null;
+        $announcementToDelete->delete();
+        
+        $this->emitTo('announcements-list', 'loadAnnouncements'); 
+               
+        session()->flash('success', 'Annuncio eliminato correttamente!');
     }
 
     public function updated($propertyName)
@@ -74,15 +89,22 @@ class EditAnnouncementForm extends Component
         $this->validateOnly($propertyName);
     }
 
+    public function loadImages($announcement_id)
+    {
+        $announcement = Announcement::find($announcement_id);
+        $this->announcementImages = $announcement->images()->get();
+    }
+
     public function getImages()
     {
         return $this->announcementImages;
     }
 
-    public function deleteImage($image_id)
+    public function deleteImage($image_id, Announcement $announcement)
     {
         $image = Image::find($image_id);
         $image->delete();
+        $this->loadImages($announcement->id);
     }
 
     public function refresh()
@@ -92,6 +114,10 @@ class EditAnnouncementForm extends Component
 
     public function render()
     {
+        if(is_numeric($this->announcement_id)) {
+            $this->loadImages($this->announcement_id);
+        }
+
         return view('livewire.edit-announcement-form');
     }
 }

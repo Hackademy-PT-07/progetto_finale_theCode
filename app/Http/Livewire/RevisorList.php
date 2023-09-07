@@ -45,7 +45,7 @@ class RevisorList extends Component
             return <<<'blade'
                 <div class="mx-auto mt-5">
                     <div class="revisor-titleBox">
-                        <button wire:click="$emitTo('switch-table', 'switchTable')" class=" switchBtn shadow floatingItem"><i class="fa-solid fa-repeat"></i></button>
+                        <button wire:click="$emitTo('switch-table', 'switchTable')" class="switchBtn shadow floatingItem"><i class="fa-solid fa-repeat"></i></button>
                         <div class="col-8 search-msg">
                             <p>{{__('revisor_area.noAdds')}}</p>
                             <p>{{__('revisor_area.backHome')}}</p>

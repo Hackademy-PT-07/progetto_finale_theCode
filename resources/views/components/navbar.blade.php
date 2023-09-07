@@ -55,10 +55,10 @@
             @else
             <ul class="auth-btns">
                 <li>
-                    <a href="/login">Accedi</a>
+                    <a href="/login">{{__('auth.signIn')}}</a>
                 </li>
                 <li>
-                    <a href="/register">Registrati</a>
+                    <a href="/register">{{__('auth.signUp')}}</a>
                 </li>
             </ul>
             @endauth

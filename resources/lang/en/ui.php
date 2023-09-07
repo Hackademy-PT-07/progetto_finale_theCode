@@ -30,6 +30,8 @@ return [
     'payment' => 'Secure payments!',
     'tracking' => 'Tracked Shipping!',
 
-
-
+    'publ' => 'Published',
+    'adds' => 'There are no ads for this search!',
+    'createAdds' => 'Do you want to publish one of your own?',
+    'create' => 'Publish!',
 ];

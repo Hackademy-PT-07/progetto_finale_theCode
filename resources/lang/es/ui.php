@@ -29,4 +29,9 @@ return [
     'fastSearch' => '¡Búsqueda rápida!',
     'payment' => '¡Pagos seguros!',
     'tracking' => '¡Envío rastreado!',
+    
+    'publ' => 'Publicado',
+    'adds' => '¡No hay anuncios para esta búsqueda!',
+    'createAdds' => '¿Quieres publicar uno propio?',
+    'create' => '¡Publicar!',
 ];

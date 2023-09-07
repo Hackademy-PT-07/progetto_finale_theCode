@@ -44,9 +44,9 @@ class ResizeImage implements ShouldQueue
 
         $croppedImage = Image::load($srcPath)
                         ->crop(Manipulations::CROP_CENTER, $w, $h)
-                        ->watermark(base_path('resources/img/splash.webp'))
+                        ->watermark(base_path('resources/img/logo-nobcg-crop.png'))
                         ->watermarkOpacity(50)
-                        ->watermarkPosition(Manipulations::POSITION_TOP_LEFT)
+                        ->watermarkPosition(Manipulations::POSITION_CENTER)
                         ->watermarkHeight(25, Manipulations::UNIT_PERCENT)
                         ->watermarkWidth(25, Manipulations::UNIT_PERCENT)
                         ->save($destPath);

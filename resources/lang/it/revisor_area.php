@@ -12,4 +12,14 @@ return [
     'show' => 'Mostra',
     'statusChange' => 'Modifica stato',
     'mail'=>'Invio email...',
+    'noAddsChrono' => 'Non hai ancora revisionato nessun annuncio!',
+
+    'revImgs' => 'Revisione immagini',
+    'adults' => 'Adulti',
+    'satire' => 'Satira',
+    'medicine' => 'Medicina',
+    'violence' => 'Violenza',
+    'winking' => 'Contenuto ammiccante',
+    'accept' => 'Accetta',
+    'refuses' => 'Rifiuta',
 ];

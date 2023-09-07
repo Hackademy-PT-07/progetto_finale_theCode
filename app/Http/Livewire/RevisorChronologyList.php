@@ -61,10 +61,10 @@ class RevisorChronologyList extends Component
             return <<<'blade'
                 <div class="col-12 mx-auto text-center search-msg mt-5">
                     <div class="d-flex">
-                        <button wire:click="$emitTo('switch-table', 'switchTable')"><i class="fa-solid fa-repeat"></i></button>
-                        <h1>Cronologia annunci revisionati</h1>
+                        <button wire:click="$emitTo('switch-table', 'switchTable')" class="switchBtn shadow floatingItem"><i class="fa-solid fa-repeat"></i></button>
+                        <h1>{{__('revisor_area.title2')}}</h1>
                     </div>
-                    <p>Non hai ancora revisionato nessun annuncio!</p>
+                    <p>{{__('revisor_area.noAddsChrono')}}</p>
                 </div>
             blade;
         }

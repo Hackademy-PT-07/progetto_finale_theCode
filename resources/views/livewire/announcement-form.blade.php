@@ -62,7 +62,7 @@
                     </div>
 
                     <div class="input-container">
-                        <label for="images">Inserisci immagini</label>
+                        <label for="images">{{__('personal_area.formImgs')}}</label>
                         <input type="file" name="images" id="images" wire:model="temporaryImages" multiple class="shadow text-black-50" @error('temporaryImages') style="border: 1px solid red" @enderror>
                         @error('temporaryImages.*')<span class="error-component">Ops!{{$message}}</span>@enderror
                     </div>

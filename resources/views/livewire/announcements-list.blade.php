@@ -1,7 +1,8 @@
 <div class="mt-5 d-flex justify-center align-items-center flex-column">
     <div class="revisor-titleBox">
-        <h2 style="font-size: 3rem;">Lista dei tuoi annunci</h2>
+        <h2 style="font-size: 3rem;">{{__('personal_area.subTitle')}}</h2>
     </div>
+    <x-success />
     <table class="personalTable shadow">
         <thead>
             <tr>
@@ -26,11 +27,10 @@
                 @endif
                 <td class="">{{ $announcement->updated_at->format('d/m/Y') }}</td>
                 <td class="text-center">
-                    <button wire:click="editAnnouncement({{ $announcement }})" class=" personalTable-btn shadow" style="background-color:green;">
+                    <button wire:click="editAnnouncement({{ $announcement }}, {{ $announcement->id }})" class=" personalTable-btn shadow" style="background-color:green;">
                         {{__('personal_area.edit')}}
                     </button>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="personalTable-btn shadow" data-bs-toggle="modal" data-bs-target="#modal" data-action="deleteAnnouncement({{ $announcement }})" style="background-color: red;">
+                    <button wire:click="deleteAnnouncement({{ $announcement }})" class=" personalTable-btn shadow" style="background-color:red;">
                         {{__('personal_area.delete')}}
                     </button>
                 </td>
@@ -38,11 +38,7 @@
             @endforeach
         </tbody>
     </table>
-<div class="d-flex justify-content-end w-100">
-    {{ $this->getAnnouncements()->links() }}
-
-</div>
-
-    <x-modal :title="$modalTitle" :body="$modalBody" />
-
+    <div class="d-flex justify-content-end w-100">
+        {{ $this->getAnnouncements()->links() }}
+    </div>
 </div>
