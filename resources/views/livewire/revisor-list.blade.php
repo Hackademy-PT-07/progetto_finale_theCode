@@ -3,13 +3,13 @@
                 <h2 class="table-title">{{__('revisor_area.adToRev')}}</h2>
                 <button wire:click="$emitTo('switch-table', 'switchTable')" class=" switchBtn shadow floatingItem"><i class="fa-solid fa-repeat"></i></button>
             </div>
-    <table class="table mt-5 shadow">
+            <table class="revisorTable">
         <thead>
             <tr>
-                <th scope="col" class="revisor-head">{{__('revisor_area.user')}}</th>
-                <th scope="col" class="revisor-head">{{__('revisor_area.title')}}</th>
-                <th scope="col" class="revisor-head">{{__('revisor_area.date')}}</th>
-                <th scope="col" class="revisor-head"></th>
+                <th scope="col" class="revisor-head" style="background-color:var(--accent-color);">{{__('revisor_area.user')}}</th>
+                <th scope="col" class="revisor-head" style="background-color:var(--accent-color);">{{__('revisor_area.title')}}</th>
+                <th scope="col" class="revisor-head" style="background-color:var(--accent-color)">{{__('revisor_area.date')}}</th>
+                <th scope="col" class="revisor-head" style="background-color:var(--accent-color)">{{__('revisor_area.show')}}</th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +19,7 @@
                 <td class="revisor-td">{{ $announcement->title }}</td>
                 <td class="revisor-td">{{ $announcement->updated_at->format('d/m/Y') }}</td>
                 <td class="revisor-td text-center">
-                    <button wire:click="showAnnouncement({{ $announcement }})" class="revisor-show-btn">{{__('revisor_area.show')}}</button>
+                    <button wire:click="showAnnouncement({{ $announcement }})" class="revisorBtn"><i class="fa-regular fa-eye"></i></button>
                 </td>
             </tr>
             @endforeach

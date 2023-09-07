@@ -1,21 +1,17 @@
-<div class="revisor-card">
+<div class="revisor-card shadow">
   <div id="carouselExampleDark" class="carousel carousel-dark slide">
     <div class="carousel-inner w-100 mx-auto" style="height: 300px;">
       @if(!is_null($announcement) && $announcement->images->isNotEmpty())
       @foreach($announcement->images as $image)
       <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="10000">
-        <img src="{{$image->getUrl() ?? 'https://picsum.photos/200/300'}}" class="d-block object-fit-cover img-fluid" alt="...">
+        <img src="{{$image->getUrl() ?? 'https://picsum.photos/300'}}" 
+        class="d-block object-fit-cover img-fluid" alt="..." 
+        width="300px" height="300px">
       </div>
       @endforeach
       @else
-      <div class="carousel-item active rounded overflow-hidden" data-bs-interval="10000">
-        <img src="https://picsum.photos/200/300" class="d-block object-fit-cover h-100 w-100" alt="...">
-      </div>
-      <div class="carousel-item rounded-3 overflow-hidden" data-bs-interval="2000">
-        <img src="https://picsum.photos/200/300" class="d-block object-fit-cover w-100" alt="...">
-      </div>
-      <div class="carousel-item rounded-3 overflow-hidden">
-        <img src="https://picsum.photos/200/300" class="d-block object-fit-cover w-100" alt="...">
+      <div class="carousel-item active rounded-5 overflow-hidden w-100 h-100 border border-black mb-3" data-bs-interval="10000">
+        <img src="https://picsum.photos/300" class=" mx-auto w-100 h-100 img-fluid" alt="...">
       </div>
       @endif
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
