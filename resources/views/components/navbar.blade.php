@@ -15,7 +15,7 @@
             @auth
             <div>
                 <a href="{{route('personalArea')}}">
-                <span class="nav-mail"><i class="fa-solid fa-user"></i> {{auth()->user()->name}}</span>
+                <span class="nav-mail"><i class="fa-solid fa-user userIcon"></i> {{auth()->user()->name}}</span>
                 </a>
             </div>
 

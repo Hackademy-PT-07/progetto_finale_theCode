@@ -3,9 +3,9 @@
     <x-slot:title>Registrazione</x-slot:title>
 
     <div class="form-box container-fluid">
-        <div class="form-container row">
+        <div class="form-container row my-sm-5">
 
-            <div class="col-12 col-md-6 form-left">
+            <div class="col-12 col-md-6 form-left pt-sm-5 pb-sm-2">
                 <form class="auth-form row" action="/register" method="POST">
                     @csrf
                     <div class="text-center">
@@ -29,7 +29,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-12 col-md-6 form-right pb-5">
+            <div class="col-12 col-md-6 form-right pb-5 py-sm-5">
                 <div class="right-cont">
                     <h2>{{__('auth.welcome')}}</h2>
                     <div class="form-paragraph">
