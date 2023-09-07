@@ -1,0 +1,16 @@
+/* utility */
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s ease-in-out;
+}
+.show {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+}
+.floatingItem {
+  animation: floating 2s ease-in-out infinite;
+}
+/* utility end */

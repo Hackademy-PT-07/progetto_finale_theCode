@@ -1,0 +1,119 @@
+.personalTable {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 50px;
+}
+.personalTable thead {
+  height: 50px;
+  width: 100%;
+}
+.personalTable thead tr th {
+  background-color: var(--nav-color);
+  color: var(--primary-color-dark);
+  border: 1px solid white;
+  max-width: 50px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+.personalTable tbody tr td {
+  /* border: 1px solid var(--primary-color-dark); */
+  height: 40px;
+  text-align: start;
+  padding: 0 10px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-overflow: ellipsis "[..]";
+  overflow: hidden;
+  white-space: nowrap;
+}
+.personalTable tbody tr {
+  border-bottom: 1px solid var(--primary-color);
+  background-color: white;
+  transition: all 0.1s ease-in;
+}
+.personalTable tbody tr:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+.personalTable-btn {
+  color: white;
+  letter-spacing: 0.2px;
+  outline: none;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin: 3px;
+}
+.revisor-head {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.revisor-td {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.revisor-td:first-child {
+  font-weight: 600;
+}
+
+.revisor-show-btn {
+  border-radius: 4px;
+  padding: 3px 6px;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  outline: none;
+  border: 1px transparent;
+  -webkit-box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.78);
+  box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.78);
+  transform: translateY(0);
+  transition: all 0.2s ease-in;
+}
+
+.revisor-show-btn:hover {
+  background-color: var(--accent-color-dark);
+}
+.revisorTable {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.revisorTable .revisor-head {
+  background-color: var(--primary-color);
+  height: 50px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-style: italic;
+}
+.accentHead{
+  background-color: var(--accent-color);
+}
+.revisorTable tr {
+  background-color: #eee;
+  transition: all 0.1s ease;
+}
+.revisorTable tr:hover {
+  background-color: #ccc;
+  color: white;
+}
+.revisorTable tr:hover .statusBtn {
+  color: white;
+}
+.revisorTable .revisor-td {
+  height: 40px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.178);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis " [..]";
+}
+

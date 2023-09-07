@@ -1,0 +1,559 @@
+/*form */
+#auth-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 0;
+}
+
+.creation-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-custom {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border-radius: 20px;
+}
+
+.form-custom-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-custom h3 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 4.2rem;
+}
+
+.form-custom span {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.form-custom label {
+  display: block;
+  margin-top: 3rem;
+  padding-left: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.form-custom input,
+.form-custom select,
+.form-custom textarea {
+  display: block;
+  height: 5rem;
+  width: 100%;
+  border-radius: 3px;
+  padding: 0 1.5rem;
+  margin-top: 0.8rem 0;
+  font-size: 1.4rem;
+  font-weight: 300;
+  border: 1px solid var(--primary-color);
+  background-color: white;
+  border-radius: 20px;
+}
+.form-custom input::placeholder,
+.form-custom input,
+.form-custom select,
+.form-custom textarea::placeholder,
+.form-custom textarea {
+  color: var(--primary-color);
+}
+.form-custom input:focus,
+.form-custom select:focus,
+.form-custom textarea:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+.form-custom textarea {
+  max-height: 100px;
+  min-height: 5rem;
+  padding: 1.2rem 1.5rem;
+}
+
+.option {
+  font-weight: 500;
+}
+
+.form-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+.form-custom-btn {
+  margin-top: 5rem;
+  width: 75%;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+.auth-img {
+  background-image: url(../../public/storage/imgs/logo-nobcg.png);
+  background-position: center;
+  background-size: cover;
+}
+.home-form {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+.home-form input {
+  width: 400px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  transition: all 0.2s ease-in;
+}
+.home-form input::placeholder {
+  color: rgba(74, 73, 73, 0.533);
+  font-weight: 100;
+}
+
+.home-form a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+}
+.home-form a i {
+  color: white;
+  font-size: 1.8rem;
+}
+
+/* forms */
+.form-box,
+.apply-form {
+  width: 100%;
+  min-height: 100vh;
+}
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.form-container {
+  width: 75%;
+  min-height: 75%;
+  -webkit-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 6px 6px 12px 0px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  overflow: hidden;
+  flex-wrap: wrap-reverse;
+}
+
+.form-left,
+.form-right {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-form,
+.apply-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
+}
+.apply-form textarea {
+  border: 2px solid rgba(128, 128, 128, 0.1);
+
+  transition: all 0.2s ease;
+}
+.apply-form textarea:focus {
+  outline: none;
+  border: 2px solid var(--accent-color);
+}
+.right-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.auth-form h3,
+.form-right h2,
+.apply-form h3,
+.apply-form h2 {
+  font-size: 4rem;
+  font-weight: 600;
+  color: black;
+}
+
+.auth-form input {
+  height: 40px;
+  width: 50%;
+  margin: 1rem auto;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.auth-form input:focus {
+  border: 1px solid var(--primary-color);
+}
+
+.apply-form input:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.auth-btn {
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 10px;
+  width: 50%;
+  height: 50px;
+  transition: all 0.2s;
+}
+
+.auth-btn:hover {
+  background-color: var(--accent-color-dark);
+}
+
+.sign-with {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.sign-with span,
+.sign-with i {
+  font-size: 1.2rem;
+  margin-right: 20px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.icons i {
+  display: block;
+  margin-right: 20px;
+  font-size: 2rem;
+}
+
+.form-right {
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: var(--primary-color);
+  color: white;
+  padding-bottom: 80px;
+}
+
+.apply-form-right {
+  background-color: var(--accent-color);
+  padding-bottom: 0;
+  padding-top: 50px;
+}
+
+.form-right p {
+  width: 75%;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 1.5rem;
+}
+
+.form-right h2 {
+  color: white;
+  font-size: 3.5rem;
+}
+
+.right-btn {
+  background-color: rgba(255, 255, 255, 0.301);
+  color: white;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 10px;
+  width: 75%;
+  height: 50px;
+  border-radius: 50px;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.apply-btn-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.apply-btn {
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  width: 50%;
+  margin: 15px 0;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.78);
+  box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.78);
+  transform: translateY(0);
+  transition: all 0.2s ease-in;
+}
+.apply-btn {
+  transform: translateY(3px);
+}
+.form-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.form-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.applyDesc-label {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+/* forms end*/
+.category-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  border-radius: 5px;
+  backdrop-filter: blur (2px);
+  margin: 40px auto 0px;
+  padding: 15px 30px;
+  width: 100%;
+}
+.category-form input,
+.category-form select {
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 150px;
+  border-radius: 50px;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+.inputBox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: fit-content;
+  margin-right: 30px;
+}
+.category-form-btnBox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+}
+.category-form-btnBox button {
+  outline: none;
+  border: 1px solid transparent;
+  background-color: var(--accent-color);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.category-form-btnBox button i {
+  font-size: 2rem;
+  color: white;
+}
+
+.category-select option {
+  background-color: white;
+}
+
+.category-select:focus-visible {
+  border: 1px solid var(--primary-color);
+}
+
+/*form end*/
+
+/* creation-form */
+.creation-container {
+  overflow: hidden;
+  width: 100%;
+}
+.creation-form-header,
+.creation-form-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 75vh;
+  padding: 10px;
+}
+.creation-form-header {
+  background-color: white;
+}
+.creation-form-cont {
+  background-color: var(--primary-color);
+}
+.creation-form-header h1,
+.creation-form h3 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.creation-form-header p {
+  font-size: 1.5rem;
+}
+.creation-form-header li {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 10px auto;
+}
+
+.creation-form-header li i {
+  font-size: 3rem;
+  margin-right: 20px;
+  color: var(--primary-color);
+}
+.creation-form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+.creation-form label {
+  font-size: 1.8rem;
+  font-weight: 600;
+  width: 100px;
+}
+.input-container {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.creation-form input,
+.input-container textarea,
+.input-container select {
+  border: none;
+  outline: none;
+  height: 30px;
+  padding: 0 2px;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+.creation-form input[type="file"] {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2px;
+}
+.creation-form input:focus,
+.input-container textarea:focus,
+.input-container select:focus {
+  border-radius: 3px;
+  border: 2px solid var(--light-black);
+}
+.input-container select {
+  font-size: 1rem;
+  color: var(--light-black);
+}
+.input-container select .creation-option {
+  border-color: white;
+}
+.input-container textarea {
+  height: 50px;
+  width: 150px;
+}
+.creation-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.creation-btn button {
+  outline: none;
+  border: none;
+  width: 300px;
+  height: 30px;
+  font-size: 2rem;
+  background-color: var(--accent-color);
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 700;
+  border-radius: 150px;
+  transition: all 0.3s ease-in-out;
+}
+.creation-btn button:hover {
+  background-color: var(--accent-color-dark);
+}
+/* creation-form end */

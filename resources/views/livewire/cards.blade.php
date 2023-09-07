@@ -1,9 +1,9 @@
 <div class="container mx-auto">
     <div class="row my-5" style="display:flex; justify-content:start; align-items:center; flex-wrap:wrap;">
         @forelse($this->getAnnouncements() as $announcement)
-        <div class="homeCard-link mx-auto">
+        <div class="homeCard-link  mx-auto">
             <a href="{{route('announcement', $announcement)}}" class="">
-                <div class="homeCard shadow">
+                <div class="homeCard addCard shadow">
                     <div class="homeCard-img shadow">
                         <img src="{{$announcement->images()->get()->isNotEmpty() ? $announcement->images()->first()->getUrl(300,300) : 'https://picsum.photos/400?grayscale'}}" alt="">
                         <div class="homeCard-category shadow">{{ $announcement->category->name }}</div>
