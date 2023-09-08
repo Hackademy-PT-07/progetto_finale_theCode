@@ -1,0 +1,121 @@
+
+/* homecard */
+.cardWrapper {
+  border-radius: 10px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  overflow-x: auto;
+  width: 100%;
+}
+.cardWrapper::-webkit-scrollbar {
+  display: none;
+}
+.homeCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 180px;
+  height: 250px;
+  padding: 4px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.653);
+}
+.homeCard-link {
+  width: fit-content;
+}
+.homeCard-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 85%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.homeCard-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.homeCard-title {
+  display: block;
+  text-align: start;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  overflow: hidden;
+  padding: 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.homeCard-price {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: rgb(124, 122, 122);
+}
+.homeCard-category {
+  position: absolute;
+  top: -7px;
+  right: -15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2px;
+  width: 60px;
+  height: 18px;
+  border-radius: 5px;
+  color: white;
+  background-color: var(--accent-color);
+  z-index: 999;
+}
+.homeCard-date {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgba(124, 122, 122, 0.548);
+  padding-right: 2px;
+}
+.homeCard:hover {
+  transform: translateY(-8px);
+  background-color: white;
+}
+
+.arrowBox {
+  bottom: -50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 30px;
+}
+.arrowBox span {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.arrowBox i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: var(--primary-color-dark);
+}
+
+/* homecard end */

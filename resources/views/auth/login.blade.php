@@ -1,9 +1,9 @@
 <x-auth-main>
     <x-slot:title>Login</x-slot>
         <div class="form-box container-fluid">
-        <div class="form-container row">
+        <div class="form-container row my-sm-5">
 
-        <div class="col-12 col-md-6 form-left">
+        <div class="col-12 col-md-6 form-left pt-sm-5">
             <form class="auth-form" action="/login" method="POST">
                 @csrf
                 <div class="text-center">
@@ -24,7 +24,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-12 col-md-6 form-right">
+        <div class="col-12 col-md-6 form-right pt-sm-5">
             <div class="right-cont">
                 <h2>{{__('auth.welcomeBack')}}</h2>
                 <div class="form-paragraph">

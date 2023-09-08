@@ -1,11 +1,7 @@
 <x-main>
         <x-slot:title>Work with us</x-slot>
-        <!-- <div class="container">
-            <div class="col-12 text-center mx-auto" style="width: 50%;margin-top: 100px;">
 
-            </div>
-        </div> -->
-        <div class="form-box container rounded-5" style="padding-top: 55px;">
+        <div class="form-box container rounded-5 mb-5" style="padding-top: 55px;">
         <div class="form-container row w-100">
 
         <div class="col-12 col-md-6 form-left h-100">
