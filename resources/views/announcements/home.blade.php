@@ -97,15 +97,15 @@
 
         </div>
     </section>
-
-    <div class="homebtn-container container-fluid position-relative">
+homebtn-container
+    <div class=" start_selling container position-relative">
         <div class="row h-100">
             <div class="col-12 col-md-6 sell_box">
                 <span class="hidden">{{__('ui.startSelling1')}}</span>
                 <span class="hidden">{{__('ui.startSelling2')}}</span>
                 <a href="{{route('announcements.create')}}" class="btn-home floatingItem">{{__('ui.createAnn')}}</a>
             </div>
-            <div class="col-12 col-md-6 position-relative">
+            <div class="col-12 col-md-6 position-relative h-100 ann_img_box">
                 <img src="/storage/imgs/sell_final.png" alt="" class="position-absolute cards_img">
             </div>
         </div>

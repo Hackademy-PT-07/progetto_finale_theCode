@@ -85,34 +85,15 @@ padding: 2px 6px;
   text-align: end;
   font-weight: 600;
 }
-
-.download-box {
-  background-color: white;
+.ann_img_box{
+  width: 100%;
 }
-.download-box h4 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-.download-box span {
-  font-size: 1.5rem;
-}
-.download-img {
-  width: 250px;
-  height: 100px;
-  object-fit: cover;
-}
-
-.homebtn-container {
+.start_selling {
   margin-top: 100px;
-  height: 75vh;
-  background-image: linear-gradient(
-    140deg,
-    rgba(255, 255, 255, 0) 55%,
-    #004fce
-  );
+  height: 60vh;
   overflow: hidden;
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px;
+  margin: 50px 0;
 }
 .sell_box {
   display: flex;
@@ -135,7 +116,7 @@ padding: 2px 6px;
 }
 .cards_img {
   width: 550px;
-  top: -50px;
+  bottom: 300px;
   right: 0px;
 }
 .btn-home {

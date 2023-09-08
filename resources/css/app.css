@@ -10,14 +10,16 @@
 
 /* all */
 @import './nav.css';
-@import './forms.css';
+
 @import './footer.css';
 @import './tables.css';
-@import './category_card.css';
-@import './cards.css';
+
 @import './revisor.css';
 @import './utilities.css';
 @import './announcements_page.css';
+@import './category_card.css';
+@import './cards.css';
+@import './forms.css';
 @import './components.css';
 @import './responsive.css';
 

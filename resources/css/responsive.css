@@ -49,6 +49,13 @@
     margin: 10px 0;
     justify-content: end;
   }
+  .sell_box {
+    width: 100%;
+  }
+    .cards_img {
+    z-index: -1;
+    top: -100%;
+    right: 0}
 }
 
 @media only screen and (max-width: 600px) {
@@ -80,7 +87,7 @@
   .category-card i {
     background-color: var(--bcg);
   }
-  .ann-section {
+  /* .ann-section {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
     height: 75vh;
@@ -88,7 +95,7 @@
 
   .ann-section h1 {
     display: none;
-  }
+  } */
   .cardWrapper {
     justify-content: start;
   }
@@ -142,18 +149,20 @@
     height: 75vh;
     background-image: none;
     overflow: hidden;
-    border-radius: 8px 8px 0 0;
+    border-radius: 8px;
   }
   .sell_box {
     height: 100%;
     padding-bottom: 50px;
   }
+
   .sell_box span {
     font-size: 3rem;
     color: black;
     font-weight: 800;
     margin-bottom: 5px;
   }
+
   .cards_img {
     z-index: -1;
     top: -560px;
@@ -161,8 +170,9 @@
     opacity: 0.7;
   }
   .sell_box .btn-home {
-    width: 150px;
+    width: 75%;
     height: 50px;
+    border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
